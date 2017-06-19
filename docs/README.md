@@ -41,7 +41,7 @@ Pinspired is a web application inspired by Pinterest built using Ruby on Rails a
 
 **Objective:** Allow Pins to be created, read, edited and destroyed through the API. Style Pins.
 
-### Phase 3: Boards (2 day)
+### Phase 3: Boards (2 days)
 
 **Objective:** Allow Boards to be created, read, edited and destroyed through the API. Style Boards.
 
@@ -49,7 +49,7 @@ Pinspired is a web application inspired by Pinterest built using Ruby on Rails a
 
 **Objective:** Add a Discover Feed to home page and add infinite scroll to Pins. Style Discover Feed and Navigation Bar.
 
-### Phase 5: Follows and User Profile (2 day)
+### Phase 5: Follows and User Profile (2 days)
 
 **Objective:** Allow Users to follow and unfollow other users and check who is following them. Style User Profile page and Follows pages.
 
