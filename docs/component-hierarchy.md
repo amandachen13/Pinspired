@@ -42,8 +42,8 @@
 | "/new"                     | "AuthFormContainer" |
 | "/login"                   | "AuthFormContainer" |
 | "/"                        | "HomeContainer"     |
-| "/users/:userId"           | "UserContainer"     |
-| "/users/:userId/followers" | "FollowsContainer"  |
-| "/users/:userId/following" | "FollowsContainer"  |
-| "/users/:userId/pins"      | "PinsContainer"     |
-| "/users/:userId/boards"    | "BoardsContainer"   |
+| "/:username"               | "UserContainer"     |
+| "/:username/followers"     | "FollowsContainer"  |
+| "/:username/following"     | "FollowsContainer"  |
+| "/:username/pins"          | "PinsContainer"     |
+| "/:username/boards"        | "BoardsContainer"   |
