@@ -25,7 +25,7 @@ user_id       | integer   | not null, foreign key (references users), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | null: false
+name        | string    | not null
 description | text      |
 user_id     | integer   | not null, foreign key (references users), indexed
 

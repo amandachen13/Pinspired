@@ -1,38 +1,38 @@
 ## Component Hierarchy
 
 **AuthFormContainer**
- - SignupForm
- - LoginForm
+  - SignupForm
+  - LoginForm
 
 **HomeContainer**
 
- - **NavBar**
-  + Logo
-  + Discover
-  + Logout
+  - **NavBar**
+    + Logo
+    + Discover
+    + Logout
 
- - **SearchContainer** (Bonus?)
-  + Search
+  - **SearchContainer** (Bonus?)
+    + Search
 
- - **NewPin**
-  + NewPin
+  - **NewPin**
+    + NewPin
 
- - **NewBoard**
-  + NewBoard
+  - **NewBoard**
+    + NewBoard
 
- - **UserContainer**
-  + UserDetail
-  - **FollowsContainer**
-   + Followers
-   + Following
-  - **BoardsContainer**
-   + BoardIndex
-   + BoardDetail
-    * PinsContainer
-   + EditBoard
-  - **PinsContainer**
-   + PinIndex
-   + PinDetail
+  - **UserContainer**
+    + UserDetail
+    - **FollowsContainer**
+      + Followers
+      + Following
+    - **BoardsContainer**
+      + BoardIndex
+      + BoardDetail
+        * PinsContainer
+      + EditBoard
+    - **PinsContainer**
+      + PinIndex
+      + PinDetail
 
 
 ## Routes

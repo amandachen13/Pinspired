@@ -1,3 +1,4 @@
+```js
 {
   session: {
     currentUser: {
@@ -48,3 +49,4 @@
     following: [5, 10]
   }
 }
+```
