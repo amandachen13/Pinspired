@@ -6,8 +6,14 @@
   "directories": {
     "doc": "docs"
   },
+  "engine": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -28,8 +34,10 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
     "webpack": "^3.0.0"
   }
 }

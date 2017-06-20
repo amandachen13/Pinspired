@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+import Root from './components/root'
 
 // TESTING
-import { signup, login, logout } from './util/session_api_util';
-window.signup = signup;
-window.login = login;
-window.logout = logout;
+// import { signup, login, logout } from './actions/session_actions';
+// window.signup = signup;
+// window.login = login;
+// window.logout = logout;
 //
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,5 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   //
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Welcome to Pinspired</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });

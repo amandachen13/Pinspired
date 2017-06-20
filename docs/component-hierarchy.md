@@ -39,7 +39,7 @@
 
 | Path                       | Component           |
 |----------------------------|---------------------|
-| "/new"                     | "AuthFormContainer" |
+| "/signup"                  | "AuthFormContainer" |
 | "/login"                   | "AuthFormContainer" |
 | "/"                        | "HomeContainer"     |
 | "/:username"               | "UserContainer"     |
