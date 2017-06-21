@@ -1,40 +1,40 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import SignupForm from './../signup_form/signup_form';
+import SignupFormContainer from './../signup_form/signup_form_container';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: ''
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.state = {
+    //   username: '',
+    //   password: ''
+    // };
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
-  }
-
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  //
+  // update(field) {
+  //   return e => this.setState({
+  //     [field]: e.currentTarget.value
+  //   });
+  // }
+  //
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const user = this.state;
+  //   this.props.processForm({user});
+  // }
+  //
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     if (this.props.loggedIn) {
@@ -49,30 +49,7 @@ class Home extends React.Component {
         <div>
           <span>Welcome to Pinspired</span>
           <br/>
-          <div className="home-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-              {this.renderErrors()}
-              <div className="login-form">
-                <br/>
-                <input type="text" placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                />
-                <br/>
-                <input type="password" placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-                <br/>
-                <input type="submit" value="Sign up" />
-              </div>
-            </form>
-          </div>
-          <div className="login-from-home">
-            <Link to='/login'>Log in</Link>
-          </div>
+          <SignupFormContainer />
         </div>
       );
     }
