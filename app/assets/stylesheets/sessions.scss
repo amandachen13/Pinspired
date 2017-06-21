@@ -46,6 +46,10 @@ h3 {
   width: 100%;
 }
 
+.login-input:focus {
+  outline: none;
+}
+
 .submit-button {
   border: 0px;
   height: 36px;
