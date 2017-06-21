@@ -66,9 +66,10 @@ class LoginForm extends React.Component {
               <input className="submit-button" type="submit" value="Log in" />
             </div>
           </form>
+          <div className="small-border" />
           <div className="session-option">
-            <span>Not on Pinspired yet?</span>
-            <Link to='/signup'>Sign Up</Link>
+            <span className="session-option-message">Not on Pinspired yet?</span>
+            <Link className="session-link" to='/signup'>Sign Up</Link>
           </div>
         </div>
       </div>

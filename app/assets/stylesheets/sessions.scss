@@ -24,19 +24,19 @@ h3 {
   box-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
 
-.login-form-box {
-  min-height: 400px;
+.login-form {
   justify-content: center;
   text-align: center;
-  display: block;
+  display: inline-block;
   width: 268px;
   height: 127px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .login-input {
-  margin-top: 6px;
-  display: inline-block;
+  margin-top: 7px;
   border-radius: 3px;
+  border: 0;
   font-weight: bold;
   font-size: 14px;
   color: #333;
@@ -62,6 +62,27 @@ h3 {
   background-color: #bd081c;
 }
 
+.small-border {
+  width: 110px;
+  border-bottom: #dedede 1px solid;
+  margin: 10px auto;
+}
+
 .session-option {
   font-size: 12px;
+}
+
+span.session-option-message {
+  margin-right: 4px;
+}
+
+a.session-link {
+  color: #717171;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 2px 6px 3px 6px;
+}
+
+a.session-link:hover {
+  color: #8a8a8a;
 }

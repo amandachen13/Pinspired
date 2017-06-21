@@ -43,30 +43,34 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <span>Sign up to see more</span>
+      <div className="login-form-background">
+        <div className="login-form-container">
+          <h3>Sign up to see more</h3>
           <br/>
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <input type="text" placeholder="Username"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-            />
-            <br/>
-            <input type="password" placeholder="Password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="login-input"
-            />
-            <br/>
-            <input type="submit" value="Sign up" />
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
+              <input type="text" placeholder="Username"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+              />
+              <br/>
+              <input type="password" placeholder="Password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+              />
+              <br/>
+              <input className="submit-button" type="submit" value="Sign up" />
+            </div>
+          </form>
+          <div className="session-option">
+            <span className="session-option-message">Already a member?</span>
+            <Link className="session-link" to='/login'>Log in</Link>
           </div>
-          <span>Already a member?</span>
-          <Link to='/login'>Log in</Link>
-        </form>
+        </div>
       </div>
     );
   }
