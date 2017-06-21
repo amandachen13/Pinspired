@@ -1,41 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import AccountFields from './account_fields';
-import ProfileFields from './profile_fields';
 
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 1
-    };
-    this.fieldValues = {
       username: '',
-      password: '',
-      image_url: '',
-      description: ''
-    }
+      password: ''
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.saveValues = this.saveValues.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
-    this.nextStep = this.nextStep.bind(this);
-    this.previousStep = this.previousStep.bind(this);
-  }
-
-  saveValues(fields) {
-    this.fieldValues = Object.assign({}, this.fieldValues, fields)
-  }
-
-  nextStep() {
-    this.setState({
-      step : this.state.step + 1
-    });
-  }
-
-  previousStep() {
-    this.setState({
-      step : this.state.step - 1
-    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -44,20 +17,17 @@ class SignupForm extends React.Component {
     }
   }
 
-  // update(field) {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   });
-  // }
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.fieldValues;
+    const user = this.state;
     this.props.processForm({user});
   }
-
-  // QUESTION: How can I check if username or password is valid
-  // before making POST request (after step 1)
 
   renderErrors() {
     return(
@@ -72,18 +42,33 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    switch(this.state.step) {
-      case 1:
-        return <AccountFields fieldValues={this.fieldValues}
-          renderErrors={this.renderErrors}
-          nextStep={this.nextStep}
-          saveValues={this.saveValues} />
-      case 2:
-        return <ProfileFields fieldValues={this.fieldValues}
-          handleSubmit={this.handleSubmit}
-          previousStep={this.previousStep}
-          saveValues={this.saveValues} />
-    }
+    return (
+      <div className="login-form-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          <span>Sign up to see more</span>
+          <br/>
+          {this.renderErrors()}
+          <div className="login-form">
+            <br/>
+            <input type="text" placeholder="Username"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="login-input"
+            />
+            <br/>
+            <input type="password" placeholder="Password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+            />
+            <br/>
+            <input type="submit" value="Sign up" />
+          </div>
+          <span>Already a member?</span>
+          <Link to='/login'>Log in</Link>
+        </form>
+      </div>
+    );
   }
 }
 

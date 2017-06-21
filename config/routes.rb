@@ -6,12 +6,15 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :boards, only: [:show, :create, :update, :destroy]
-    
+
     resources :pins, only: [:index, :show, :create, :update, :destroy]
 
     resources :pinnings, only: [:create, :destroy]
 
     resources :follows, only: [:create, :destroy]
+
+
+    get "/users/validate", to: "users#validate"
 
   end
 

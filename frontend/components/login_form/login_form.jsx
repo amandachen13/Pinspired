@@ -43,30 +43,34 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <span>Log in to see more</span>
+      <div className="login-form-background">
+        <div className="login-form-container">
+          <h3>Log in to see more</h3>
           <br/>
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <input type="text" placeholder="Username"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-            />
-            <br/>
-            <input type="password" placeholder="Password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="login-input"
-            />
-            <br/>
-            <input type="submit" value="Log in" />
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
+              <input type="text" placeholder="Username"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+              />
+              <br/>
+              <input type="password" placeholder="Password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+              />
+              <br/>
+              <input className="submit-button" type="submit" value="Log in" />
+            </div>
+          </form>
+          <div className="session-option">
+            <span>Not on Pinspired yet?</span>
+            <Link to='/signup'>Sign Up</Link>
           </div>
-        </form>
-        <span>Not on Pinspired yet?</span>
-        <Link to='/signup'>Sign Up</Link>
+        </div>
       </div>
     );
   }
