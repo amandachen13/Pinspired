@@ -1,12 +1,16 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import SessionFormContainer from './session_form/session_form_container';
+import LoginFormContainer from './login_form/login_form_container';
+import SignupFormContainer from './signup_form/signup_form_container';
+import HomeContainer from './home/home_container';
+import { AuthRoute } from './../util/route_util';
+
 
 const App = () => (
   <div>
-    <h1>Pinspired</h1>
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <Route exact path="/" component={HomeContainer} />
+    <AuthRoute path="/login" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
 );
 
