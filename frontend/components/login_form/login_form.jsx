@@ -26,7 +26,6 @@ class LoginForm extends React.Component {
         }
       });
     }
-    return false;
   }
 
   componentWillUnmount() {

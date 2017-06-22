@@ -16,6 +16,8 @@ class SignupForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+    document.getElementById("passwordError").innerHTML = "";
+    document.getElementById("usernameError").innerHTML = "";
   }
 
   componentDidUpdate() {
@@ -28,8 +30,6 @@ class SignupForm extends React.Component {
         }
       });
     }
-    console.log("hello")
-    return false;
   }
 
   componentWillUnmount() {
