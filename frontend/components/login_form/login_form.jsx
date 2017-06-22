@@ -18,6 +18,17 @@ class LoginForm extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    if (this.props.errors) {
+      this.props.errors.forEach((err) => {
+        if (err.substring(0,4) === "Oops") {
+          document.getElementById("combinationError").innerHTML = err;
+        }
+      });
+    }
+    return false;
+  }
+
   componentWillUnmount() {
     this.props.clearErrors();
   }
@@ -34,17 +45,17 @@ class LoginForm extends React.Component {
     this.props.processForm({user});
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul className="errors-list">
+  //       {this.props.errors.map((error, i) => (
+  //         <li className="errors-list-item" key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   demo() {
     this.props.demoLogin({user: {username:"pindiesel" , password:"pindiesel"} });
@@ -56,7 +67,6 @@ class LoginForm extends React.Component {
         <h3>Log in to see more</h3>
         <br/>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
           <div className="login-form">
             <br/>
             <input type="text" placeholder="Username"
@@ -64,6 +74,7 @@ class LoginForm extends React.Component {
               onChange={this.update('username')}
               className="login-input"
             />
+            <span id="combinationError"></span>
             <br/>
             <input type="password" placeholder="Password"
               value={this.state.password}

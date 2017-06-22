@@ -14,8 +14,12 @@
  *= require_self
  */
 
-body, p, div {
+body, p, div, ul {
   margin: 0px;
   font-family: Helvetica, sans-serif;
   font-size: 12px;
+}
+
+li {
+  list-style: none;
 }

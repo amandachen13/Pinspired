@@ -29,6 +29,24 @@ h3 {
   -webkit-font-smoothing: antialiased;
 }
 
+#combinationError, #usernameError, #passwordError {
+  float: right;
+  border: 1px solid;
+  padding: 5px;
+}
+
+#combinationError {
+  margin-top: 25px;
+  width: 110px;
+  margin-right: -140px;
+}
+
+#usernameError, #passwordError {
+  margin-top: 6px;
+  width: 100px;
+  margin-right: -130px;
+}
+
 .login-input {
   margin: 7px auto 0px;
   border-radius: 3px;
@@ -42,7 +60,7 @@ h3 {
   width: 248px;;
 }
 
-.login-input:focus {
+.login-input:focus, .submit-button:focus, .demo:focus {
   outline: none;
 }
 
@@ -60,6 +78,10 @@ h3 {
   color: #fff;
   cursor: pointer;
   background-color: #bd081c;
+}
+
+.submit-button:hover {
+  background-color: #d50c22;
 }
 
 p.or-option {
