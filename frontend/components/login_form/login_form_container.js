@@ -12,7 +12,8 @@ const mapStateToProps = ({ session }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     processForm: user => dispatch(login(user)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    demoLogin: user => dispatch(login(user))
   };
 };
 

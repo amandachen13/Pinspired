@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup, logout } from './../../actions/session_actions';
+import { login, signup, logout } from './../../actions/session_actions';
 import Home from './home';
 
 const mapStateToProps = ({ session }) => {
@@ -15,6 +15,8 @@ const mapDispatchToProps = (dispatch, { location }) => {
   return {
     processForm: user => dispatch(signup(user)),
     clearErrors: () => dispatch(clearErrors()),
+    logout: () => dispatch(logout()),
+    demoLogin: user => dispatch(login(user)),
     message
   };
 };

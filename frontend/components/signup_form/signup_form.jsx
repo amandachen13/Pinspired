@@ -9,6 +9,7 @@ class SignupForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demo = this.demo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -45,6 +46,10 @@ class SignupForm extends React.Component {
     );
   }
 
+  demo() {
+    this.props.demoLogin({user: {username:"pindiesel" , password:"pindiesel"} });
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -70,7 +75,7 @@ class SignupForm extends React.Component {
           </div>
         </form>
         <p className="or-option">OR</p>
-        <button className="demo">Demo</button>
+        <button onClick={this.demo} className="demo">Demo</button>
         <div className="large-border" />
         <div className="session-option">
           <span className="login-option-message">Already a member?</span>
