@@ -1,22 +1,21 @@
 html {
   background-color: #efefef;
-  height: 100vw;
-  width: 100vw;
 }
 
 h3 {
   color: #555;
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: -1.2px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .login-form-container {
   display: block;
-  margin-top: 100px;
+  margin: 100px auto;
   background-color: white;
   min-height: 400px;
-  width: 404px;
+  width: 384px;
   padding: 20px 10px;
   border-radius: 8px;
   text-align: center;
@@ -25,16 +24,12 @@ h3 {
 }
 
 .login-form {
-  justify-content: center;
-  text-align: center;
   display: inline-block;
-  width: 268px;
-  height: 127px;
   -webkit-font-smoothing: antialiased;
 }
 
 .login-input {
-  margin-top: 7px;
+  margin: 7px auto 0px;
   border-radius: 3px;
   border: 0;
   font-weight: bold;
@@ -43,7 +38,7 @@ h3 {
   padding: 10px;
   background-color: #f0f0f0;
   box-shadow: none;
-  width: 100%;
+  width: 248px;;
 }
 
 .login-input:focus {
@@ -57,7 +52,7 @@ h3 {
   padding: 0 18px;
   font-size: 15px;
   font-weight: bold;
-  width: 232px;
+  width: 268px;
   height: 36px;
   vertical-align: middle;
   margin-top: 10px;
@@ -66,25 +61,85 @@ h3 {
   background-color: #bd081c;
 }
 
+p.or-option {
+  margin-top: 14px;
+  margin-bottom: 3px;
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+}
+
+button.demo {
+  border: 0px;
+  height: 36px;
+  border-radius: 2px;
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 268px;
+  height: 36px;
+  vertical-align: middle;
+  margin-top: 9px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #4285f4;
+  -webkit-font-smoothing: antialiased;
+}
+
 .small-border {
   width: 110px;
   border-bottom: #dedede 1px solid;
-  margin: 10px auto;
+  margin: 30px auto 13px auto;
+}
+
+.large-border {
+  border-bottom: 1px solid rgb(239, 239, 239);
+  margin: 20px 0px 15px -10px;
+  width: 404px;
 }
 
 .session-option {
   font-size: 12px;
 }
 
-span.session-option-message {
+span.signup-option-message {
   margin-right: 4px;
 }
 
-a.session-link {
+span.login-option-message {
+  color: rgb(85, 85, 85);
+  font-weight: normal;
+  font-size: 14px;
+  margin-bottom: 5px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a.signup-link {
   color: #717171;
   text-decoration: none;
   font-weight: bold;
   padding: 2px 6px 3px 6px;
+}
+
+a.login-link {
+  border: 0px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 4px;
+  -webkit-font-smoothing: antialiased;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+  background-color: rgb(235, 235, 235);
+  color: rgb(68, 68, 68);
+  width: 120px;
+  text-decoration: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+a.login-link:hover {
+  background-color: #f5f3f3;
 }
 
 a.session-link:hover {

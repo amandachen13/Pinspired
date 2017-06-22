@@ -47,34 +47,34 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-background">
-        <div className="login-form-container">
-          <h3>Log in to see more</h3>
-          <br/>
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            {this.renderErrors()}
-            <div className="login-form">
-              <br/>
-              <input type="text" placeholder="Username"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-              <br/>
-              <input type="password" placeholder="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-              <br/>
-              <input className="submit-button" type="submit" value="Log in" />
-            </div>
-          </form>
-          <div className="small-border" />
-          <div className="session-option">
-            <span className="session-option-message">Not on Pinspired yet?</span>
-            <Link className="session-link" to='/signup'>Sign Up</Link>
+      <div className="login-form-container">
+        <h3>Log in to see more</h3>
+        <br/>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          {this.renderErrors()}
+          <div className="login-form">
+            <br/>
+            <input type="text" placeholder="Username"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="login-input"
+            />
+            <br/>
+            <input type="password" placeholder="Password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+            />
+            <br/>
+            <input className="submit-button" type="submit" value="Log in" />
           </div>
+        </form>
+        <p className="or-option">OR</p>
+        <button className="demo">Demo</button>
+        <div className="small-border" />
+        <div className="session-option">
+          <span className="signup-option-message">Not Pinspired yet?</span>
+          <Link className="signup-link" to='/signup'>Sign Up</Link>
         </div>
       </div>
     );
