@@ -14,9 +14,11 @@
 
 class User < ActiveRecord::Base
 
-  validates :username, :password_digest, :session_token, presence: true
-  validates :username, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :username, presence: {message: "You missed a spot!"}
+  validates :password_digest, :session_token, presence: true
+  validates :username, uniqueness: {message: "Deja vu! That username's taken."}
+  validates :session_token, uniqueness: true
+  validates :password, length: { minimum: 6, allow_nil: true, message: "Your password is too short!"}
 
   attr_reader :password
 
