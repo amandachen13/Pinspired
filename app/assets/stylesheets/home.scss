@@ -1,0 +1,51 @@
+header {
+  margin-top: 12px;
+  padding-bottom: 12px;
+  height: 40px;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+}
+
+.search-bar {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  color: #757575;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #efefef;
+  border-radius: 4px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a.icon-temp {
+  color: #b5b5b5;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+button.icon-temp {
+  border: 0px;
+  border-radius: 4px;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: #555555;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 4px 7px;
+}
+
+a.signup-footer {
+  color: #fff;
+}

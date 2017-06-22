@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SignupFormContainer from './../signup_form/signup_form_container';
+import HeaderContainer from './header_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -11,14 +12,14 @@ class Home extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="header">
-          <h1>Pinspired</h1>
-          <button onClick={this.props.logout}>Log Out</button>
+          <HeaderContainer />
         </div>
       );
     } else {
       return (
         <div className="home-background">
           <SignupFormContainer location="/" />
+          <footer><a className="signup-footer" href="https://github.com/amandachen13/Pinspired">Github</a></footer>
         </div>
       );
     }

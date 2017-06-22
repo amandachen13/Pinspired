@@ -1,8 +1,3 @@
-body {
-  background-color: #efefef;
-  display: block;
-}
-
 h3 {
   margin-top: 60px;
   margin-bottom: -9px;
@@ -77,7 +72,7 @@ h3 {
   letter-spacing: -.4px;
 }
 
-.login-input:focus, .submit-button:focus, .demo:focus {
+.login-input:focus, .submit-button:focus {
   outline: none;
 }
 

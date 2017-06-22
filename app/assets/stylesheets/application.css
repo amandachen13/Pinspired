@@ -20,6 +20,19 @@ body, p, div, ul {
   font-size: 12px;
 }
 
+body {
+  background-color: white;
+  display: block;
+}
+
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
 }
