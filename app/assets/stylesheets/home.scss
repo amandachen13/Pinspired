@@ -1,5 +1,5 @@
 header {
-  margin-top: 12px;
+  padding-top: 12px;
   padding-bottom: 12px;
   height: 40px;
   background-color: white;
@@ -39,11 +39,14 @@ button.icon-temp {
   cursor: pointer;
 }
 
-footer {
+div.signup-footer {
   text-align: center;
   font-size: 11px;
+  color: #fff;
   font-weight: normal;
-  padding: 4px 7px;
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
 }
 
 a.signup-footer {

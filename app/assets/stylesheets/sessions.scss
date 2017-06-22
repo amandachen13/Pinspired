@@ -1,3 +1,11 @@
+div.home-background {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  top: 0px;
+  background-color: rgba(95, 115, 160, 0.56);
+}
+
 h3 {
   margin-top: 60px;
   margin-bottom: -9px;
@@ -12,8 +20,8 @@ h3 {
   display: block;
   margin: 100px auto;
   background-color: white;
-  min-height: 400px;
-  width: 384px;
+  height: 429px;
+  width: 382px;
   padding: 20px 10px;
   border-radius: 8px;
   text-align: center;
@@ -130,7 +138,7 @@ button.demo {
 .large-border {
   border-bottom: 1px solid rgb(239, 239, 239);
   margin: 20px 0px 15px -10px;
-  width: 404px;
+  width: 402px;
 }
 
 .session-option {

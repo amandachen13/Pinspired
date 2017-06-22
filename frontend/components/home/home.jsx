@@ -19,7 +19,7 @@ class Home extends React.Component {
       return (
         <div className="home-background">
           <SignupFormContainer location="/" />
-          <footer><a className="signup-footer" href="https://github.com/amandachen13/Pinspired">Github</a></footer>
+          <div className="signup-footer"><a className="signup-footer" href="https://github.com/amandachen13/Pinspired">Github</a></div>
         </div>
       );
     }

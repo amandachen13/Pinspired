@@ -14,14 +14,18 @@
  *= require_self
  */
 
-body, p, div, ul {
+html {
+  height: 100%;
+}
+
+body, p, div, ul, footer {
   margin: 0px;
   font-family: Helvetica, sans-serif;
   font-size: 12px;
 }
 
 body {
-  background-color: white;
+  background-color: #efefef;
   display: block;
 }
 
