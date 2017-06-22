@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <h3>Sign up to see more</h3>
+        <h3>{this.props.message}</h3>
         <br/>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.renderErrors()}

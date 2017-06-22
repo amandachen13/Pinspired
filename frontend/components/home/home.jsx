@@ -47,9 +47,7 @@ class Home extends React.Component {
     } else {
       return (
         <div>
-          <span>Welcome to Pinspired</span>
-          <br/>
-          <SignupFormContainer />
+          <SignupFormContainer location="/" />
         </div>
       );
     }

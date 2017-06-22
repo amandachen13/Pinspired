@@ -9,10 +9,13 @@ const mapStateToProps = ({ session }) => {
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, { location }) => {
+  const message = (location === '/') ?
+    "Welcome to Pinspired" : "Sign up to see more";
   return {
     processForm: user => dispatch(signup(user)),
-    logout: () => dispatch(logout())
+    clearErrors: () => dispatch(clearErrors()),
+    message
   };
 };
 
