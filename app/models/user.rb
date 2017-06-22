@@ -19,6 +19,14 @@ class User < ActiveRecord::Base
   validates :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true, message: "Your password is too short!"}
 
+  has_attached_file :image, default_url: "user_default.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  has_many :created_pins,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "Pin"
+
   attr_reader :password
 
   after_initialize :ensure_session_token

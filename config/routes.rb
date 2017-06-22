@@ -13,9 +13,6 @@ Rails.application.routes.draw do
 
     resources :follows, only: [:create, :destroy]
 
-
-    get "/users/validate", to: "users#validate"
-
   end
 
   root "static_pages#root"
