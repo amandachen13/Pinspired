@@ -20,6 +20,7 @@ class Api::PinsController < ApplicationController
       render 'api/pins/show'
     else
       render json: @pin.errors.full_messages, status: 422
+    end
   end
 
   def update
