@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
     logout: () => dispatch(logout()),
     demoLogin: user => dispatch(login(user)),
     message
-  };
+  }
 };
 
 export default connect(

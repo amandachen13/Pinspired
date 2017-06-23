@@ -42,7 +42,7 @@ class Api::PinsController < ApplicationController
 
     if @pin
       if @pin.destroy
-        render json: ["Pin successfully deleted"], status: 200
+        render json: params[:id], status: 200
       else
         render json: ["Failed to delete."], status: 404
       end
@@ -54,7 +54,7 @@ class Api::PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :url, :image, :description)
+    params.require(:pin).permit(:title, :url, :image, :description, :user_id)
   end
 
 end

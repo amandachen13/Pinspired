@@ -5,9 +5,15 @@ import Root from './components/root'
 
 // TESTING
 // import { signup, login, logout } from './actions/session_actions';
+import { requestAllPins, requestSinglePin, createPin, editPin, deletePin } from './actions/pin_actions';
 // window.signup = signup;
 // window.login = login;
 // window.logout = logout;
+window.requestAllPins = requestAllPins;
+window.requestSinglePin = requestSinglePin;
+window.createPin = createPin;
+window.editPin = editPin;
+window.deletePin = deletePin;
 //
 
 document.addEventListener('DOMContentLoaded', () => {

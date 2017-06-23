@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SignupFormContainer from './../signup_form/signup_form_container';
 import HeaderContainer from './header_container';
+import PinsIndexContainer from './../pins/pins_index_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -11,8 +12,13 @@ class Home extends React.Component {
   render() {
     if (this.props.loggedIn) {
       return (
-        <div className="header">
-          <HeaderContainer />
+        <div>
+          <div className="header">
+            <HeaderContainer />
+          </div>
+          <div>
+            <PinsIndexContainer />
+          </div>
         </div>
       );
     } else {
