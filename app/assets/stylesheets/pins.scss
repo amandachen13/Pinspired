@@ -3,7 +3,7 @@
 
 div.pins-grid {
   background-color: white;
-  height: 100vh;
+  height: 100%;
   padding: 24px 18px 0;
   margin: 0 auto;
 }
@@ -85,6 +85,7 @@ div.pins-hover:hover div.pin-save-modal {
 }
 
 i.fa-thumb-tack {
+  margin-top: 0.5px;
   padding-right: 6px;
 }
 
@@ -143,14 +144,15 @@ img.pin-creator-pic {
   width: 24px;
   height: 24px;
   margin-right: 8px;
-  margin-top: 2px;
+  margin-top: 2.5px;
 }
 
 div.pin-creator-info {
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 span.pin-creator {
+  margin-bottom: 2px;
   font-weight: bold;
   display: block;
 }
