@@ -1,0 +1,104 @@
+div.pins-grid {
+  background-color: white;
+  height: 100vh;
+  padding: 24px 18px 0;
+  margin: 0 auto;
+}
+
+div.pins-hover {
+  // transform: translateX(0px) translateY(0px);
+  width: 236px;
+  position: relative;
+}
+
+div.pins-hover:hover {
+  cursor: zoom-in;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  margin: -10px;
+  height: 100%;
+}
+
+div.pins {
+}
+
+img.pins {
+  width: 236px;
+  border-radius: 8px;
+}
+
+img.pins:hover {
+}
+
+div.dim-gradient {
+  background-color: rgba(0, 0, 0, 0.15);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  top: 100px;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  margin: 0 auto;
+  width: 236px;
+  border-radius: 0 0 8px 8px;
+}
+
+div.dim-gradient:hover {
+  margin-top: 10px;
+}
+
+
+div.pin-url {
+}
+
+div.pin-info {
+  padding: 0 8px;
+}
+
+div.pin-title {
+  font-weight: bold;
+  color: #444;
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  line-height: 16px;
+  word-spacing: 0;
+}
+
+div.pin-title, div.pin-desc {
+  margin-bottom: 6px;
+  width: 145px;
+}
+
+div.pin-desc {
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+}
+
+div.pin-link-to-board {
+  width: 220px;
+  height: 28px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 0 0 6px 6px;
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  line-height: 14px;
+  word-spacing: 0;
+  color: #555;
+}
+
+div.pin-link-to-board:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  opacity: 1.0;
+}
+
+span.pin-creator {
+  font-weight: bold;
+  display: block;
+}
+
+span.pin-board {
+  display: block;
+}

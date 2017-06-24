@@ -1,6 +1,7 @@
 import React from 'react';
 import MasonryInfiniteScroller from 'react-masonry-infinite';
 import MasonryLayout from 'react-masonry-layout';
+import Masonry from 'react-masonry-component';
 
 class PinsIndex extends React.Component {
   constructor(props) {
@@ -53,24 +54,50 @@ class PinsIndex extends React.Component {
 
   // END INFINITE SCROLL
 
-  pins_list() {
-    return(
-      <ul className="pins-index">
-        {this.props.pins.map((pin, idx) => (
-          <li className="pins" key={idx}>
-            <img src={pin.image_url}/>
-            {pin.title}
-            {pin.url}
-            {pin.description}
-          </li>
-        ))}
-      </ul>
-    );
+  pinsList() {
+    const pins = this.props.pins.map( pin => {
+      return (
+        <li key={pin.id}>
+          <div className="pins-hover">
+            <div className="pins">
+              <div className="pins-image">
+                <img className="pins" src={pin.image_url} />
+                <div className="dim-gradient">
+                  <div className="pin-url">{pin.url}</div>
+                </div>
+              </div>
+              <div className="pin-info">
+                <div className="pin-title">{pin.title}</div>
+                <div className="pin-desc">{pin.description}</div>
+              </div>
+              <div className="pin-link-to-board">
+                <span className="pin-creator">{pin.creator.username}</span>
+                <span className="pin-board">Board Name</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+    });
+    return pins;
   }
 
   render() {
+    let masonryOptions = {
+      transitionDuration: 0,
+      gutter: 25,
+      fitWidth: true
+    };
     if (this.props.pins.length > 0) {
-      return <ul>{this.pins_list()}</ul>
+      return (
+        <Masonry className={"pins-index-container"}
+          elementType={'ul'}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}>
+          {this.pinsList()}
+        </Masonry>
+      );
     } else {
       return null;
     }

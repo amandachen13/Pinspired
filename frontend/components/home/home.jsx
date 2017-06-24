@@ -16,7 +16,7 @@ class Home extends React.Component {
           <div className="header">
             <HeaderContainer />
           </div>
-          <div>
+          <div className="pins-grid">
             <PinsIndexContainer />
           </div>
         </div>

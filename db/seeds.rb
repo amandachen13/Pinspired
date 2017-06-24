@@ -14,10 +14,15 @@ User.create({username: "pindiesel", password: "pindiesel"})
 Pin.create({title: "Test",
   url: "test.com",
   description: "testing",
-  image: "http://i.imgur.com/CpVrWei.jpg",
+  image: File.open("app/assets/images/pin1.jpg"),
   user_id: User.find_by_username("pindiesel").id})
 Pin.create({title: "Test 2",
   url: "test2.com",
   description: "testing2",
-  image: "http://i.imgur.com/eTuCPxM.jpg",
+  image: File.open("app/assets/images/pin2.jpg"),
+  user_id: User.find_by_username("pindiesel").id})
+Pin.create({title: "Test 3",
+  url: "test3.com",
+  description: "testing3",
+  image: File.open("app/assets/images/pin3.jpg"),
   user_id: User.find_by_username("pindiesel").id})
