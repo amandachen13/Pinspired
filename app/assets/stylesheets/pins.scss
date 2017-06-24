@@ -1,3 +1,6 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 div.pins-grid {
   background-color: white;
   height: 100vh;
@@ -6,9 +9,9 @@ div.pins-grid {
 }
 
 div.pins-hover {
-  // transform: translateX(0px) translateY(0px);
   width: 236px;
   position: relative;
+  margin-bottom: 20px;
 }
 
 div.pins-hover:hover {
@@ -31,10 +34,14 @@ img.pins {
 img.pins:hover {
 }
 
-div.dim-gradient {
+div.pins-image {
+  position: relative;
+}
+
+div.pins-hover:hover div.dim-gradient {
   background-color: rgba(0, 0, 0, 0.15);
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
-  top: 100px;
+  bottom: 3px;
   height: 100px;
   left: 0;
   position: absolute;
@@ -48,18 +55,54 @@ div.dim-gradient:hover {
   margin-top: 10px;
 }
 
+a.pin-url, div.pin-save-modal {
+  display: none;
+}
 
-div.pin-url {
+div.pins-hover:hover a.pin-url {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 7px;
+  color: #efefef;
+  size: 11px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+
+div.pins-hover:hover div.pin-save-modal {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 9px 12px;
+  background-color: #bd081c;
+  color: #efefef;
+  font-size: 14px;
+}
+
+i.fa-thumb-tack {
+  padding-right: 6px;
+}
+
+div.pin-save {
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
 }
 
 div.pin-info {
+  margin-top: 6px;
   padding: 0 8px;
 }
 
 div.pin-title {
   font-weight: bold;
   color: #444;
-  font-size: 14px;
+  font-size: 14.5px;
   letter-spacing: -0.15px;
   line-height: 16px;
   word-spacing: 0;
@@ -76,14 +119,15 @@ div.pin-desc {
 }
 
 div.pin-link-to-board {
+  display: flex;
   width: 220px;
   height: 28px;
   margin-top: 6px;
   padding: 5px 8px;
   border-radius: 0 0 6px 6px;
-  font-size: 12px;
-  letter-spacing: -0.1px;
-  line-height: 14px;
+  font-size: 11px;
+  letter-spacing: -0.05px;
+  line-height: 12px;
   word-spacing: 0;
   color: #555;
 }
@@ -92,6 +136,18 @@ div.pin-link-to-board:hover {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   opacity: 1.0;
+  cursor: pointer;
+}
+
+img.pin-creator-pic {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+div.pin-creator-info {
+  margin-top: 2px;
 }
 
 span.pin-creator {

@@ -63,7 +63,11 @@ class PinsIndex extends React.Component {
               <div className="pins-image">
                 <img className="pins" src={pin.image_url} />
                 <div className="dim-gradient">
-                  <div className="pin-url">{pin.url}</div>
+                  <a className="pin-url" href={`${pin.url}`} target="_blank">{pin.url}</a>
+                </div>
+                <div className="pin-save-modal">
+                  <i className="fa fa-thumb-tack" aria-hidden="true"></i>
+                  <div className="pin-save">Save</div>
                 </div>
               </div>
               <div className="pin-info">
@@ -71,8 +75,11 @@ class PinsIndex extends React.Component {
                 <div className="pin-desc">{pin.description}</div>
               </div>
               <div className="pin-link-to-board">
-                <span className="pin-creator">{pin.creator.username}</span>
-                <span className="pin-board">Board Name</span>
+                <img className="pin-creator-pic" src={pin.creator.image_url} />
+                <div className="pin-creator-info">
+                  <span className="pin-creator">{pin.creator.username}</span>
+                  <span className="pin-board">Board Name</span>
+                </div>
               </div>
             </div>
           </div>
