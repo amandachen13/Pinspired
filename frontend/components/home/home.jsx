@@ -17,7 +17,7 @@ class Home extends React.Component {
             <HeaderContainer />
           </div>
           <div className="pins-grid">
-            <PinsIndexContainer />
+            <PinsIndexContainer history={this.props.history}/>
           </div>
         </div>
       );

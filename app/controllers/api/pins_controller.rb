@@ -24,7 +24,7 @@ class Api::PinsController < ApplicationController
   end
 
   def update
-    @pin = current_user.created_pins.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
 
     if @pin
       if @pin.update(pin_params)
@@ -33,12 +33,12 @@ class Api::PinsController < ApplicationController
         render json: @pin.errors.full_messages, status: 422
       end
     else
-      render json: ["You do not have permission to edit this pin"], status: 401
+      render json: ["You do not have permission to edit this pin."], status: 401
     end
   end
 
   def destroy
-    @pin = current_user.created_pins.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
 
     if @pin
       if @pin.destroy
@@ -47,7 +47,7 @@ class Api::PinsController < ApplicationController
         render json: ["Failed to delete."], status: 404
       end
     else
-      render json: ["You do not have permission to delete this pin"], status: 401
+      render json: ["You do not have permission to delete this pin."], status: 401
     end
   end
 

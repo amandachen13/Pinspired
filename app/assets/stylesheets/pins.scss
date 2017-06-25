@@ -95,6 +95,10 @@ div.pin-save {
   -webkit-font-smoothing: antialiased;
 }
 
+div.pins-hover:hover div.pin-save-modal:hover {
+  background-color: #b7071b;
+}
+
 div.pin-info {
   margin-top: 6px;
   padding: 0 8px;

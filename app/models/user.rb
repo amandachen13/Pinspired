@@ -2,13 +2,17 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  description     :text
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  description        :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -22,10 +26,15 @@ class User < ActiveRecord::Base
   has_attached_file :image, default_url: "user_default.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  has_many :created_pins,
+  has_many :pins,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: "Pin"
+
+  has_many :boards,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "Board"
 
   attr_reader :password
 
