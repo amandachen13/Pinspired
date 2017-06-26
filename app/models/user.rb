@@ -18,6 +18,7 @@
 class User < ActiveRecord::Base
 
   validates :username, presence: {message: "You missed a spot!"}
+  validates :username, exclusion: { in: %w(pin login signup), message: "%{value} is reserved." }
   validates :password_digest, :session_token, presence: true
   validates :username, uniqueness: {message: "Deja vu! That username's taken."}
   validates :session_token, uniqueness: true

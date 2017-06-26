@@ -8,3 +8,13 @@
 </script>
 
 <main id="root"></main>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".no-event-bubble-up").each(function () {
+    $(this).click(function(e) {
+      e.stopPropagation();
+    });
+  });
+});
+</script>

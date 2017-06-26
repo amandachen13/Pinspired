@@ -15,6 +15,7 @@ class PinsIndex extends React.Component {
     // this.hasMore = this.hasMore.bind(this);
     // this.nextPins = this.nextPins.bind(this);
     // this.loadMore = this.loadMore.bind(this);
+    // this.stopClick = this.stopClick.bind(this);
   }
 
   // componentDidMount() {
@@ -55,25 +56,35 @@ class PinsIndex extends React.Component {
 
   // END INFINITE SCROLL
 
+  // stopClick(e) {
+  //   e.stopPropagation();
+  // }
+  //
+  // handleBoardShow(e) {
+  //
+  // }
+
   pinsList() {
     const pins = this.props.pins.map( pin => {
       return (
         <li key={pin.id}>
           <div className="pins-hover">
             <div className="pins">
-              <div className="pins-image">
-                <img className="pins" src={pin.image_url} />
-                <div className="dim-gradient">
-                  <a className="pin-url" href={`${pin.url}`} target="_blank">{pin.url}</a>
+              <div onClick={ () => this.props.history.push(`/pin/${pin.id}`) } >
+                <div className="pins-image">
+                  <img className="pins" src={pin.image_url} />
+                  <div className="dim-gradient">
+                    <a className="pin-url" href={`${pin.url}`} target="_blank">{pin.url}</a>
+                  </div>
+                  <div className="pin-save-modal">
+                    <i className="fa fa-thumb-tack" aria-hidden="true"></i>
+                    <div className="pin-save">Save</div>
+                  </div>
                 </div>
-                <div className="pin-save-modal">
-                  <i className="fa fa-thumb-tack" aria-hidden="true"></i>
-                  <div className="pin-save">Save</div>
+                <div className="pin-info">
+                  <div className="pin-title">{pin.title}</div>
+                  <div className="pin-desc">{pin.description}</div>
                 </div>
-              </div>
-              <div className="pin-info">
-                <div className="pin-title">{pin.title}</div>
-                <div className="pin-desc">{pin.description}</div>
               </div>
               <div onClick={ () => this.props.history.push(`/${pin.creator.username}/${pin.board.name}`) } className="pin-link-to-board">
                 <img className="pin-creator-pic" src={pin.creator.image_url} />

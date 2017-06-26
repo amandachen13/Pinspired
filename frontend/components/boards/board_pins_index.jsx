@@ -9,6 +9,7 @@ class BoardPinsIndex extends React.Component {
 
     this.pinsIndexArr = this.pinsIndexArr.bind(this);
     this.pinsList = this.pinsList.bind(this);
+    // this.handlePinShow = this.handlePinShow.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +48,11 @@ class BoardPinsIndex extends React.Component {
     });
     return pinsArr;
   }
+
+  // handlePinShow() {
+  //   e.stopPropagation();
+  //   return this.props.history.push(`/pins/${pin.id}`)
+  // }
 
   pinsList() {
     const pins = this.pinsIndexArr().map( id => {
