@@ -165,13 +165,58 @@ span.pin-board {
   display: block;
 }
 
+
+div.pin-unshow {
+  position: absolute;
+  // margin-top: -30px;
+  padding-top: 30px;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+
+div.pin-unshow:hover {
+  cursor: zoom-out;
+}
+
+div.pin-show-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.pin-show-options {
+  // margin: 30px auto 0;
+  width: 564px;
+  height: 40px;
+  padding: 8px 32px;
+  border-radius: 8px 8px 0 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+div.pin-show-options:hover {
+  cursor: auto;
+}
+
 div.pin-show {
-  margin: 0 auto;
+  // margin: 0 auto;
   width: 564px;
   padding: 0 32px;
   background-color: white;
+  border-radius: 0 0 8px 8px;
+  z-index: 1000;
+}
+
+div.pin-show:hover {
+  cursor: auto;
 }
 
 img.pin-show-image {
   width: 564px;
+  height: 100%;
+  z-index: 1000;
 }

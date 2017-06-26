@@ -7,7 +7,7 @@ const mapStateToProps = ({ session, pins }, { match }) => {
   return {
     currentUser: session.currentUser,
     pinId,
-    pins: pins.pins
+    pin: pins.pins[pinId]
   }
 }
 

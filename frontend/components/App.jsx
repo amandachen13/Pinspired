@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './login_form/login_form_container';
 import SignupFormContainer from './signup_form/signup_form_container';
 import HomeContainer from './home/home_container';
@@ -13,8 +13,10 @@ const App = () => (
     <Route exact path="/" component={HomeContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute path="/pin/:id" component={PinShowContainer} />
-    <ProtectedRoute path="/:username/:boardName" component={BoardShowContainer} />
+    <Switch>
+      <ProtectedRoute path="/pin/:id" component={PinShowContainer} />
+      <ProtectedRoute path="/:username/:boardName" component={BoardShowContainer} />
+    </Switch>
   </div>
 );
 
