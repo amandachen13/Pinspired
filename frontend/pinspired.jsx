@@ -14,7 +14,7 @@ import { requestUser } from './actions/user_actions';
 // window.requestAllPins = requestAllPins;
 // window.requestSinglePin = requestSinglePin;
 window.createPin = createPin;
-// window.editPin = editPin;
+window.editPin = editPin;
 // window.deletePin = deletePin;
 window.createBoard = createBoard;
 window.editBoard = editBoard;

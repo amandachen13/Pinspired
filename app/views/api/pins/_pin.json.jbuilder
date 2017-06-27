@@ -7,7 +7,7 @@ json.creator do
 end
 
 json.board do
-  json.extract! pin.board, :name
+  json.extract! pin.board, :name, :id
 end
 
 # NOTE: change to pull less from user
