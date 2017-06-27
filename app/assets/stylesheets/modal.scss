@@ -34,6 +34,7 @@
 }
 
 .modal-wrapper {
+  border-radius: 8px;
   z-index: 0;
   background-color: #ffffff;
   margin: auto;
@@ -43,6 +44,8 @@
 }
 
 .modal-content {
+  display: block;
+  border-radius: 8px;
   background-color: #ffffff;
   padding: 32px;
   box-sizing: border-box;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { editPin, clearErrors } from './../../actions/pin_actions';
+import { editPin, deletePin, clearErrors } from './../../actions/pin_actions';
 import { close } from './../../actions/modal_actions';
 import PinEditForm from './pin_edit_form';
 
@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch => {
   return {
     editPin: pin => dispatch(editPin(pin)),
     clearErrors: () => dispatch(clearErrors()),
+    deletePin: id => dispatch(deletePin(id)),
     close: () => dispatch(close())
   };
 };

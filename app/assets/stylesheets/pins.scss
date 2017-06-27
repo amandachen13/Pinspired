@@ -329,3 +329,27 @@ span.pin-show-pinning, div.pin-show-description {
   font-size: 15px;
   color: #211922;
 }
+
+div.pin-edit-form-container {
+  -webkit-font-smoothing: antialiased;
+}
+
+div.pin-edit-header {
+  margin: 0 auto;
+  width: 504px;
+  color: #555;
+  font-size: 21px;
+  letter-spacing: -.3px;
+  line-height: 23px;
+  word-spacing: -1.3px;
+  font-weight: 700;
+}
+
+div.pin-edit-form-image {
+  width: 103.5px;
+  padding: 12px 16px;
+}
+
+img.pin-edit-form-image {
+  width: 103.5px;
+}
