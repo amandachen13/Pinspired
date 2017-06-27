@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import MasonryInfiniteScroller from 'react-masonry-infinite';
 import MasonryLayout from 'react-masonry-layout';
 import Masonry from 'react-masonry-component';
+import PinSaveFormContainer from './pin_save_form_container';
+import { randomizePins } from './../../reducers/selectors';
 
 class PinsIndex extends React.Component {
   constructor (props) {
@@ -76,7 +78,7 @@ class PinsIndex extends React.Component {
                   <div className="dim-gradient">
                     <a className="pin-url" href={`${pin.url}`} target="_blank">{pin.url}</a>
                   </div>
-                  <div className="pin-save-modal">
+                  <div onClick={ e => { e.stopPropagation(); this.props.open(<PinSaveFormContainer pin={pin}/>);} } className="pin-save-modal">
                     <i className="fa fa-thumb-tack" aria-hidden="true"></i>
                     <div className="pin-save">Save</div>
                   </div>

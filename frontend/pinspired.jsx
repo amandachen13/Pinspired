@@ -5,7 +5,7 @@ import Root from './components/root'
 
 // TESTING
 // import { signup, login, logout } from './actions/session_actions';
-// import { requestAllPins, requestSinglePin, createPin, editPin, deletePin } from './actions/pin_actions';
+import { requestAllPins, requestSinglePin, createPin, editPin, deletePin } from './actions/pin_actions';
 import { createBoard, editBoard, deleteBoard } from './actions/board_actions';
 import { requestUser } from './actions/user_actions';
 // window.signup = signup;
@@ -13,7 +13,7 @@ import { requestUser } from './actions/user_actions';
 // window.logout = logout;
 // window.requestAllPins = requestAllPins;
 // window.requestSinglePin = requestSinglePin;
-// window.createPin = createPin;
+window.createPin = createPin;
 // window.editPin = editPin;
 // window.deletePin = deletePin;
 window.createBoard = createBoard;

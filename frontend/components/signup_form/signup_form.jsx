@@ -84,7 +84,7 @@ class SignupForm extends React.Component {
               onChange={this.update('password')}
               className="login-input"
             />
-          <span id="passwordError"></span>
+            <span id="passwordError"></span>
             <br/>
             <input className="submit-button" type="submit" value="Sign up" />
           </div>
