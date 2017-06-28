@@ -18,7 +18,7 @@ class PinShow extends React.Component {
     if (this.props.currentUser.username === this.props.pin.creator.username) {
       return (
         <div className="pin-show-options" onClick={ e => e.stopPropagation() }>
-          <div onClick={ e => { e.stopPropagation(); this.props.open(<PinEditFormContainer pin={this.props.pin}/>);} } className="pin-edit"><i className="fa fa-pencil fa-2x" aria-hidden="true"></i></div>
+          <div onClick={ e => { e.stopPropagation(); this.props.open(<PinEditFormContainer pin={this.props.pin} history={this.props.history}/>);} } className="pin-edit"><i className="fa fa-pencil fa-2x" aria-hidden="true"></i></div>
           <div onClick={ e => { e.stopPropagation(); this.props.open(<PinSaveFormContainer pin={this.props.pin}/>);} } className="pin-show-save-modal">
             <i className="fa fa-thumb-tack" aria-hidden="true"></i>
             <div className="pin-save">Save</div>

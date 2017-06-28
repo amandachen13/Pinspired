@@ -4,6 +4,7 @@ import HeaderContainer from './../home/header_container';
 import Masonry from 'react-masonry-component';
 import { values } from 'lodash';
 import BoardPinsIndexContainer from './board_pins_index_container';
+import BoardEditFormContainer from './board_edit_form_container';
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class BoardShow extends React.Component {
   }
 
   componentDidMount() {
+    // debugger;
     // users has boards key ...
     // need to request user first?
     // this.props.requestUser(username);
@@ -22,17 +24,28 @@ class BoardShow extends React.Component {
     // this.props.requestSingleBoard(__________);
   }
 
+  componentWillMount() {
+    // debugger;
+  }
+
   shouldComponentUpdate(nextProps) {
+    // debugger;
     // debugger
     // const boardId = nextProps.user.boards[this.props.boardName];
     // this.props.requestSingleBoard(boardId);
     const boardId = nextProps.user.boards[this.props.boardName];
     // debugger
     if (this.props.boards[boardId]) {
+      // debugger
+      // this.props.requestSingleBoard(boardId);
       return false;
     } else {
       return true;
     }
+  }
+
+  forceUpdate() {
+
   }
 
   componentWillUpdate(nextProps) {
@@ -41,6 +54,19 @@ class BoardShow extends React.Component {
     this.props.requestSingleBoard(boardId);
   }
 
+  // componentDidUpdate(nextProps) {
+  //   const boardId = nextProps.user.boards[this.props.boardName];
+  //   this.props.requestSingleBoard(boardId);
+  // }
+
+  componentWillReceiveProps() {
+    // debugger;
+  }
+
+  // componentWillReceiveProps(nextProps) {
+    // window.location.reload();
+  // }
+
   // componentWillReceiveProps(nextProps) {
   //   debugger
   //   const boardId = nextProps.user.boards[this.props.boardName];
@@ -48,10 +74,12 @@ class BoardShow extends React.Component {
   // }
 
   ownBoard() {
+    const boardId = this.props.user.boards[this.props.boardName];
+
     if (this.props.currentUser.username === this.props.username) {
       return (
         <div className="board-options">
-          EDIT DELETE
+          <div onClick={ () => this.props.open(<BoardEditFormContainer board={this.props.boards[boardId]} />) } ><i className="fa fa-pencil fa-2x" aria-hidden="true"></i></div>
         </div>
       );
     } else {
@@ -72,6 +100,7 @@ class BoardShow extends React.Component {
   }
 
   render() {
+    // debugger
     if (this.props.user) {
       const boardId = this.props.user.boards[this.props.boardName];
       if (this.props.boards[boardId]) {
@@ -98,9 +127,11 @@ class BoardShow extends React.Component {
           </div>
         );
       } else {
+        // debugger
         return null;
       }
     } else {
+      // debugger
       return null;
     }
   }

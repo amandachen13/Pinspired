@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import { createPin } from './../../actions/pin_actions';
+import { deletePin } from './../../actions/pin_actions';
 import { close } from './../../actions/modal_actions';
 import { requestSingleBoard } from './../../actions/board_actions';
-import PinSaveForm from './pin_save_form';
+import PinDeleteWarning from './pin_delete_warning';
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = ({ session, pins }, history) => {
   return {
-    currentUser: session.currentUser
+    history
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    createPin: pin => dispatch(createPin(pin)),
+    deletePin: id => dispatch(deletePin(id)),
     requestSingleBoard: id => dispatch(requestSingleBoard(id)),
     close: () => dispatch(close())
   };
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => {
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(PinSaveForm);
+)(PinDeleteWarning);

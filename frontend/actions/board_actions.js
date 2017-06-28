@@ -24,8 +24,8 @@ export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
 
-export const requestSingleBoard = name => dispatch => (
-  APIUtil.fetchBoard(name)
+export const requestSingleBoard = id => dispatch => (
+  APIUtil.fetchBoard(id)
     .then(board => dispatch(receiveSingleBoard(board)))
 );
 

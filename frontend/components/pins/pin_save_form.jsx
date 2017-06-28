@@ -19,7 +19,12 @@ class PinSaveForm extends React.Component {
     const pin = this.state;
     this.props.createPin(pin);
     this.props.close();
+    this.props.requestSingleBoard(pin.board_id);
     // this.props.history.push('/');
+  }
+
+  componentWillUnmount() {
+
   }
 
   // boardId() {

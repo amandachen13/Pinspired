@@ -1,21 +1,21 @@
 import { connect } from 'react-redux';
-import { deletePin, editPin, clearErrors } from './../../actions/pin_actions';
+import { deleteBoard, editBoard, clearErrors } from './../../actions/board_actions';
 import { open, close } from './../../actions/modal_actions';
-import PinEditForm from './pin_edit_form';
+import BoardEditForm from './board_edit_form';
 
-const mapStateToProps = ({ session, pins }) => {
+const mapStateToProps = ({ session, boards }) => {
   return {
     currentUser: session.currentUser,
-    errors: pins.errors
+    errors: boards.errors
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    editPin: pin => dispatch(editPin(pin)),
+    editBoard: board => dispatch(editBoard(pin)),
     clearErrors: () => dispatch(clearErrors()),
     open: component => dispatch(open(component)),
-    deletePin: id => dispatch(deletePin(id)),
+    deleteBoard: id => dispatch(deleteBoard(id)),
     close: () => dispatch(close())
   };
 };
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => {
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(PinEditForm);
+)(BoardEditForm);

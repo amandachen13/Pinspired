@@ -6,6 +6,7 @@ import HomeContainer from './home/home_container';
 import BoardShowContainer from './boards/board_show_container';
 import PinShowContainer from './pins/pin_show_container';
 import ModalContainer from './modal/modal_container';
+import UserProfileContainer from './users/user_profile_container';
 import { AuthRoute, ProtectedRoute } from './../util/route_util';
 
 
@@ -17,6 +18,8 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Switch>
       <ProtectedRoute path="/pin/:id" component={PinShowContainer} />
+      <ProtectedRoute exact path="/:username" component={UserProfileContainer} />
+      <ProtectedRoute exact path="/:username/boards" component={UserProfileContainer} />
       <ProtectedRoute path="/:username/:boardName" component={BoardShowContainer} />
     </Switch>
   </div>

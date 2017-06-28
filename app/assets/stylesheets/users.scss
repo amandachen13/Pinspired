@@ -1,0 +1,126 @@
+div.profile-show-container {
+  background-color: white;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+div.profile-options {
+  margin: 6px auto 0;
+  height: 42px;
+  width: 75%;
+  max-width: 860px;
+  padding: 10px 0;
+}
+
+div.profile-settings {
+  height: 48px;
+  width: 48px;
+  margin-left: -10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.profile-settings:hover {
+  background-color: rgba(0,0,0,0.06);
+}
+
+i.fa-cog {
+  color: #b5b5b5;
+  font-size: 30px;
+}
+
+h1.profile-show-username {
+  padding-top: 10px;
+  color: #555;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -1.25px;
+  line-height: 42px;
+  word-spacing: -2.25px;
+  width: 75%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+div.profile-info {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  max-width: 860px;
+  margin: 18px auto 0;
+  color: #555;
+  padding-bottom: 12px;
+}
+
+div.profile-description {
+  max-width: 85%;
+  min-width: 200px;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  word-spacing: 0;
+}
+
+div.profile-info-right {
+  display: flex;
+}
+
+div.profile-follow {
+  width: 64px;
+  padding: 0 8px;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+span.profile-follow-num {
+  color: #555;
+}
+
+span.profile-follow {
+  color: #b5b5b5;
+}
+
+div.profile-pic {
+  padding: 0 16px;
+  margin-left: 20px;
+}
+
+img.profile-pic {
+  width: 168px;
+  height: 168px;
+  cursor: auto;
+}
+
+div.profile-links {
+  margin: 0 auto 22px;
+  width: 75%;
+  max-width: 860px;
+}
+
+a.profile-links {
+  padding: 12px 16px;
+  color: #b5b5b5;
+  letter-spacing: -.2px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+a.profile-links-active {
+  padding: 12px 16px;
+  color: #555;
+  letter-spacing: -.2px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #efefef;
+  border-radius: 100px;
+  margin-right: 12px;
+}

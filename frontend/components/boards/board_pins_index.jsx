@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import Masonry from 'react-masonry-component';
 import { values } from 'lodash';
 import PinCreateFormContainer from './../pins/pin_create_form_container';
+import PinSaveFormContainer from './../pins/pin_save_form_container';
 
 class BoardPinsIndex extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class BoardPinsIndex extends React.Component {
   }
 
   componentDidMount() {
+    // debugger;
     // const firstPinId = this.pinsIndexArr()[0];
     // this.props.requestSinglePin(firstPinId);
+    // debugger;
     this.pinsIndexArr().forEach( id => {
       this.props.requestSinglePin(id);
     });
@@ -43,7 +46,10 @@ class BoardPinsIndex extends React.Component {
 
   pinsIndexArr() {
     const pinsArr = [];
-    const pins = this.props.board.pins;
+    // debugger
+    const board = this.props.boards[this.props.board.id];
+    // const pins = this.props.board.pins;
+    const pins = board.pins;
     pins.forEach( pin => {
       pinsArr.push(pin.id)
     });
@@ -56,6 +62,7 @@ class BoardPinsIndex extends React.Component {
   // }
 
   pinsList() {
+    // debugger
     const pins = this.pinsIndexArr().map( id => {
       const pin = this.props.pins[id];
       return (
@@ -68,7 +75,7 @@ class BoardPinsIndex extends React.Component {
                   <div className="dim-gradient">
                     <a className="pin-url" href={`${pin.url}`} target="_blank">{pin.url}</a>
                   </div>
-                  <div className="pin-save-modal">
+                  <div onClick={ e => { e.stopPropagation(); this.props.open(<PinSaveFormContainer pin={pin}/>);} } className="pin-save-modal">
                     <i className="fa fa-thumb-tack" aria-hidden="true"></i>
                     <div className="pin-save">Save</div>
                   </div>
@@ -108,6 +115,7 @@ class BoardPinsIndex extends React.Component {
     // return (
     //   <div>{this.props.board.name}</div>
     // );
+    // debugger
     const pinKeysInState = Object.keys(this.props.pins);
     const pinsInState = pinKeysInState.map( id => parseInt(id) );
     const pinsInBoard = this.pinsIndexArr();

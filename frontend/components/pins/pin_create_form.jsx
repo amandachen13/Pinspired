@@ -5,15 +5,15 @@ class PinCreateForm extends React.Component {
     super(props);
 
     this.state = {
-      title: "",
-      url: "",
-      description: "",
-      image: "",
-      board_id: ""
+      title: '',
+      url: '',
+      description: '',
+      image: '',
+      board_id: ''
     };
 
-    // this.handleSave = this.handleSave.bind(this);
-    this.nextStep = this.nextStep.bind(this);
+    this.handleCreate = this.handleCreate.bind(this);
+    // this.nextStep = this.nextStep.bind(this);
   }
 
   update(field) {
@@ -23,13 +23,18 @@ class PinCreateForm extends React.Component {
   }
 
   handleCreate(e) {
-
+    const pin = this.state;
+    this.props.createPin(pin);
+    // if (this.props.errors.length === 0) {
+    //   this.props.close();
+    // }
+    debugger
   }
 
   boardList() {
     // debugger
 
-    if (this.state.title && this.state.image && this.state.url) {
+    // if (this.state.title && this.state.image && this.state.url) {
       // && (this.props.errors.length === 1)
       const boards = this.props.currentUser.boards;
       const boardNames = Object.keys(boards).map( name => {
@@ -37,7 +42,7 @@ class PinCreateForm extends React.Component {
         return (
         <li key={boardId} className="pin-save-board">
           <div>{name}</div>
-          <div onClick={ () => { this.setState({board_id: boardId}) } } className="pin-save-final">
+          <div onClick={ (e) => { this.setState({board_id: boardId}); this.handleCreate(e); } } className="pin-save-final">
             <i className="fa fa-thumb-tack" aria-hidden="true"></i>
             <div className="pin-save">Save</div>
           </div>
@@ -45,20 +50,30 @@ class PinCreateForm extends React.Component {
         );
       });
       return boardNames;
-    } else {
-      return null;
-    }
+  //   } else {
+  //     return null;
+  //   }
   }
 
   componentDidUpdate() {
     // debugger
+    // debugger
     debugger
-    if (this.state.board_id) {
-      const pin = this.state;
-      this.props.createPin(pin);
-      this.props.clearErrors();
-      this.props.close();
+    if (this.props.errors) {
+      this.props.errors.forEach((err) => {
+        switch(err.substring(0,4)) {
+          case "Titl":
+            document.getElementById("titleError").innerHTML = err;
+          case "Imag":
+            document.getElementById("imageError").innerHTML = err;
+          case "Url ":
+            document.getElementById("urlError").innerHTML = err;
+        }
+      });
     }
+  }
+
+  // componentWillUpdate() {
     // debugger
     // if (this.state.errors) {
     //   this.props.errors.forEach((err) => {
@@ -72,23 +87,7 @@ class PinCreateForm extends React.Component {
     //     }
     //   });
     // }
-  }
-
-  componentWillUpdate() {
-    debugger
-    // if (this.state.errors) {
-    //   this.props.errors.forEach((err) => {
-    //     switch(err.substring(0,4)) {
-    //       case "Titl":
-    //         document.getElementById("titleError").innerHTML = err;
-    //       case "Imag":
-    //         document.getElementById("imageError").innerHTML = err;
-    //       case "Url ":
-    //         document.getElementById("urlError").innerHTML = err;
-    //     }
-    //   });
-    // }
-  }
+  // }
 
   // componentWillReceiveProps() {
   //   debugger
@@ -103,7 +102,7 @@ class PinCreateForm extends React.Component {
   }
 
   nextStep(e) {
-    debugger
+    // debugger
     e.preventDefault();
     const pin = this.state;
     this.props.createPin(pin);
@@ -111,7 +110,7 @@ class PinCreateForm extends React.Component {
     // if only one error
     // return boards list
     // else, render errors
-    debugger
+    // debugger
     // if (this.state.errors) {
     //   this.props.errors.forEach((err) => {
     //     switch(err.substring(0,4)) {
@@ -144,27 +143,30 @@ class PinCreateForm extends React.Component {
         <h3>Create a Pin</h3>
         <br/>
         {this.renderErrors()}
-        <form onSubmit={this.nextStep}>
+        <form>
           <input type="text" placeholder="Title"
-            onBlur={this.update('title')}
+            value={this.state.title}
+            onChange={this.update('title')}
           />
           <span id="titleError"></span>
           <br/>
           <input type="text" placeholder="Image URL"
-            onBlur={this.update('image')}
+            value={this.state.image}
+            onChange={this.update('image')}
           />
           <span id="imageError"></span>
           <br/>
           <input type="text" placeholder="https://..."
-            onBlur={this.update('url')}
+            value={this.state.url}
+            onChange={this.update('url')}
           />
           <span id="urlError"></span>
           <br/>
           <textarea placeholder="Tell us about this pin..."
-            onBlur={this.update('description')}
+            value={this.state.description}
+            onChange={this.update('description')}
           />
           <br/>
-          <input type="submit" value="Next" />
         </form>
         <br/>
         <ul>

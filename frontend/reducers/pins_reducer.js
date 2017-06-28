@@ -22,7 +22,6 @@ const pinsReducer = (state = defaultState, action) => {
       return merge({}, state, {pins: {[pin_id]: pin}});
     case REMOVE_PIN:
       const newState = merge({}, state);
-      debugger
       delete newState.pins[action.id];
       return newState;
     case RECEIVE_PIN_ERRORS:

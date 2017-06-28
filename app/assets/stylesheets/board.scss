@@ -7,7 +7,8 @@ div.board-show-container {
 div.board-options {
   margin: 0 auto;
   height: 42px;
-  width: 66.66%;
+  width: 75%;
+  max-width: 860px; 
   padding: 10px 0;
 }
 
@@ -19,14 +20,16 @@ h1.board-show-title {
   letter-spacing: -1.25px;
   line-height: 42px;
   word-spacing: -2.25px;
-  width: 66.66%;
+  width: 75%;
+  max-width: 860px; 
   margin: 0 auto;
 }
 
 div.board-info {
   display: flex;
   justify-content: space-between;
-  width: 66.66%;
+  width: 75%;
+  max-width: 860px; 
   margin: 18px auto 0;
   color: #555;
   padding-bottom: 12px;

@@ -18,7 +18,7 @@ const boardsReducer = (state = defaultState, action) => {
     case REMOVE_BOARD:
       const newState = merge({}, state);
       debugger
-      delete newState.boards.boards[action.name];
+      delete newState.boards.boards[action.id];
       return newState;
     case RECEIVE_BOARD_ERRORS:
       const errors = action.errors;

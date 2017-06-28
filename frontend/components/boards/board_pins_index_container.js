@@ -3,10 +3,11 @@ import BoardPinsIndex from './board_pins_index';
 import { requestSinglePin } from './../../actions/pin_actions';
 import { open } from './../../actions/modal_actions';
 
-const mapStateToProps = ({session, pins }) => {
+const mapStateToProps = ({session, pins, boards }) => {
   return {
     currentUser: session.currentUser,
-    pins: pins.pins
+    pins: pins.pins,
+    boards: boards.boards
   }
 };
 
