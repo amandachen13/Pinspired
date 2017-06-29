@@ -1,5 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
+import BoardDeleteWarningContainer from './board_delete_warning_container';
 
 class BoardEditForm extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class BoardEditForm extends React.Component {
   }
 
   render() {
+    debugger
     const board = this.props.boards[this.props.boardId];
     return (
       <div className="board-edit-form-container">
@@ -79,7 +81,7 @@ class BoardEditForm extends React.Component {
           </div>
           <div className="board-edit-buttons">
             <div>
-              <button className="board">Delete board</button>
+              <button onClick={ () => this.props.open(<BoardDeleteWarningContainer boardId={this.props.boardId} history={this.props.history} />) } className="board">Delete board</button>
             </div>
             <div>
               <button className="board" onClick={ () => this.props.close() }>Cancel</button>

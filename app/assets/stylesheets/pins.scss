@@ -244,6 +244,100 @@ img.pin-show-image {
   z-index: 1000;
 }
 
+// Pin Save Form
+
+div.pin-save-form-container {
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  margin: 24px 0;
+}
+
+div.pin-save-left {
+  margin: 16px 0;
+  width: 50%;
+}
+
+div.pin-save-right {
+  width: 50%;
+  border-left: 1px solid #f5f5f5;
+}
+
+img.pin-save-form-image {
+  width: 216px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  position: relative;
+  vertical-align: middle;
+}
+
+div.pin-save-desc {
+  margin: 6px auto;
+  display: table;
+}
+
+textarea.pin-save-form-desc {
+  width: 165px;
+  height: 55px;
+  resize: none;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  letter-spacing: -.35px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+textarea.pin-save-form-desc:hover {
+  background-color: #e3e9ed;
+}
+
+textarea.pin-save-form-desc:focus {
+  outline: none;
+  width: 200px;
+}
+
+label.pin-save-form-edit-desc {
+  cursor: pointer;
+}
+
+textarea.pin-save-form-desc:focus + i.pin-save-form-edit-desc {
+  color: #ffffff;
+  font-size: 0;
+}
+
+div.pin-save-form-header {
+  display: flex;
+}
+
+div.pin-save-form-title {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 24px;
+  padding-bottom: 12px;
+}
+
+div.pin-save-exit {
+  cursor: pointer;
+  position: absolute;
+  right: 28px;
+  top: 32px;
+}
+
+div.pin-save-board {
+  color: #555;
+  display: inline-block;
+  width: 55%;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: -.25px;
+  line-height: 34px;
+  margin: 7px 0;
+}
+
 div.pin-save-final {
   display: none;
 }
@@ -487,4 +581,78 @@ input.pin-edit-save {
 
 input.pin-edit-save:hover {
   background-color: #ad081b;
+}
+
+div.pin-create-form-container {
+  display: flex;
+}
+
+form.pin-create-form {
+  padding-top: 24px;
+}
+
+div.pin-create-left {
+  width: 50%;
+}
+
+div.pin-create-error {
+  display: flex;
+}
+
+#titleError, #imageError, #urlError {
+  font-size: 10px;
+  color: #ad081b;
+  height: 24px;
+  width: auto;
+  max-width: 52px;
+  padding-left: 6px;
+}
+
+input.pin-create-input {
+  background: #efefef;
+  border: 1px solid #efefef;
+  color: #555;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  word-spacing: 0;
+  font-weight: 700;
+  width: 70%;
+}
+
+input.pin-create-input:focus, textarea.pin-create-text:focus {
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #b5b5b5;
+  outline: 0;
+  background-color: #ffffff;
+  color: #555;
+}
+
+textarea.pin-create-text {
+  background: #efefef;
+  border: 1px solid #efefef;
+  color: #555;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  letter-spacing: -.5px;
+  line-height: 16px;
+  word-spacing: 0;
+  font-weight: 700;
+  max-width: 215px;
+  min-width: 215px;
+  min-height: 45px;
+}
+
+div.pin-create-right {
+  width: 50%;
+}
+
+div.pin-create-choose-board {
+  padding: 24px 0 12px 24px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
 }

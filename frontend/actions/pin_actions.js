@@ -16,9 +16,9 @@ export const receiveSinglePin = pin => ({
   pin
 });
 
-export const removePin = id => ({
+export const removePin = pin => ({
   type: REMOVE_PIN,
-  id
+  pin
 })
 
 export const receivePinErrors = errors => ({
@@ -60,5 +60,5 @@ export const editPin = pin => dispatch => (
 
 export const deletePin = id => dispatch => (
   APIUtil.deletePin(id)
-    .then(id => dispatch(removePin(id)))
+    .then(pin => dispatch(removePin(pin)))
 );

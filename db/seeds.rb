@@ -17,10 +17,13 @@ User.create({username: "pablopincasso", password: "pablopincasso"})
 Board.create({name: "Cars",
   description: "So fast!",
   user_id: User.find_by_username("pindiesel").id})
-Board.create({name: "Cars2",
-  description: "So fast!2",
+Board.create({name: "Food",
+  description: "So good!",
   user_id: User.find_by_username("pindiesel").id})
 Board.create({name: "Art",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  user_id: User.find_by_username("pablopincasso").id})
+Board.create({name: "Sad",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   user_id: User.find_by_username("pablopincasso").id})
 Board.create({name: "Vacation",

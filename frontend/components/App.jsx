@@ -7,6 +7,7 @@ import BoardShowContainer from './boards/board_show_container';
 import PinShowContainer from './pins/pin_show_container';
 import ModalContainer from './modal/modal_container';
 import UserProfileContainer from './users/user_profile_container';
+import UserPinsContainer from './users/user_pins_container';
 import { AuthRoute, ProtectedRoute } from './../util/route_util';
 
 
@@ -20,6 +21,7 @@ const App = () => (
       <ProtectedRoute path="/pin/:id" component={PinShowContainer} />
       <ProtectedRoute exact path="/:username" component={UserProfileContainer} />
       <ProtectedRoute exact path="/:username/boards" component={UserProfileContainer} />
+      <ProtectedRoute exact path="/:username/pins" component={UserPinsContainer} />
       <ProtectedRoute path="/:username/board/:id" component={BoardShowContainer} />
     </Switch>
   </div>

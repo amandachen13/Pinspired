@@ -4,11 +4,12 @@ import { requestUser } from './../../actions/user_actions';
 import { open, close } from './../../actions/modal_actions';
 import BoardEditForm from './board_edit_form';
 
-const mapStateToProps = ({ session, boards }) => {
+const mapStateToProps = ({ session, boards }, history) => {
   return {
     currentUser: session.currentUser,
     boards: boards.boards,
-    errors: boards.errors
+    errors: boards.errors,
+    history
   };
 };
 

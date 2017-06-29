@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { values } from 'lodash';
 import HeaderContainer from './../home/header_container';
 import Masonry from 'react-masonry-component';
 import UserProfileEditContainer from'./user_profile_edit_container';
+import UserPinsIndexContainer from './user_pins_index_container';
 
-class UserProfile extends React.Component {
+class UserPins extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,9 +18,12 @@ class UserProfile extends React.Component {
     this.props.requestUser(this.props.username);
   }
 
+  // componentWillUpdate() {
+
+  // }
+
   handleOpenEdit(e) {
     e.preventDefault();
-    debugger
     this.props.open(<UserProfileEditContainer user={this.props.user} />);
   }
 
@@ -42,36 +45,10 @@ class UserProfile extends React.Component {
     }
   }
 
-  boardsList() {
-    const boards = (values(this.props.user.boards)).map( board => {
-      return (
-        <li className="board-list-item" key={board.id}>
-          <div className="board-list-item">
-            {board.name}
-          </div>
-        </li>
-      );
-    });
-    if (this.props.username === this.props.currentUser.username) {
-      boards.unshift(
-        <li className="board-add" key="add">
-          <div className="board-add">
-            <div>ADD BOARD MODAL GOES HERE</div>
-          </div>
-        </li>
-      );
-    }
-    return boards;
-  }
-
   render() {
-    let masonryOptions = {
-      transitionDuration: 0,
-      gutter: 25,
-      fitWidth: true
-    };
     if (this.props.user) {
-      if (this.props.user.boards) {
+      debugger
+      // if (this.props.user.pins) {
         return(
           <div className="profile-show-container">
             <HeaderContainer />
@@ -98,23 +75,15 @@ class UserProfile extends React.Component {
               </div>
             </div>
             <div className="profile-links">
-              <Link className="profile-links-active" to={`/${this.props.username}/boards`}>Boards</Link>
-              <Link className="profile-links" to={`/${this.props.username}/pins`}>Pins</Link>
+              <Link className="profile-links" to={`/${this.props.username}/boards`}>Boards</Link>
+              <Link className="profile-links-active" to={`/${this.props.username}/pins`}>Pins</Link>
             </div>
-            <div>
-              <Masonry className={"boards-index-container"}
-                elementType={'ul'}
-                options={masonryOptions}
-                disableImagesLoaded={false}
-                updateOnEachImageLoad={false}>
-                {this.boardsList()}
-              </Masonry>
-            </div>
+            <UserPinsIndexContainer username={this.props.username} />
           </div>
         );
-      } else {
-      return null;
-      }
+      // } else {
+      // return null;
+      // }
     } else {
       return null;
     }
@@ -122,4 +91,4 @@ class UserProfile extends React.Component {
 
 }
 
-export default withRouter(UserProfile);
+export default withRouter(UserPins);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { values } from 'lodash';
 
 class PinSaveForm extends React.Component {
   constructor(props) {
@@ -17,9 +18,9 @@ class PinSaveForm extends React.Component {
 
   componentDidUpdate() {
     const pin = this.state;
-    this.props.createPin(pin);
-    this.props.close();
-    this.props.requestSingleBoard(pin.board_id);
+    this.props.createPin(pin).then(() => this.props.close());
+    // this.props.close();
+    // this.props.requestSingleBoard(pin.board_id);
     // this.props.history.push('/');
   }
 
@@ -53,13 +54,20 @@ class PinSaveForm extends React.Component {
     // this.props.createPin(pin);
   // }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   boardList() {
-    const boards = this.props.currentUser.boards;
-    const boardNames = Object.keys(boards).map( name => {
-      const boardId = boards[name];
+    const boards = values(this.props.currentUser.boards);
+    debugger;
+    const boardNames = boards.map( board => {
+      const boardId = board.id;
       return (
       <li key={boardId} className="pin-save-board">
-        <div>{name}</div>
+        <div className="pin-save-board">{board.name}</div>
         <div onClick={ () => { this.setState({board_id: boardId}) } } className="pin-save-final">
           <i className="fa fa-thumb-tack" aria-hidden="true"></i>
           <div className="pin-save">Save</div>
@@ -72,14 +80,29 @@ class PinSaveForm extends React.Component {
 
   render() {
     return(
-      <div>
-        <div>
-          Picture
-          description
+      <div className="pin-save-form-container">
+        <div className="pin-save-left">
+          <img className="pin-save-form-image" src={this.props.pin.image_url} />
+          <div className="pin-save-desc">
+            <textarea
+              className="pin-save-form-desc"
+              id="Description"
+              placeholder="Tell us about this Pin..."
+              value={this.state.description}
+              onChange={this.update('description')}
+            />
+            <label className="pin-save-form-edit-desc" htmlFor="Description">
+              <i className="fa fa-pencil pin-save-form-edit-desc" aria-hidden="true"></i>
+            </label>
+          </div>
         </div>
-        <div>
-          Choose board
-          list of own boards
+        <div className="pin-save-right">
+          <div className="pin-save-form-header">
+            <div className="pin-save-form-title">Choose board</div>
+            <div className="pin-save-exit">
+              <i onClick={ () => this.props.close() } className="fa fa-times fa-lg" aria-hidden="true"></i>
+            </div>
+          </div>
           <ul>
             {this.boardList()}
           </ul>

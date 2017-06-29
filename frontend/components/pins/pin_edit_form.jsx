@@ -42,11 +42,11 @@ class PinEditForm extends React.Component {
   }
 
   selectBoard() {
-    const boards = this.props.currentUser.boards;
-    const boardNames = Object.keys(boards);
-    const options = boardNames.map( (board, idx) => {
+    const boards = values(this.props.currentUser.boards);
+    debugger
+    const options = boards.map( board => {
       return(
-        <option key={idx} selected={this.selected(board)} value={boards[board]}>{board}</option>
+        <option key={board.id} selected={this.selected(board.name)} value={board.id}>{board.name}</option>
       );
     });
 
