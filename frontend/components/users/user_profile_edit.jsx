@@ -12,7 +12,29 @@ class UserProfileEdit extends React.Component {
 
   render() {
     return(
-      <div>EDIT FORM HERE</div>
+      <div>
+        <div className="user-edit-header">
+          <div className="user-edit-header">Profile</div>
+          <div className="user-edit-exit">
+            <i onClick={ () => this.props.close() } className="fa fa-times fa-lg" aria-hidden="true"></i>
+          </div>
+        </div>
+        <form>
+          <div>
+            Picture & change picture
+          </div>
+          <div>
+            <label htmlFor="Description">About you</label>
+            <textarea
+              id="Description"
+            />
+          </div>
+          <div>
+            <button>Cancel</button>
+            <input type="submit" value="Save" />
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -6,7 +6,7 @@ import Root from './components/root'
 // TESTING
 // import { signup, login, logout } from './actions/session_actions';
 import { requestAllPins, requestSinglePin, createPin, editPin, deletePin } from './actions/pin_actions';
-import { createBoard, editBoard, deleteBoard } from './actions/board_actions';
+import { createBoard, editBoard, deleteBoard, requestSingleBoard } from './actions/board_actions';
 import { requestUser } from './actions/user_actions';
 // window.signup = signup;
 // window.login = login;
@@ -20,6 +20,7 @@ window.createBoard = createBoard;
 window.editBoard = editBoard;
 window.deleteBoard = deleteBoard;
 window.requestUser = requestUser;
+window.requestSingleBoard = requestSingleBoard;
 //
 
 document.addEventListener('DOMContentLoaded', () => {

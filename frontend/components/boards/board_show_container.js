@@ -6,14 +6,15 @@ import { requestAllPins } from './../../actions/pin_actions';
 import { open } from './../../actions/modal_actions';
 
 const mapStateToProps = ({ session, users, boards, pins }, { match }) => {
-  const boardName = match.params.boardName;
+  const boardId = match.params.id;
   const username = match.params.username;
   return {
     currentUser: session.currentUser,
     username,
     user: users[username],
-    boardName,
-    boards: boards.boards
+    boardId,
+    board: boards.boards[boardId],
+    boards
   }
 };
 

@@ -13,6 +13,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.requestUser(this.props.username);
   }
 
@@ -42,14 +43,16 @@ class UserProfile extends React.Component {
   boardsList() {
     const boards = Object.keys(this.props.user.boards).map( board => {
       return (
-        <li key={this.props.user.boards[board]}>
-          {board}
+        <li className="board-list-item" key={this.props.user.boards[board]}>
+          <div className="board-list-item">
+            {board}
+          </div>
         </li>
       );
     });
     if (this.props.username === this.props.currentUser.username) {
       boards.unshift(
-        <li key="add">
+        <li className="board-add" key="add">
           <div className="board-add">
             <div>ADD BOARD MODAL GOES HERE</div>
           </div>
@@ -66,46 +69,50 @@ class UserProfile extends React.Component {
       fitWidth: true
     };
     if (this.props.user) {
-      return(
-        <div className="profile-show-container">
-          <HeaderContainer />
-          {this.ownProfile()}
-          <h1 className="profile-show-username">{this.props.username}</h1>
-          <div className="profile-info">
-            <div className="profile-info-left">
-              <div className="profile-description">{this.props.user.description}</div>
+      if (this.props.user.boards) {
+        return(
+          <div className="profile-show-container">
+            <HeaderContainer />
+            {this.ownProfile()}
+            <h1 className="profile-show-username">{this.props.username}</h1>
+            <div className="profile-info">
+              <div className="profile-info-left">
+                <div className="profile-description">{this.props.user.description}</div>
+              </div>
+              <div className="profile-info-right">
+                <div className="profile-follow">
+                  <span className="profile-follow-num">0</span>
+                  <br/>
+                  <span className="profile-follow">Followers</span>
+                </div>
+                <div className="profile-follow">
+                  <span className="profile-follow-num">0</span>
+                  <br/>
+                  <span className="profile-follow">Following</span>
+                </div>
+                <div className="profile-pic">
+                  <img className="profile-pic" src={this.props.user.image_url} />
+                </div>
+              </div>
             </div>
-            <div className="profile-info-right">
-              <div className="profile-follow">
-                <span className="profile-follow-num">0</span>
-                <br/>
-                <span className="profile-follow">Followers</span>
-              </div>
-              <div className="profile-follow">
-                <span className="profile-follow-num">0</span>
-                <br/>
-                <span className="profile-follow">Following</span>
-              </div>
-              <div className="profile-pic">
-                <img className="profile-pic" src={this.props.user.image_url} />
-              </div>
+            <div className="profile-links">
+              <Link className="profile-links-active" to={`/${this.props.username}/boards`}>Boards</Link>
+              <Link className="profile-links" to={`/${this.props.username}/pins`}>Pins</Link>
+            </div>
+            <div>
+              <Masonry className={"boards-index-container"}
+                elementType={'ul'}
+                options={masonryOptions}
+                disableImagesLoaded={false}
+                updateOnEachImageLoad={false}>
+                {this.boardsList()}
+              </Masonry>
             </div>
           </div>
-          <div className="profile-links">
-            <Link className="profile-links-active" to={`/${this.props.username}/boards`}>Boards</Link>
-            <Link className="profile-links" to={`/${this.props.username}/pins`}>Pins</Link>
-          </div>
-          <div>
-            <Masonry className={"boards-index-container"}
-              elementType={'ul'}
-              options={masonryOptions}
-              disableImagesLoaded={false}
-              updateOnEachImageLoad={false}>
-              {this.boardsList()}
-            </Masonry>
-          </div>
-        </div>
-      );
+        );
+      } else {
+      return null;
+      }
     } else {
       return null;
     }

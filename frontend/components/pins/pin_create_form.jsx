@@ -24,11 +24,11 @@ class PinCreateForm extends React.Component {
 
   handleCreate(e) {
     const pin = this.state;
-    this.props.createPin(pin);
+    this.props.createPin(pin).then(() => this.props.close());
     // if (this.props.errors.length === 0) {
     //   this.props.close();
     // }
-    debugger
+    // debugger
   }
 
   boardList() {
@@ -56,6 +56,7 @@ class PinCreateForm extends React.Component {
   }
 
   componentDidUpdate() {
+    // debugger
     // debugger
     // debugger
     debugger
@@ -96,16 +97,16 @@ class PinCreateForm extends React.Component {
   //   document.getElementById("urlError").innerHTML = "";
   // }
 
-  componentWillUnmount() {
-    // debugger;
-    this.props.clearErrors();
+  componentWillUpdate() {
+    debugger;
+    // this.props.clearErrors();
   }
 
-  nextStep(e) {
+  // nextStep(e) {
     // debugger
-    e.preventDefault();
-    const pin = this.state;
-    this.props.createPin(pin);
+    // e.preventDefault();
+    // const pin = this.state;
+    // this.props.createPin(pin);
 
     // if only one error
     // return boards list
@@ -123,7 +124,7 @@ class PinCreateForm extends React.Component {
     //     }
     //   });
     // }
-  }
+  // }
 
   renderErrors() {
     return(

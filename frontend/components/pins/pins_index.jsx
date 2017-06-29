@@ -88,7 +88,7 @@ class PinsIndex extends React.Component {
                   <div className="pin-desc">{pin.description}</div>
                 </div>
               </div>
-              <div onClick={ () => { this.props.history.push(`/${pin.creator.username}/${pin.board.name}`); }} className="pin-link-to-board">
+              <div onClick={ () => { this.props.history.push(`/${pin.creator.username}/board/${pin.board.id}`); }} className="pin-link-to-board">
                 <img className="pin-creator-pic" src={pin.creator.image_url} />
                 <div className="pin-creator-info">
                   <span className="pin-creator">{pin.creator.username}</span>

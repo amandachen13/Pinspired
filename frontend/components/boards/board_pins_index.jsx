@@ -19,9 +19,9 @@ class BoardPinsIndex extends React.Component {
     // const firstPinId = this.pinsIndexArr()[0];
     // this.props.requestSinglePin(firstPinId);
     // debugger;
-    this.pinsIndexArr().forEach( id => {
-      this.props.requestSinglePin(id);
-    });
+    // this.pinsIndexArr().forEach( id => {
+    //   this.props.requestSinglePin(id);
+    // });
   }
 
   // shouldComponentUpdate(nextProps) {
@@ -46,10 +46,9 @@ class BoardPinsIndex extends React.Component {
 
   pinsIndexArr() {
     const pinsArr = [];
+    const pins = this.props.board.pins;
     // debugger
-    const board = this.props.boards[this.props.board.id];
     // const pins = this.props.board.pins;
-    const pins = board.pins;
     pins.forEach( pin => {
       pinsArr.push(pin.id)
     });
@@ -85,7 +84,7 @@ class BoardPinsIndex extends React.Component {
                   <div className="pin-desc">{pin.description}</div>
                 </div>
               </div>
-              <div onClick={ () => this.props.history.push(`/${pin.creator.username}/${pin.board.name}`) } className="pin-link-to-board">
+              <div onClick={ () => this.props.history.push(`/${pin.creator.username}/board/${pin.board.id}`) } className="pin-link-to-board">
                 <img className="pin-creator-pic" src={pin.creator.image_url} />
                 <div className="pin-creator-info">
                   <span className="pin-creator">{pin.creator.username}</span>
@@ -115,7 +114,7 @@ class BoardPinsIndex extends React.Component {
     // return (
     //   <div>{this.props.board.name}</div>
     // );
-    // debugger
+    debugger
     const pinKeysInState = Object.keys(this.props.pins);
     const pinsInState = pinKeysInState.map( id => parseInt(id) );
     const pinsInBoard = this.pinsIndexArr();

@@ -21,10 +21,10 @@ class PinEditForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const pin = this.state;
-    this.props.editPin(pin);
-    if(this.props.errors.length === 0) {
-      this.props.close();
-    }
+    this.props.editPin(pin).then(() => this.props.requestSingleBoard(this.props.pin.board.id)).then(() => this.props.close());
+    // if(this.props.errors.length === 0) {
+    //   this.props.close();
+    // }
   }
 
   update(field) {
@@ -33,12 +33,20 @@ class PinEditForm extends React.Component {
     });
   }
 
+  selected(name) {
+    if (name === this.props.pin.board.name) {
+      return "selected";
+    } else {
+      return "";
+    }
+  }
+
   selectBoard() {
     const boards = this.props.currentUser.boards;
     const boardNames = Object.keys(boards);
     const options = boardNames.map( (board, idx) => {
       return(
-        <option key={idx} value={boards[board]}>{board}</option>
+        <option key={idx} selected={this.selected(board)} value={boards[board]}>{board}</option>
       );
     });
 
@@ -56,32 +64,39 @@ class PinEditForm extends React.Component {
         </div>
         <div className="pin-edit-header-line"></div>
         <form onSubmit={this.handleSubmit}>
-          <div className="pin-edit-board">
-            <label className="pin-edit-label" htmlFor="Board">Board</label>
-            <select className="pin-edit-selector" id="Board" onChange={this.update('board_id')}>
-              {this.selectBoard()}
-            </select>
+          <div className="pin-edit-board-mid">
+            <div>
+              <div className="pin-edit-board">
+                <label className="pin-edit-label" htmlFor="Board">Board</label>
+                <select className="pin-edit-selector" id="Board" onChange={this.update('board_id')}>
+                  {this.selectBoard()}
+                </select>
+              </div>
+              <div className="pin-edit-description">
+                <label className="pin-edit-label" htmlFor="Description">Description</label>
+                <textarea
+                  className="pin-edit-description"
+                  id="Description"
+                  placeholder="Tell us about this Pin..."
+                  value={this.state.description}
+                  onChange={this.update('description')}
+                />
+              </div>
+            </div>
+            <div className="pin-edit-form-image">
+              <img className="pin-edit-form-image" src={this.props.pin.image_url} />
+            </div>
           </div>
-          <div className="pin-edit-description">
-            <label className="pin-edit-label" htmlFor="Description">Description</label>
-            <textarea
-              className="pin-edit-description"
-              id="Description"
-              placeholder="Tell us about this Pin..."
-              value={this.state.description}
-              onChange={this.update('description')}
-            />
+          <div className="pin-edit-buttons">
+            <div>
+              <button className="pin" onClick={ () => this.props.open(<PinDeleteWarningContainer pin={this.props.pin} history={this.props.history} boardId={this.state.board_id}/>) }>Delete</button>
+            </div>
+            <div>
+            <button className="pin" onClick={ () => this.props.close() }>Cancel</button>
+            <input className="pin-edit-save" type="submit" value="Save" />
+            </div>
           </div>
-          <div>Delete</div>
-          <button onClick={ () => this.props.open(<PinDeleteWarningContainer pin={this.props.pin} history={this.props.history}/>) }>Delete</button>
-          <button onClick={ () => this.props.close() }>Cancel</button>
-          <input type="submit" value="Save" />
-          <br/>
-
         </form>
-        <div className="pin-edit-form-image">
-          <img className="pin-edit-form-image" src={this.props.pin.image_url} />
-        </div>
       </div>
     );
   }

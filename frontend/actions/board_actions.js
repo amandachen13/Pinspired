@@ -5,9 +5,11 @@ export const REMOVE_BOARD = "REMOVE_BOARD";
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
-export const receiveSingleBoard = board => ({
+export const receiveSingleBoard = response => ({
   type: RECEIVE_SINGLE_BOARD,
-  board
+  board: response.board,
+  pins: response.pins,
+  user: response.creator
 });
 
 export const removeBoard = name => ({
@@ -26,7 +28,7 @@ export const clearErrors = () => ({
 
 export const requestSingleBoard = id => dispatch => (
   APIUtil.fetchBoard(id)
-    .then(board => dispatch(receiveSingleBoard(board)))
+    .then(response => dispatch(receiveSingleBoard(response)))
 );
 
 export const createBoard = board => dispatch => (
@@ -47,7 +49,7 @@ export const editBoard = board => dispatch => (
     ))
 );
 
-export const deleteBoard = name => dispatch => (
-  APIUtil.deleteBoard(name)
-    .then(name => dispatch(removeBoard(name)))
+export const deleteBoard = id => dispatch => (
+  APIUtil.deleteBoard(id)
+    .then(id => dispatch(removeBoard(id)))
 );

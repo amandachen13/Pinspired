@@ -8,8 +8,28 @@ div.board-options {
   margin: 0 auto;
   height: 42px;
   width: 75%;
-  max-width: 860px; 
+  max-width: 860px;
   padding: 10px 0;
+}
+
+div.board-edit {
+  height: 48px;
+  width: 48px;
+  margin-left: -10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+div.board-edit:hover {
+  background-color: rgba(0,0,0,0.06);
+}
+
+i.fa-pencil-board {
+  color: #b5b5b5;
+  font-size: 30px;
 }
 
 h1.board-show-title {
@@ -21,7 +41,7 @@ h1.board-show-title {
   line-height: 42px;
   word-spacing: -2.25px;
   width: 75%;
-  max-width: 860px; 
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -29,7 +49,7 @@ div.board-info {
   display: flex;
   justify-content: space-between;
   width: 75%;
-  max-width: 860px; 
+  max-width: 860px;
   margin: 18px auto 0;
   color: #555;
   padding-bottom: 12px;
@@ -60,4 +80,206 @@ img.board-creator-pic {
   width: 60px;
   height: 60px;
   cursor: pointer;
+}
+
+div.board-edit-form-container {
+  -webkit-font-smoothing: antialiased;
+}
+
+div.board-edit-header {
+  padding: 4px 0;
+  display: flex;
+}
+
+div.board-edit-header {
+  color: #555;
+  font-size: 21px;
+  letter-spacing: -.3px;
+  line-height: 23px;
+  word-spacing: -1.3px;
+  font-weight: 700;
+}
+
+span.board-edit-prev-name {
+  padding: 5.25px 0 0 10px;
+  letter-spacing: -.25px;
+  line-height: 20px;
+  font-size: 18px;
+  color: #555;
+  font-weight: 400;
+}
+
+div.board-edit-exit {
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+}
+
+i.fa-times {
+  color: #b5b5b5;
+  font-size: 26px;
+}
+
+div.board-edit-header-line {
+  border-bottom: 1px solid #efefef;
+}
+
+label.board-edit-label {
+  padding: 12px 0;
+  display: block;
+  width: 150px;
+  letter-spacing: -.15px;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  // color: #211922;
+  color: #555;
+  font-weight: 400;
+}
+
+div.board-edit-name {
+  display: inline-flex;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+input.board-edit-name {
+  margin-left: 10px;
+  background: #efefef;
+  border: 1px solid #efefef;
+  color: #555;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 14px;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  word-spacing: 0;
+  font-weight: 700;
+  width: 70%;
+}
+
+input.board-edit-name:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #b5b5b5;
+  outline: 0;
+  background-color: #ffffff;
+  color: #555;
+}
+
+div.board-edit-description {
+  display: inline-flex;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+textarea.board-edit-description {
+  margin-left: 10px;
+  background: #efefef;
+  border: 1px solid #efefef;
+  color: #555;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  word-spacing: 0;
+  font-weight: 700;
+  width: 70%;
+  min-height: 45px;
+}
+
+textarea.board-edit-description:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #b5b5b5;
+  outline: 0;
+  background-color: #ffffff;
+  color: #555;
+}
+
+div.board-edit-buttons {
+  margin: 18px 0 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button.board {
+  letter-spacing: -.5px;
+  line-height: 18px;
+  font-size: 16px;
+  color: #555;
+  font-weight: 700;
+  cursor: pointer;
+  background: #efefef;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+button.board:hover {
+  background: #e2e2e2;
+}
+
+input.board-edit-save {
+  margin-left: 16px;
+  letter-spacing: -.5px;
+  line-height: 18px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #bd081c;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+}
+
+input.board-edit-save:hover {
+  background-color: #ad081b;
+}
+
+// Profile Board List
+
+div.board-list-item:hover {
+  width: 325px;
+  height: 290px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  position: absolute;
+  left: -12px;
+  top: -12px;
+}
+
+div.board-list-item {
+  width: 325px;
+  height: 290px;
+}
+
+li.board-list-item {
+  margin: 0 5px;
+  background-color: #e3e3e3;
+  border-radius: 8px;
+  width: 301px;
+  height: 200px;
+}
+
+div.board-add {
+  width: 325px;
+  height: 290px;
+}
+
+div.board-add:hover {
+  width: 325px;
+  height: 290px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  position: absolute;
+  left: -12px;
+  top: -12px;
+}
+
+li.board-add {
+  margin: 0 5px;
+  width: 301px;
+  height: 200px;
+  background-color: #e3e3e3;
+  border-radius: 8px;
 }

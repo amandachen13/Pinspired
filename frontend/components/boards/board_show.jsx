@@ -20,38 +20,47 @@ class BoardShow extends React.Component {
     // need to request user first?
     // this.props.requestUser(username);
     // if user, then user.boards. find id pointing to boardName
-    this.props.requestUser(this.props.username);
+    debugger
+    this.props.requestSingleBoard(this.props.boardId);
+    // this.props.requestUser(this.props.username);
     // this.props.requestSingleBoard(__________);
   }
 
-  componentWillMount() {
+  // componentWillMount() {
     // debugger;
-  }
+    // debugger;
+    // this.props.requestSingleBoard(this.props.boardId);
+  // }
 
-  shouldComponentUpdate(nextProps) {
+  // shouldComponentUpdate(nextProps) {
     // debugger;
     // debugger
     // const boardId = nextProps.user.boards[this.props.boardName];
     // this.props.requestSingleBoard(boardId);
-    const boardId = nextProps.user.boards[this.props.boardName];
+    // const boardId = nextProps.user.boards[this.props.boardName];
     // debugger
-    if (this.props.boards[boardId]) {
+    // if (this.props.board) {
       // debugger
       // this.props.requestSingleBoard(boardId);
-      return false;
-    } else {
-      return true;
-    }
-  }
+    //   return false;
+    // } else {
+    //   return true;
+    // }
+  // }
 
-  forceUpdate() {
+  // forceUpdate() {
+
+  // }
+
+  componentDidUpdate(prevProps, prevState) {
+    // debugger
+    // this.props.requestSingleBoard(this.props.boardId);
 
   }
 
   componentWillUpdate(nextProps) {
     // debugger
-    const boardId = nextProps.user.boards[this.props.boardName];
-    this.props.requestSingleBoard(boardId);
+
   }
 
   // componentDidUpdate(nextProps) {
@@ -59,8 +68,9 @@ class BoardShow extends React.Component {
   //   this.props.requestSingleBoard(boardId);
   // }
 
-  componentWillReceiveProps() {
-    // debugger;
+  componentWillReceiveProps(nextProps) {
+
+  debugger;
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -74,12 +84,14 @@ class BoardShow extends React.Component {
   // }
 
   ownBoard() {
-    const boardId = this.props.user.boards[this.props.boardName];
+    // const boardId = this.props.user.boards[this.props.boardName];
 
     if (this.props.currentUser.username === this.props.username) {
       return (
         <div className="board-options">
-          <div onClick={ () => this.props.open(<BoardEditFormContainer board={this.props.boards[boardId]} />) } ><i className="fa fa-pencil fa-2x" aria-hidden="true"></i></div>
+          <div onClick={ () => this.props.open(<BoardEditFormContainer boardId={this.props.boardId} />) } className="board-edit">
+            <i className="fa fa-pencil fa-2x fa-pencil-board" aria-hidden="true"></i>
+          </div>
         </div>
       );
     } else {
@@ -101,10 +113,13 @@ class BoardShow extends React.Component {
 
   render() {
     // debugger
-    if (this.props.user) {
-      const boardId = this.props.user.boards[this.props.boardName];
-      if (this.props.boards[boardId]) {
-        const board = this.props.boards[boardId];
+    // if (this.props.user) {
+    //   debugger;
+    debugger
+      // const boardId = this.props.user.boards[this.props.boardName];
+      if (this.props.board) {
+        debugger;
+        const board = this.props.board;
         return (
           <div className="board-show-container">
             <HeaderContainer />
@@ -122,14 +137,14 @@ class BoardShow extends React.Component {
               </div>
             </div>
             <div className="pins-grid">
-              <BoardPinsIndexContainer board={board} />
+              <BoardPinsIndexContainer board={board} boardPinsArr={board.pins} />
             </div>
           </div>
         );
-      } else {
-        // debugger
-        return null;
-      }
+      // } else {
+      //   // debugger
+      //   return null;
+      // }
     } else {
       // debugger
       return null;

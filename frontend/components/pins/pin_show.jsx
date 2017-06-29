@@ -61,7 +61,7 @@ class PinShow extends React.Component {
                 <img className="pin-show-creator-pic" src={pin.creator.image_url} />
                 <Link to={`/${pin.creator.username}`} className="pin-show-creator">{this.ownPinCreator()}</Link>
                 <span className="pin-show-pinning"> saved this to </span>
-                <Link to={`/${pin.creator.username}/${pin.board.name}`} className="pin-show-board">{pin.board.name}</Link>
+                <Link to={`/${pin.creator.username}/board/${pin.board.id}`} className="pin-show-board">{pin.board.name}</Link>
                 <div className="pin-show-description">{pin.description}</div>
               </div>
             </div>

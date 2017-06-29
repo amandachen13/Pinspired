@@ -3,6 +3,7 @@ import { RECEIVE_PINS,
   REMOVE_PIN,
   RECEIVE_PIN_ERRORS,
   CLEAR_ERRORS } from './../actions/pin_actions';
+import { RECEIVE_SINGLE_BOARD } from './../actions/board_actions';
 import { merge } from 'lodash';
 
 export const defaultState = Object.freeze({
@@ -24,6 +25,9 @@ const pinsReducer = (state = defaultState, action) => {
       const newState = merge({}, state);
       delete newState.pins[action.id];
       return newState;
+    case RECEIVE_SINGLE_BOARD:
+      const boardPins = action.pins
+      return merge({}, state, {pins: boardPins})
     case RECEIVE_PIN_ERRORS:
       const errors = action.errors;
       return merge({}, state, {errors});
