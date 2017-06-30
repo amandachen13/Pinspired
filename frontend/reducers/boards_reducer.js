@@ -23,13 +23,13 @@ const boardsReducer = (state = defaultState, action) => {
       return newState;
     case RECEIVE_SINGLE_PIN:
       const newestState = merge({}, state);
-      if (newestState.boards[action.pin.board_id]) {
+      if (newestState.boards && newestState.boards[action.pin.board_id]) {
         newestState.boards[action.pin.board_id].pins = action.pin.board_pins
       }
       return newestState;
     case REMOVE_PIN:
       const newerState = merge({}, state);
-      if (newerState.boards[action.pin.board_id]) {
+      if (newestState.boards && newerState.boards[action.pin.board_id]) {
         newerState.boards[action.pin.board_id].pins = action.pin.board_pins
       }
       return newerState;

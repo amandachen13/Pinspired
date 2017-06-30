@@ -113,7 +113,7 @@ class BoardShow extends React.Component {
 
   render() {
     // //debugger
-    // if (this.props.user) {
+    if (this.props.user) {
     //   //debugger;
     //debugger
       // const boardId = this.props.user.boards[this.props.boardName];
@@ -141,10 +141,10 @@ class BoardShow extends React.Component {
             </div>
           </div>
         );
-      // } else {
-      //   // //debugger
-      //   return null;
-      // }
+      } else {
+        // //debugger
+        return null;
+      }
     } else {
       // //debugger
       return null;
