@@ -28,6 +28,7 @@ class PinShow extends React.Component {
     } else {
       return (
         <div className="pin-show-options" onClick={ e => e.stopPropagation() }>
+          <div> </div>
           <div onClick={ e => { e.stopPropagation(); this.props.open(<PinSaveFormContainer pin={this.props.pin}/>);} } className="pin-show-save-modal">
             <i className="fa fa-thumb-tack" aria-hidden="true"></i>
             <div className="pin-save">Save</div>
@@ -57,12 +58,14 @@ class PinShow extends React.Component {
               <img className="pin-show-image" src={pin.image_url} />
               <div className="pin-show-url"><a className="pin-show-url" href={pin.url}>{pin.url}</a></div>
               <div className="pin-show-line"></div>
-              <div>
+              <div className="pin-show-creator-info">
                 <img className="pin-show-creator-pic" src={pin.creator.image_url} />
-                <Link to={`/${pin.creator.username}`} className="pin-show-creator">{this.ownPinCreator()}</Link>
-                <span className="pin-show-pinning"> saved this to </span>
-                <Link to={`/${pin.creator.username}/board/${pin.board.id}`} className="pin-show-board">{pin.board.name}</Link>
-                <div className="pin-show-description">{pin.description}</div>
+                <div className="pin-show-creator-links">
+                  <Link to={`/${pin.creator.username}`} className="pin-show-creator">{this.ownPinCreator()}</Link>
+                  <span className="pin-show-pinning"> saved this to </span>
+                  <Link to={`/${pin.creator.username}/board/${pin.board.id}`} className="pin-show-board">{pin.board.name}</Link>
+                  <div className="pin-show-description">{pin.description}</div>
+                </div>
               </div>
             </div>
           </div>

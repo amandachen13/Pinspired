@@ -21,7 +21,7 @@ class UserProfile extends React.Component {
   handleOpenEdit(e) {
     e.preventDefault();
     debugger
-    this.props.open(<UserProfileEditContainer user={this.props.user} />);
+    this.props.open(<UserProfileEditContainer username={this.props.username} />);
   }
 
   ownProfile() {

@@ -24,7 +24,7 @@ class UserPins extends React.Component {
 
   handleOpenEdit(e) {
     e.preventDefault();
-    this.props.open(<UserProfileEditContainer user={this.props.user} />);
+    this.props.open(<UserProfileEditContainer username={this.props.username} />);
   }
 
   ownProfile() {

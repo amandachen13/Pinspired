@@ -413,6 +413,17 @@ img.pin-show-creator-pic {
   height: 40px;
 }
 
+div.pin-show-creator-info {
+  display: flex;
+  padding-bottom: 8px;
+}
+
+div.pin-show-creator-links {
+  margin-top: 4px;
+  margin-left: 6px;
+}
+
+
 a.pin-show-creator, a.pin-show-board {
   color: #444;
   font-weight: bold;

@@ -96,6 +96,7 @@ img.profile-pic {
   width: 168px;
   height: 168px;
   cursor: auto;
+  border-radius: 50%;
 }
 
 div.profile-links {
@@ -124,4 +125,131 @@ a.profile-links-active {
   background-color: #efefef;
   border-radius: 100px;
   margin-right: 12px;
+}
+
+div.user-edit-profile-container {
+  -webkit-font-smoothing: antialiased;
+}
+
+div.user-edit-header {
+  padding: 4px 0 6px;
+  display: flex;
+}
+
+div.user-edit-header {
+  color: #555;
+  font-size: 21px;
+  letter-spacing: -.3px;
+  line-height: 23px;
+  word-spacing: -1.3px;
+  font-weight: 700;
+}
+
+div.user-edit-exit {
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+}
+
+.user-edit-label {
+  word-spacing: 0;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+div.user-edit-picture {
+  margin-left: 2px;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+img.user-edit-picture {
+  width: 75px;
+  height: 75px;
+}
+
+div.user-edit-picture-right {
+  margin-left: 48px;
+}
+
+img.user-image-prev {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+div.user-edit-description {
+  margin-left: 2px;
+  display: inline-block;
+  width: 100%;
+}
+
+textarea.user-edit-description {
+  margin-top: 4px;
+  background: #efefef;
+  border: 1px solid #efefef;
+  color: #555;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  letter-spacing: -.15px;
+  line-height: 16px;
+  word-spacing: 0;
+  font-weight: 700;
+  width: 80%;
+  min-height: 45px;
+}
+
+textarea.user-edit-description:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #b5b5b5;
+  outline: 0;
+  background-color: #ffffff;
+  color: #555;
+}
+
+div.user-buttons-row {
+  margin: 18px 0 6px;
+}
+
+div.user-buttons {
+  text-align: right;
+}
+
+button.user {
+  letter-spacing: -.5px;
+  line-height: 18px;
+  font-size: 16px;
+  color: #555;
+  font-weight: 700;
+  cursor: pointer;
+  background: #efefef;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+button.user:hover {
+  background: #e2e2e2;
+}
+
+input.user-edit-save {
+  margin-left: 16px;
+  letter-spacing: -.5px;
+  line-height: 18px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #bd081c;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+}
+
+input.user-edit-save:hover {
+  background-color: #ad081b;
 }

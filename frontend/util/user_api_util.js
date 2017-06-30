@@ -4,3 +4,13 @@ export const fetchUser = username => (
     url: `api/users/${username}`
   })
 );
+
+export const editUser = (formData, username) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/users/${username}`,
+    contentType: false,
+    processData: false,
+    data: formData
+  })
+)
