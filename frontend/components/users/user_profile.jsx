@@ -4,6 +4,7 @@ import { values } from 'lodash';
 import HeaderContainer from './../home/header_container';
 import Masonry from 'react-masonry-component';
 import UserProfileEditContainer from'./user_profile_edit_container';
+import BoardCreateFormContainer from './../boards/board_create_form_container';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class UserProfile extends React.Component {
     if (this.props.username === this.props.currentUser.username) {
       boards.unshift(
         <li className="board-add" key="add">
-          <div className="board-hover board-add">
+          <div onClick={ () => this.props.open(<BoardCreateFormContainer />) } className="board-hover board-add">
             <div className="board-list-item">
               <div className="board-add-icon">
                 <i className="fa fa-plus-circle" aria-hidden="true"></i>
