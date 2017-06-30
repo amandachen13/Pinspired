@@ -15,13 +15,13 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    //debugger
     this.props.requestUser(this.props.username);
   }
 
   handleOpenEdit(e) {
     e.preventDefault();
-    debugger
+    //debugger
     this.props.open(<UserProfileEditContainer username={this.props.username} />);
   }
 

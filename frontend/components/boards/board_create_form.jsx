@@ -25,14 +25,14 @@ class BoardCreateForm extends React.Component {
     // if (this.props.errors.length === 0) {
     //   this.props.close();
     // }
-    // debugger
+    // //debugger
   }
 
   // componentDidUpdate() {
-  //   // debugger
-  //   // debugger
-  //   // debugger
-  //   debugger
+  //   // //debugger
+  //   // //debugger
+  //   // //debugger
+  //   //debugger
   //   if (this.props.errors) {
   //     this.props.errors.forEach((err) => {
   //       switch(err.substring(0,4)) {
@@ -68,19 +68,19 @@ class BoardCreateForm extends React.Component {
   }
 
   // componentWillReceiveProps() {
-  //   debugger
+  //   //debugger
   //   document.getElementById("titleError").innerHTML = "";
   //   document.getElementById("imageError").innerHTML = "";
   //   document.getElementById("urlError").innerHTML = "";
   // }
 
   // componentWillUpdate() {
-  //   debugger;
+  //   //debugger;
     // this.props.clearErrors();
   // }
 
   // nextStep(e) {
-    // debugger
+    // //debugger
     // e.preventDefault();
     // const pin = this.state;
     // this.props.createPin(pin);
@@ -88,7 +88,7 @@ class BoardCreateForm extends React.Component {
     // if only one error
     // return boards list
     // else, render errors
-    // debugger
+    // //debugger
     // if (this.state.errors) {
     //   this.props.errors.forEach((err) => {
     //     switch(err.substring(0,4)) {

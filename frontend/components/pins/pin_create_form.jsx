@@ -30,16 +30,16 @@ class PinCreateForm extends React.Component {
     // if (this.props.errors.length === 0) {
     //   this.props.close();
     // }
-    // debugger
+    // //debugger
   }
 
   boardList() {
-    // debugger
+    // //debugger
 
     // if (this.state.title && this.state.image && this.state.url) {
       // && (this.props.errors.length === 1)
       const boards = values(this.props.currentUser.boards);
-      debugger
+      //debugger
       const boardNames = boards.map( board => {
         const boardId = board.id;
         return (
@@ -59,10 +59,10 @@ class PinCreateForm extends React.Component {
   }
 
   // componentDidUpdate() {
-  //   // debugger
-  //   // debugger
-  //   // debugger
-  //   debugger
+  //   // //debugger
+  //   // //debugger
+  //   // //debugger
+  //   //debugger
   //   if (this.props.errors) {
   //     this.props.errors.forEach((err) => {
   //       switch(err.substring(0,4)) {
@@ -78,7 +78,7 @@ class PinCreateForm extends React.Component {
   // }
 
   componentWillUnmount() {
-    debugger
+    //debugger
     this.props.clearErrors();
   }
 
@@ -89,7 +89,7 @@ class PinCreateForm extends React.Component {
   }
 
   componentDidUpdate() {
-    debugger
+    //debugger
     if (this.props.errors) {
       this.props.errors.forEach((err) => {
         switch(err.substring(0,4)) {
@@ -108,19 +108,19 @@ class PinCreateForm extends React.Component {
   }
 
   // componentWillReceiveProps() {
-  //   debugger
+  //   //debugger
   //   document.getElementById("titleError").innerHTML = "";
   //   document.getElementById("imageError").innerHTML = "";
   //   document.getElementById("urlError").innerHTML = "";
   // }
 
   // componentWillUpdate() {
-  //   debugger;
+  //   //debugger;
     // this.props.clearErrors();
   // }
 
   // nextStep(e) {
-    // debugger
+    // //debugger
     // e.preventDefault();
     // const pin = this.state;
     // this.props.createPin(pin);
@@ -128,7 +128,7 @@ class PinCreateForm extends React.Component {
     // if only one error
     // return boards list
     // else, render errors
-    // debugger
+    // //debugger
     // if (this.state.errors) {
     //   this.props.errors.forEach((err) => {
     //     switch(err.substring(0,4)) {

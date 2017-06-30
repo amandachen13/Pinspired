@@ -12,9 +12,9 @@ class BoardDeleteWarning extends React.Component {
     e.preventDefault();
     this.props.deleteBoard(this.props.boardId).then(() => this.props.requestUser(this.props.currentUser.username)).then(() => this.props.close());
     // window.location.reload();
-    // debugger;
+    // //debugger;
     // this.props.requestSingleBoard(this.props.pin.board.id);
-    debugger
+    //debugger
     this.props.history.push(`/${this.props.currentUser.username}`)
     // this.props.history.history.goBack();
     // window.location.reload();

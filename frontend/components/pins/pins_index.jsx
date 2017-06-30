@@ -22,9 +22,9 @@ class PinsIndex extends React.Component {
 
   // componentDidMount() {
   //   this.props.requestAllPins();
-  //   debugger;
+  //   //debugger;
   //   this.setState({ elements: this.props.pins.slice(0, this.state.pin_num) });
-  //   debugger;
+  //   //debugger;
   // }
 
   componentDidMount() {
@@ -125,7 +125,7 @@ class PinsIndex extends React.Component {
     //
     // if (this.state.elements.length > 0) {
     //     // this.setState({ elements: this.props.pins.slice(0, this.state.pin_num) });
-    //   debugger;
+    //   //debugger;
     //   return(
     //     <MasonryInfiniteScroller hasMore={this.hasMore()} loadMore={this.loadMore}>
     //       {
@@ -136,7 +136,7 @@ class PinsIndex extends React.Component {
     //     </MasonryInfiniteScroller>
     //   );
     // } else {
-    //   debugger;
+    //   //debugger;
     //   return null;
     // }
 

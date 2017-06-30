@@ -14,7 +14,7 @@ class UserPins extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    //debugger
     this.props.requestUser(this.props.username);
   }
 
@@ -47,7 +47,7 @@ class UserPins extends React.Component {
 
   render() {
     if (this.props.user) {
-      debugger
+      //debugger
       // if (this.props.user.pins) {
         return(
           <div className="profile-show-container">

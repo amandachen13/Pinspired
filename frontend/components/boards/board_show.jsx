@@ -15,32 +15,32 @@ class BoardShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
+    // //debugger;
     // users has boards key ...
     // need to request user first?
     // this.props.requestUser(username);
     // if user, then user.boards. find id pointing to boardName
-    debugger
+    //debugger
     this.props.requestSingleBoard(this.props.boardId);
     // this.props.requestUser(this.props.username);
     // this.props.requestSingleBoard(__________);
   }
 
   // componentWillMount() {
-    // debugger;
-    // debugger;
+    // //debugger;
+    // //debugger;
     // this.props.requestSingleBoard(this.props.boardId);
   // }
 
   // shouldComponentUpdate(nextProps) {
-    // debugger;
-    // debugger
+    // //debugger;
+    // //debugger
     // const boardId = nextProps.user.boards[this.props.boardName];
     // this.props.requestSingleBoard(boardId);
     // const boardId = nextProps.user.boards[this.props.boardName];
-    // debugger
+    // //debugger
     // if (this.props.board) {
-      // debugger
+      // //debugger
       // this.props.requestSingleBoard(boardId);
     //   return false;
     // } else {
@@ -53,13 +53,13 @@ class BoardShow extends React.Component {
   // }
 
   componentDidUpdate(prevProps, prevState) {
-    // debugger
+    // //debugger
     // this.props.requestSingleBoard(this.props.boardId);
 
   }
 
   componentWillUpdate(nextProps) {
-    // debugger
+    // //debugger
 
   }
 
@@ -70,7 +70,7 @@ class BoardShow extends React.Component {
 
   componentWillReceiveProps(nextProps) {
 
-  debugger;
+  //debugger;
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -78,7 +78,7 @@ class BoardShow extends React.Component {
   // }
 
   // componentWillReceiveProps(nextProps) {
-  //   debugger
+  //   //debugger
   //   const boardId = nextProps.user.boards[this.props.boardName];
   //   this.props.requestSingleBoard(boardId);
   // }
@@ -112,13 +112,13 @@ class BoardShow extends React.Component {
   }
 
   render() {
-    // debugger
+    // //debugger
     // if (this.props.user) {
-    //   debugger;
-    debugger
+    //   //debugger;
+    //debugger
       // const boardId = this.props.user.boards[this.props.boardName];
       if (this.props.board) {
-        debugger;
+        //debugger;
         const board = this.props.board;
         return (
           <div className="board-show-container">
@@ -142,11 +142,11 @@ class BoardShow extends React.Component {
           </div>
         );
       // } else {
-      //   // debugger
+      //   // //debugger
       //   return null;
       // }
     } else {
-      // debugger
+      // //debugger
       return null;
     }
   }

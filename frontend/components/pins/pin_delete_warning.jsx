@@ -12,7 +12,7 @@ class PinDeleteWarning extends React.Component {
     e.preventDefault();
     this.props.deletePin(this.props.pin.id).then(() => this.props.close()).then(() => this.props.history.goBack());
     // window.location.reload();
-    // debugger;
+    // //debugger;
     // this.props.requestSingleBoard(this.props.pin.board.id);
     // window.location.reload();
     // this.props.history.history.push(`/${this.props.pin.creator.username}/${this.props.pin.board.name}`)

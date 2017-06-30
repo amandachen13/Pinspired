@@ -15,10 +15,10 @@ class UserPinsIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
+    // //debugger;
     // const firstPinId = this.pinsIndexArr()[0];
     // this.props.requestSinglePin(firstPinId);
-    // debugger;
+    // //debugger;
     // this.pinsIndexArr().forEach( id => {
     //   this.props.requestSinglePin(id);
     // });
@@ -29,7 +29,7 @@ class UserPinsIndex extends React.Component {
   // shouldComponentUpdate(nextProps) {
   //   const pinsInState = Object.keys(this.props.pins);
   //   const pinsInBoard = this.pinsIndexArr();
-  //   debugger
+  //   //debugger
   //
   //   if (pinsInBoard.every(id => pinsInState.indexOf(id) > -1)) {
   //     return false;
@@ -43,22 +43,22 @@ class UserPinsIndex extends React.Component {
   //   restPinIds.forEach( id => {
   //     this.props.requestSinglePin(id);
   //   });
-  //   debugger
+  //   //debugger
   // }
 
   pinsIndexArr() {
     const pinsArr = [];
-    debugger
+    //debugger
     const user = this.props.users[this.props.username];
-    debugger
+    //debugger
     const pins = values(user.pins);
-    debugger
-    // debugger
+    //debugger
+    // //debugger
     // const pins = this.props.board.pins;
     pins.forEach( pin => {
       pinsArr.push(pin.id)
     });
-    debugger
+    //debugger
     return pinsArr;
   }
 
@@ -68,12 +68,12 @@ class UserPinsIndex extends React.Component {
   // }
 
   pinsList() {
-    debugger
+    //debugger
     const user = this.props.users[this.props.username];
     const pins = this.pinsIndexArr().map( id => {
-      debugger
+      //debugger
       const pin = user.pins[id];
-      debugger
+      //debugger
       return (
         <li key={pin.id}>
           <div className="pins-hover">
@@ -106,7 +106,7 @@ class UserPinsIndex extends React.Component {
         </li>
       );
     });
-    debugger
+    //debugger
     if (user.username === this.props.currentUser.username) {
       pins.unshift(
         <li key="add">
@@ -131,7 +131,7 @@ class UserPinsIndex extends React.Component {
     // return (
     //   <div>{this.props.board.name}</div>
     // );
-    debugger
+    //debugger
     // const pinKeysInState = Object.keys(this.props.pins);
     // const pinsInState = pinKeysInState.map( id => parseInt(id) );
     // const pinsInBoard = this.pinsIndexArr();

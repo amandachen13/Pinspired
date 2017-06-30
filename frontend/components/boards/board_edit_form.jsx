@@ -47,7 +47,7 @@ class BoardEditForm extends React.Component {
   }
 
   render() {
-    debugger
+    //debugger
     const board = this.props.boards[this.props.boardId];
     return (
       <div className="board-edit-form-container">

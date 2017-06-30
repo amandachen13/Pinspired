@@ -29,28 +29,28 @@ class PinSaveForm extends React.Component {
   }
 
   // boardId() {
-  //   debugger
+  //   //debugger
   //   return this;
   // }
   //
   // handleSave(boardId) {
-  //   debugger;
+  //   //debugger;
   //   this.setState({board_id: boardId});
-  //   debugger
+  //   //debugger
   //   let pin = this.state;
-  //   debugger
+  //   //debugger
   //   let that = this;
   //   return () => {
-  //     debugger
+  //     //debugger
   //     that.props.createPin(pin);
   //   }
 
     // e.preventDefault();
-    // debugger;
+    // //debugger;
     // const boardId = parseInt(e.currentTarget.value);
     // this.setState({board_id: boardId});
     // const pin = this.state;
-    // debugger
+    // //debugger
     // this.props.createPin(pin);
   // }
 
@@ -62,7 +62,7 @@ class PinSaveForm extends React.Component {
 
   boardList() {
     const boards = values(this.props.currentUser.boards);
-    debugger;
+    //debugger;
     const boardNames = boards.map( board => {
       const boardId = board.id;
       return (

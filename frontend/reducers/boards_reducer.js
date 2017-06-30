@@ -18,7 +18,7 @@ const boardsReducer = (state = defaultState, action) => {
       return merge({}, state, {boards: {[board.id]: board}}, {errors: []});
     case REMOVE_BOARD:
       const newState = merge({}, state);
-      debugger
+      //debugger
       delete newState.boards[action.id];
       return newState;
     case RECEIVE_SINGLE_PIN:
