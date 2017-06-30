@@ -31,12 +31,14 @@ class UserProfile extends React.Component {
           <div onClick={this.handleOpenEdit} className="profile-settings">
             <i className="fa fa-cog" aria-hidden="true"></i>
           </div>
+          <div></div>
         </div>
       );
     } else {
       return (
         <div className="profile-options">
-          FOLLOW OR UNFOLLOW
+          <div></div>
+          <div className="profile-follow-button">Follow</div>
         </div>
       );
     }
@@ -46,8 +48,10 @@ class UserProfile extends React.Component {
     const boards = (values(this.props.user.boards)).map( board => {
       return (
         <li className="board-list-item" key={board.id}>
-          <div className="board-list-item">
-            {board.name}
+          <div className="board-hover">
+            <div className="board-list-item">
+              <Link className="board-list-link" to={`/${this.props.username}/board/${board.id}`}>{board.name}</Link>
+            </div>
           </div>
         </li>
       );
@@ -55,8 +59,12 @@ class UserProfile extends React.Component {
     if (this.props.username === this.props.currentUser.username) {
       boards.unshift(
         <li className="board-add" key="add">
-          <div className="board-add">
-            <div>ADD BOARD MODAL GOES HERE</div>
+          <div className="board-hover board-add">
+            <div className="board-list-item">
+              <div className="board-add-icon">
+                <i className="fa fa-plus-circle" aria-hidden="true"></i>
+              </div>
+            </div>
           </div>
         </li>
       );

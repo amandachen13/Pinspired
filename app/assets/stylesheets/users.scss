@@ -10,6 +10,8 @@ div.profile-options {
   width: 75%;
   max-width: 860px;
   padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 div.profile-settings {
@@ -30,6 +32,24 @@ div.profile-settings:hover {
 i.fa-cog {
   color: #b5b5b5;
   font-size: 30px;
+}
+
+div.profile-follow-button {
+  background-color: #bd081c;
+  padding: 10px 14px;
+  border-radius: 4px;
+  letter-spacing: -.2px;
+  line-height: 20px;
+  margin-right: 16px;
+  margin-top: 2px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+
+div.profile-follow-button:hover {
+  background-color: #ad081b;
 }
 
 h1.profile-show-username {
@@ -176,6 +196,22 @@ img.user-edit-picture {
 div.user-edit-picture-right {
   margin-left: 48px;
 }
+
+// input.user-choose-picture {
+//   letter-spacing: -.5px;
+//   line-height: 18px;
+//   font-size: 16px;
+//   color: #555;
+//   font-weight: 700;
+//   cursor: pointer;
+//   background: #efefef;
+//   padding: 10px 14px;
+//   border-radius: 4px;
+// }
+//
+// input.user-choose-picture:hover {
+//   background: #e2e2e2;
+// }
 
 img.user-image-prev {
   width: 75px;

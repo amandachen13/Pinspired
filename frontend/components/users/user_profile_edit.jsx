@@ -68,7 +68,7 @@ class UserProfileEdit extends React.Component {
             </div>
             <div className="user-edit-picture-right">
               <div className="user-edit-label">Change picture</div>
-              <input type="file" onChange={this.updateFile} />
+              <input className="user-choose-picture" type="file" onChange={this.updateFile} />
               <img className="user-image-prev" src={this.state.imageUrl} />
             </div>
           </div>

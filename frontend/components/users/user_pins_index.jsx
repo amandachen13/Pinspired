@@ -110,9 +110,11 @@ class UserPinsIndex extends React.Component {
     if (user.username === this.props.currentUser.username) {
       pins.unshift(
         <li key="add">
-          <div className="pins-hover" onClick={ e => { e.stopPropagation(); this.props.open(<PinCreateFormContainer />);} }>
+          <div className="pins-add-hover" onClick={ e => { e.stopPropagation(); this.props.open(<PinCreateFormContainer />);} }>
             <div className="pins">
-              <div className="pins-image">ADD PIN MODAL GOES HERE</div>
+              <div className="pins-add">
+                <i className="fa fa-plus-circle" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </li>

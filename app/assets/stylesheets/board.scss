@@ -80,6 +80,7 @@ img.board-creator-pic {
   width: 60px;
   height: 60px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 div.board-edit-form-container {
@@ -238,48 +239,102 @@ input.board-edit-save:hover {
 
 // Profile Board List
 
-div.board-list-item:hover {
+div.board-hover {
   width: 325px;
-  height: 290px;
+  height: 200px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+div.board-hover:hover {
+  cursor: zoom-in;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  position: absolute;
-  left: -12px;
-  top: -12px;
-}
-
-div.board-list-item {
-  width: 325px;
-  height: 290px;
-}
-
-li.board-list-item {
-  margin: 0 5px;
-  background-color: #e3e3e3;
-  border-radius: 8px;
-  width: 301px;
-  height: 200px;
-}
-
-div.board-add {
-  width: 325px;
-  height: 290px;
+  padding: 10px;
+  margin: -10px;
+  height: 100%;
 }
 
 div.board-add:hover {
-  width: 325px;
-  height: 290px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  position: absolute;
-  left: -12px;
-  top: -12px;
+  cursor: pointer;
 }
 
-li.board-add {
-  margin: 0 5px;
-  width: 301px;
+div.board-list-item {
+  border-radius: 8px;
+  width: 325px;
   height: 200px;
   background-color: #e3e3e3;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+a.board-list-link {
+  cursor: zoom-in;
+  width: 325px;
+  line-height: 200px;
+  text-align: center;
+  color: #555;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -1.25px;
+  word-spacing: -2.25px;
+}
+
+div.board-add-icon {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i.fa-plus-circle {
+  color: #bd081c;
+  font-size: 40px;
+}
+// div.board-list-item:hover {
+//   width: 325px;
+//   height: 290px;
+//   background: rgba(0, 0, 0, 0.05);
+//   border-radius: 8px;
+//   position: absolute;
+//   left: -12px;
+//   top: -12px;
+// }
+//
+// div.board-list-item {
+//   width: 325px;
+//   height: 290px;
+// }
+//
+// li.board-list-item {
+//   margin: 0 5px;
+//   background-color: #e3e3e3;
+//   border-radius: 8px;
+//   width: 301px;
+//   height: 200px;
+// }
+//
+// div.board-add {
+//   width: 325px;
+//   height: 290px;
+// }
+//
+// div.board-add:hover {
+//   width: 325px;
+//   height: 290px;
+//   background: rgba(0, 0, 0, 0.05);
+//   border-radius: 8px;
+//   position: absolute;
+//   left: -12px;
+//   top: -12px;
+// }
+//
+// li.board-add {
+//   margin: 0 5px;
+//   width: 301px;
+//   height: 200px;
+//   background-color: #e3e3e3;
+//   border-radius: 8px;
+// }

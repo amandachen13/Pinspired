@@ -55,6 +55,25 @@ div.dim-gradient:hover {
   margin-top: 10px;
 }
 
+div.pins-add {
+  width: 236px;
+  height: 236px;
+  border-radius: 8px;
+  background-color: #e3e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.pins-add-hover:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  margin: -10px;
+  height: 100%;
+}
+
 a.pin-url, div.pin-save-modal {
   display: none;
 }
@@ -149,6 +168,7 @@ img.pin-creator-pic {
   height: 24px;
   margin-right: 8px;
   margin-top: 2.5px;
+  border-radius: 50%;
 }
 
 div.pin-creator-info {
@@ -372,6 +392,10 @@ div.pin-show-save-modal:hover {
   background-color: #b7071b;
 }
 
+div.pin-show-save-modal:focus {
+  outline: none;
+}
+
 div.pin-show-title {
   margin: 0 auto;
   width: 548px;
@@ -411,6 +435,7 @@ div.pin-show-line {
 img.pin-show-creator-pic {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
 }
 
 div.pin-show-creator-info {
@@ -592,6 +617,10 @@ input.pin-edit-save {
 
 input.pin-edit-save:hover {
   background-color: #ad081b;
+}
+
+input.pin-edit-save:focus {
+  outline: none;
 }
 
 div.pin-create-form-container {

@@ -1,3 +1,6 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 header {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -29,6 +32,23 @@ a.icon-temp {
   align-items: center;
   margin-left: 30px;
   font-size: 12px;
+  // position: relative;
+  // top: 4px;
+}
+
+a.logo {
+  padding-right: 8px;
+}
+
+i.fa-circle {
+  margin-left: -2px;
+  font-size: 12px;
+  margin-top: 22px;
+  color: #bd081c;
+}
+
+i.fa-cloud {
+  color: #bd081c;
 }
 
 button.icon-temp {

@@ -67,6 +67,13 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <div className="session-form-logo">
+          <span className="fa-stack fa-lg">
+            <i className="fa fa-circle fa-stack-3x session-logo-circle" aria-hidden="true"></i>
+            <i className="fa fa-cloud fa-stack-2x" aria-hidden="true"></i>
+            <i className="fa fa-thumb-tack fa-stack-1x fa-inverse" aria-hidden="true"></i>
+          </span>
+        </div>
         <h3>{this.props.message}</h3>
         <br/>
         <form onSubmit={this.handleSubmit} className="login-form-box">
