@@ -5,15 +5,21 @@
 Pinspired is a full-stack web application inspired by Pinterest that allows users to discover and share ideas from around the web.
 Users can save links and corresponding images as a "pin" and categorize the pins with "boards".
 
+![discover feed screenshot](/app/assets/images/Screen_Shot_2017-06-30_at_11.55.46_AM.png)
+
 The application uses Ruby on Rails with a PostgreSQL database on the back-end and React with a Redux framework on the front-end
 
 == Features & Implementation
 
 === User Authentication
 
+![sign up screenshot](/app/assets/images/Screen_Shot_2017-06-30_at_11.54.57_AM.png)
+
 Users cannot view the content of Pinspired until they either create an account or log in with valid credentials. When a user signs up, backend validations ensure that a unique username is chosen and that the password is long enough. BCrypt hashes the passwords and also verifies username and password combinations.
 
 === Modals
+
+
 
 Many of the site's forms are displayed in an overlay on the current page rather than on a new page. Users can easily click outside of the modal window to return to the page they were on.
 
