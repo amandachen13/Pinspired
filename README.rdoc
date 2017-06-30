@@ -5,7 +5,7 @@
 Pinspired is a full-stack web application inspired by Pinterest that allows users to discover and share ideas from around the web.
 Users can save links and corresponding images as a "pin" and categorize the pins with "boards".
 
-![discover feed screenshot](/app/assets/images/Screen_Shot_2017-06-30_at_11.55.46_AM.png)
+![discover feed screenshot](https://github.com/amandachen13/Pinspired/blob/master/app/assets/images/Screen%20Shot%202017-06-30%20at%2011.55.46%20AM.png?raw=true)
 
 The application uses Ruby on Rails with a PostgreSQL database on the back-end and React with a Redux framework on the front-end
 
