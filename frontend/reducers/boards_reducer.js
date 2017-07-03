@@ -2,6 +2,7 @@ import { RECEIVE_SINGLE_BOARD,
   REMOVE_BOARD,
   RECEIVE_BOARD_ERRORS,
   CLEAR_ERRORS } from './../actions/board_actions';
+// import { RECEIVE_USER } from './../actions/user_actions';
 import { REMOVE_PIN, RECEIVE_SINGLE_PIN } from './../actions/pin_actions';
 import { merge } from 'lodash';
 
@@ -16,6 +17,8 @@ const boardsReducer = (state = defaultState, action) => {
     case RECEIVE_SINGLE_BOARD:
       const board = action.board;
       return merge({}, state, {boards: {[board.id]: board}}, {errors: []});
+    // case RECEIVE_USER:
+      //
     case REMOVE_BOARD:
       const newState = merge({}, state);
       //debugger
@@ -29,7 +32,7 @@ const boardsReducer = (state = defaultState, action) => {
       return newestState;
     case REMOVE_PIN:
       const newerState = merge({}, state);
-      if (newestState.boards && newerState.boards[action.pin.board_id]) {
+      if (newerState.boards && newerState.boards[action.pin.board_id]) {
         newerState.boards[action.pin.board_id].pins = action.pin.board_pins
       }
       return newerState;
