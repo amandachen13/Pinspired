@@ -113,13 +113,13 @@ class BoardShow extends React.Component {
 
   render() {
     // //debugger
-    if (this.props.user) {
+    if (this.props.user && this.props.boards) {
     //   //debugger;
     //debugger
       // const boardId = this.props.user.boards[this.props.boardName];
-      if (this.props.board) {
+      if (this.props.boards[this.props.boardId]) {
         //debugger;
-        const board = this.props.board;
+        const board = this.props.boards[this.props.boardId];
         return (
           <div className="board-show-container">
             <HeaderContainer />
