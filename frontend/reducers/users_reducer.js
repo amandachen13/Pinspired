@@ -10,10 +10,10 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USER:
       const user = action.user;
       return merge({}, state, {[user.username]: user})
-    // case RECEIVE_SINGLE_BOARD:
-    //   //debugger
-    //   const creator = action.user;
-    //   return merge({}, state, {[creator.username]: creator})
+    case RECEIVE_SINGLE_BOARD:
+      //debugger
+      const creator = action.user;
+      return merge({}, state, {[creator.username]: creator})
     case REMOVE_PIN:
       const newState = merge({}, state);
       delete newState[action.pin.creator.username].pins[action.pin.id]
