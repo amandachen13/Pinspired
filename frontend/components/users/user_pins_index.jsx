@@ -154,7 +154,21 @@ class UserPinsIndex extends React.Component {
         </Masonry>
       );
     } else {
-      return null;
+      // return null;
+      let masonryOptions = {
+        transitionDuration: 0,
+        gutter: 25,
+        fitWidth: true
+      };
+      return (
+        <Masonry className={"board-pins-index-container"}
+          elementType={'ul'}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}>
+          {this.pinsList()}
+        </Masonry>
+      );
     }
   }
 

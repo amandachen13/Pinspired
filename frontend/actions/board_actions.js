@@ -12,9 +12,10 @@ export const receiveSingleBoard = response => ({
   user: response.creator
 });
 
-export const removeBoard = name => ({
+export const removeBoard = array => ({
   type: REMOVE_BOARD,
-  name
+  id: array[0],
+  username: array[1]
 })
 
 export const receiveBoardErrors = errors => ({

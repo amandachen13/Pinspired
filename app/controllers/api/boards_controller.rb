@@ -42,7 +42,7 @@ class Api::BoardsController < ApplicationController
 
     if @board
       if @board.destroy
-        render json: params[:id], status: 200
+        render json: [params[:id], current_user.username], status: 200
       else
         render json: ["Failed to delete."], status: 404
       end
