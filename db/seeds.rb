@@ -78,39 +78,39 @@ Pin.create({title: "Summer",
   board_id: Board.find_by_name("Vacation").id})
 
 
-Pin.create({title: "Hot Chocolate",
-  url: "http://www.epicurious.com/recipes/food/views/simple-hot-cocoa-for-one-369469",
-  description: "hungry",
-  image: File.open("app/assets/images/pinfood3.jpg"),
-  user_id: User.find_by_username("pinniethepooh").id,
-  board_id: Board.find_by_name("Food").id})
+# Pin.create({title: "Hot Chocolate",
+#   url: "http://www.epicurious.com/recipes/food/views/simple-hot-cocoa-for-one-369469",
+#   description: "hungry",
+#   image: File.open("app/assets/images/pinfood3.jpg"),
+#   user_id: User.find_by_username("pinniethepooh").id,
+#   board_id: Board.find_by_name("Food").id})
 
   Pin.create({title: "Lace",
     url: "https://www.kleinfeldbridal.com/index.cfm?pid=51&category=1027&clearpreviouscriteria=true",
     image: File.open("app/assets/images/pinwedding3.jpg"),
     user_id: User.find_by_username("pinderella").id,
     board_id: Board.find_by_name("Wedding").id})
-    Pin.create({title: "Mercedes",
-      url: "https://www.mbusa.com/mercedes/index",
-      image: File.open("app/assets/images/pincar6.jpg"),
-      user_id: User.find_by_username("pindiesel").id,
-      board_id: Board.find_by_name("Cars").id})
-  Pin.create({title: "Tiny Mouse",
-    url: "http://imgur.com/gallery/xc4Ej",
-    image: File.open("app/assets/images/pintiny1.jpg"),
-    user_id: User.find_by_username("pindiesel").id,
-    board_id: Board.find_by_name("Tiny Animals").id})
-    Pin.create({title: "Tiny Snake",
-      url: "http://imgur.com/gallery/xc4Ej",
-      image: File.open("app/assets/images/pintiny2.jpg"),
-      user_id: User.find_by_username("pindiesel").id,
-      board_id: Board.find_by_name("Tiny Animals").id})
-Pin.create({title: "Fruit Smoothie",
-  url: "https://www.juicegeneration.com/",
-  description: "hungry",
-  image: File.open("app/assets/images/pinfood4.jpg"),
-  user_id: User.find_by_username("pinniethepooh").id,
-  board_id: Board.find_by_name("Food").id})
+    # Pin.create({title: "Mercedes",
+    #   url: "https://www.mbusa.com/mercedes/index",
+    #   image: File.open("app/assets/images/pincar6.jpg"),
+    #   user_id: User.find_by_username("pindiesel").id,
+    #   board_id: Board.find_by_name("Cars").id})
+  # Pin.create({title: "Tiny Mouse",
+  #   url: "http://imgur.com/gallery/xc4Ej",
+  #   image: File.open("app/assets/images/pintiny1.jpg"),
+  #   user_id: User.find_by_username("pindiesel").id,
+  #   board_id: Board.find_by_name("Tiny Animals").id})
+  #   Pin.create({title: "Tiny Snake",
+  #     url: "http://imgur.com/gallery/xc4Ej",
+  #     image: File.open("app/assets/images/pintiny2.jpg"),
+  #     user_id: User.find_by_username("pindiesel").id,
+      # board_id: Board.find_by_name("Tiny Animals").id})
+# Pin.create({title: "Fruit Smoothie",
+#   url: "https://www.juicegeneration.com/",
+#   description: "hungry",
+#   image: File.open("app/assets/images/pinfood4.jpg"),
+#   user_id: User.find_by_username("pinniethepooh").id,
+#   board_id: Board.find_by_name("Food").id})
 Pin.create({title: "Dip",
   url: "http://www.epicurious.com/recipes/food/views/hummus-237832",
   description: "hungry",
@@ -118,12 +118,12 @@ Pin.create({title: "Dip",
   user_id: User.find_by_username("pinniethepooh").id,
   board_id: Board.find_by_name("Food").id})
 
-  Pin.create({title: "Old Car",
-    url: "https://classics.autotrader.com/",
-    description: "Rusty",
-    image: File.open("app/assets/images/pincar3.jpg"),
-    user_id: User.find_by_username("pindiesel").id,
-    board_id: Board.find_by_name("Cars").id})
+  # Pin.create({title: "Old Car",
+  #   url: "https://classics.autotrader.com/",
+  #   description: "Rusty",
+  #   image: File.open("app/assets/images/pincar3.jpg"),
+  #   user_id: User.find_by_username("pindiesel").id,
+  #   board_id: Board.find_by_name("Cars").id})
     Pin.create({title: "Helicopter",
       url: "https://www.avbuyer.com/aircraft/helicopter",
       description: "Not a car.",
@@ -150,13 +150,13 @@ Pin.create({title: "Not sure, but looks good",
   image: File.open("app/assets/images/pinfood7.jpg"),
   user_id: User.find_by_username("pinniethepooh").id,
   board_id: Board.find_by_name("Food").id})
-
-Pin.create({title: "Acai",
-  url: "https://www.juicegeneration.com/menu/acai-bowls",
-  description: "hungry",
-  image: File.open("app/assets/images/pinfood8.jpg"),
-  user_id: User.find_by_username("pinniethepooh").id,
-  board_id: Board.find_by_name("Food").id})
+#
+# Pin.create({title: "Acai",
+#   url: "https://www.juicegeneration.com/menu/acai-bowls",
+#   description: "hungry",
+#   image: File.open("app/assets/images/pinfood8.jpg"),
+#   user_id: User.find_by_username("pinniethepooh").id,
+#   board_id: Board.find_by_name("Food").id})
   Pin.create({title: "Long Hair",
     url: "https://www.muralswallpaper.com/",
     image: File.open("app/assets/images/pinart2.jpg"),
@@ -182,24 +182,24 @@ Pin.create({title: "Mural",
     user_id: User.find_by_username("pindiesel").id,
     board_id: Board.find_by_name("Tiny Animals").id})
 
-
-    Pin.create({title: "Fried Chicken",
-      url: "https://www.timeout.com/newyork/restaurants/the-best-fried-chicken-in-nyc",
-      description: "hungry",
-      image: File.open("app/assets/images/pinfood1.jpg"),
-      user_id: User.find_by_username("pinniethepooh").id,
-      board_id: Board.find_by_name("Food").id})
+    #
+    # Pin.create({title: "Fried Chicken",
+    #   url: "https://www.timeout.com/newyork/restaurants/the-best-fried-chicken-in-nyc",
+    #   description: "hungry",
+    #   image: File.open("app/assets/images/pinfood1.jpg"),
+    #   user_id: User.find_by_username("pinniethepooh").id,
+    #   board_id: Board.find_by_name("Food").id})
       Pin.create({title: "Fries",
         url: "https://ny.eater.com/maps/best-fries-nyc",
         description: "hungry",
         image: File.open("app/assets/images/pinfood2.jpg"),
         user_id: User.find_by_username("pinniethepooh").id,
         board_id: Board.find_by_name("Food").id})
-    Pin.create({title: "Tiny Giraffe",
-      url: "http://imgur.com/gallery/xc4Ej",
-      image: File.open("app/assets/images/pintiny4.jpg"),
-      user_id: User.find_by_username("pindiesel").id,
-      board_id: Board.find_by_name("Tiny Animals").id})
+    # Pin.create({title: "Tiny Giraffe",
+    #   url: "http://imgur.com/gallery/xc4Ej",
+    #   image: File.open("app/assets/images/pintiny4.jpg"),
+    #   user_id: User.find_by_username("pindiesel").id,
+    #   board_id: Board.find_by_name("Tiny Animals").id})
 Pin.create({title: "Blue",
   url: "https://goinswriter.com/sad-art/",
   image: File.open("app/assets/images/pinsad1.jpg"),
@@ -211,11 +211,11 @@ Pin.create({title: "Tiny Chameleon",
   image: File.open("app/assets/images/pintiny5.jpg"),
   user_id: User.find_by_username("pindiesel").id,
   board_id: Board.find_by_name("Tiny Animals").id})
-Pin.create({title: "Tiny Puffer",
-  url: "http://imgur.com/gallery/xc4Ej",
-  image: File.open("app/assets/images/pintiny6.jpg"),
-  user_id: User.find_by_username("pindiesel").id,
-  board_id: Board.find_by_name("Tiny Animals").id})
+# Pin.create({title: "Tiny Puffer",
+#   url: "http://imgur.com/gallery/xc4Ej",
+#   image: File.open("app/assets/images/pintiny6.jpg"),
+#   user_id: User.find_by_username("pindiesel").id,
+#   board_id: Board.find_by_name("Tiny Animals").id})
   Pin.create({title: "Adidas",
     url: "http://www.adidas.com/us/",
     description: "Cool",
