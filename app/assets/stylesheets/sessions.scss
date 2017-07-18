@@ -4,6 +4,45 @@ div.home-background {
   display: flex;
   top: 0px;
   background-color: rgba(95, 115, 160, 0.56);
+  background: image-url('pinspired.png');
+  background-size: cover;
+  // background-repeat: no-repeat;
+  -webkit-animation:200s scroll infinite linear;
+  -moz-animation:200s scroll infinite linear;
+  -o-animation:200s scroll infinite linear;
+  -ms-animation:200s scroll infinite linear;
+  animation:200s scroll infinite linear;
+}
+
+@-webkit-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+    transform: translateY(-300px);
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
 }
 
 div.session-form-logo {
