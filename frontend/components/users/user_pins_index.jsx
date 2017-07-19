@@ -84,7 +84,7 @@ class UserPinsIndex extends React.Component {
                   <div className="dim-gradient">
                     <a className="pin-url" href={`${pin.url}`} target="_blank">{pin.url}</a>
                   </div>
-                  <div onClick={ e => { e.stopPropagation(); this.props.open(<PinSaveFormContainer pin={pins[pin.id]}/>);} } className="pin-save-modal">
+                  <div onClick={ e => { e.stopPropagation(); this.props.open(<PinSaveFormContainer pin={this.props.pins[pin.id]}/>);} } className="pin-save-modal">
                     <i className="fa fa-thumb-tack" aria-hidden="true"></i>
                     <div className="pin-save">Save</div>
                   </div>
@@ -128,6 +128,7 @@ class UserPinsIndex extends React.Component {
   // }
 
   render() {
+
     // return (
     //   <div>{this.props.board.name}</div>
     // );

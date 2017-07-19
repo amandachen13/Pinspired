@@ -40,7 +40,7 @@ const boardsReducer = (state = defaultState, action) => {
       const errors = action.errors;
       return merge({}, state, {errors});
     case CLEAR_ERRORS:
-      return merge({}, state.boards, {errors: []});
+      return merge({}, {boards: state.boards}, {errors: []});
     default:
       return state;
   }

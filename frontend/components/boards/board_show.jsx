@@ -20,8 +20,9 @@ class BoardShow extends React.Component {
     // need to request user first?
     // this.props.requestUser(username);
     // if user, then user.boards. find id pointing to boardName
-    //debugger
+    // debugger
     this.props.requestSingleBoard(this.props.boardId);
+    this.props.requestAllPins();
     // this.props.requestUser(this.props.username);
     // this.props.requestSingleBoard(__________);
   }
@@ -112,7 +113,6 @@ class BoardShow extends React.Component {
   }
 
   render() {
-    // //debugger
     if (this.props.user && this.props.boards) {
     //   //debugger;
     //debugger

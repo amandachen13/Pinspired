@@ -45,7 +45,7 @@ class PinCreateForm extends React.Component {
         return (
         <li key={boardId} className="pin-save-board">
           <div className="pin-save-board">{board.name}</div>
-          <div onClick={ () => this.props.createPin(merge(this.state, {board_id:boardId})).then(() => this.props.close()) } className="pin-save-final">
+          <div onClick={ () => this.props.createPin(merge(this.state, {board_id: boardId})).then(() => this.props.close()) } className="pin-save-final">
             <i className="fa fa-thumb-tack" aria-hidden="true"></i>
             <div className="pin-save">Save</div>
           </div>

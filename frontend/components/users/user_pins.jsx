@@ -34,12 +34,14 @@ class UserPins extends React.Component {
           <div onClick={this.handleOpenEdit} className="profile-settings">
             <i className="fa fa-cog" aria-hidden="true"></i>
           </div>
+          <div></div>
         </div>
       );
     } else {
       return (
         <div className="profile-options">
-          FOLLOW OR UNFOLLOW
+          <div></div>
+          <div className="profile-follow-button">Follow</div>
         </div>
       );
     }

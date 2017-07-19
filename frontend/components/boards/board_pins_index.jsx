@@ -22,6 +22,7 @@ class BoardPinsIndex extends React.Component {
     // this.pinsIndexArr().forEach( id => {
     //   this.props.requestSinglePin(id);
     // });
+    // this.props.requestAllPins();
   }
 
   // shouldComponentUpdate(nextProps) {
@@ -105,6 +106,7 @@ class BoardPinsIndex extends React.Component {
                 <i className="fa fa-plus-circle" aria-hidden="true"></i>
               </div>
             </div>
+            <div></div>
           </div>
         </li>
       );

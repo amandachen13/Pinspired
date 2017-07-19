@@ -32,7 +32,7 @@ const pinsReducer = (state = defaultState, action) => {
       const errors = action.errors;
       return merge({}, state, {errors});
     case CLEAR_ERRORS:
-      return merge({}, state, {errors: []});
+      return merge({}, {pins: state.pins}, {errors: []});
     default:
       return state;
   }
