@@ -25,7 +25,11 @@ class Home extends React.Component {
       return (
         <div className="home-background">
           <SignupFormContainer location="/" />
-          <div className="signup-footer"><a className="signup-footer" href="https://github.com/amandachen13/Pinspired">Github</a></div>
+          <div className="signup-footer">
+            <a className="signup-footer" target="_blank" href="https://github.com/amandachen13/Pinspired">Github</a>
+            <a className="signup-footer" target="_blank" href="http://www.amandachen.io/">Portfolio</a>
+            <a className="signup-footer" target="_blank" href="https://www.linkedin.com/in/amandachen13/">LinkedIn</a>
+          </div>
         </div>
       );
     }
