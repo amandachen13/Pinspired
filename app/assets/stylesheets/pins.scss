@@ -56,7 +56,8 @@ div.dim-gradient:hover {
 }
 
 div.pins-add {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  // border-bottom: 20px;
   width: 236px;
   height: 236px;
   border-radius: 8px;
@@ -72,6 +73,7 @@ div.pins-add-hover:hover {
   border-radius: 8px;
   padding: 10px;
   margin: -10px;
+  padding-bottom: 0px;
   height: 100%;
 }
 
@@ -89,6 +91,10 @@ div.pins-hover:hover a.pin-url {
   size: 11px;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
+  width: 224px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 div.pins-hover:hover div.pin-save-modal {
