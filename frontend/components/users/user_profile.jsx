@@ -88,12 +88,7 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    // debugger
-    let masonryOptions = {
-      transitionDuration: 0,
-      gutter: 25,
-      fitWidth: true
-    };
+
     if (this.props.user) {
       if (this.props.user.boards) {
         return(
@@ -125,14 +120,10 @@ class UserProfile extends React.Component {
               <Link className="profile-links-active" to={`/${this.props.username}/boards`}>Boards</Link>
               <Link className="profile-links" to={`/${this.props.username}/pins`}>Pins</Link>
             </div>
-            <div>
-              <Masonry className={"boards-index-container"}
-                elementType={'ul'}
-                options={masonryOptions}
-                disableImagesLoaded={false}
-                updateOnEachImageLoad={false}>
+            <div className="boards-list">
+              <ul className="boards-list">
                 {this.boardsList()}
-              </Masonry>
+              </ul>
             </div>
           </div>
         );
@@ -168,13 +159,9 @@ class UserProfile extends React.Component {
               <Link className="profile-links" to={`/${this.props.username}/pins`}>Pins</Link>
             </div>
             <div>
-              <Masonry className={"boards-index-container"}
-                elementType={'ul'}
-                options={masonryOptions}
-                disableImagesLoaded={false}
-                updateOnEachImageLoad={false}>
+              <ul className="boards-list">
                 {this.boardsList()}
-              </Masonry>
+              </ul>
             </div>
           </div>
         );

@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS, RECEIVE_LOGOUT } from './../actions/session_actions';
-
+import { RECEIVE_SINGLE_BOARD, REMOVE_BOARD } from './../actions/board_actions';
 const nullUser = Object.freeze({
   currentUser: null,
   errors: []
@@ -20,6 +20,12 @@ const sessionReducer = (state = nullUser, action) => {
       return merge({}, nullUser, {errors});
     case CLEAR_ERRORS:
       return merge({}, {currentUser: state.currentUser}, {errors: []});
+    case REMOVE_BOARD:
+      const newState = merge({}, state);
+      delete newState.currentUser.boards[action.id];
+      return newState;
+    case RECEIVE_SINGLE_BOARD:
+      return merge({}, state, {currentUser: {boards: {[action.board.id]: {id: action.board.id, name: action.board.name}}}});
     default:
       return state;
   }
