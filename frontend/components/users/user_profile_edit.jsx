@@ -84,7 +84,7 @@ class UserProfileEdit extends React.Component {
           </div>
           <div className="user-buttons-row">
             <div className="user-buttons">
-              <button className="user">Cancel</button>
+              <button onClick={ () => this.props.close() } className="user">Cancel</button>
               <input className="user-edit-save" type="submit" value="Save" />
             </div>
           </div>
