@@ -57,7 +57,6 @@ div.dim-gradient:hover {
 
 div.pins-add {
   margin-bottom: 10px;
-  // border-bottom: 20px;
   width: 236px;
   height: 236px;
   border-radius: 8px;
@@ -65,6 +64,12 @@ div.pins-add {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+div.pins-add-hover {
+  width: 236px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 div.pins-add-hover:hover {
@@ -191,7 +196,6 @@ span.pin-creator {
 span.pin-board {
   display: block;
 }
-
 
 div.pin-unshow {
   position: absolute;
