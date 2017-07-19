@@ -15,8 +15,22 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    //debugger
+    // debugger
     this.props.requestUser(this.props.username);
+  }
+
+  // componentWillUpdate() {
+  //   debugger
+  //   if (this.props.user === undefined) {
+  //     this.props.requestUser(this.props.username);
+  //   }
+  // }
+
+  componentDidUpdate() {
+    // debugger
+    if (this.props.user === undefined) {
+      this.props.requestUser(this.props.username);
+    }
   }
 
   handleOpenEdit(e) {
@@ -74,6 +88,7 @@ class UserProfile extends React.Component {
   }
 
   render() {
+    // debugger
     let masonryOptions = {
       transitionDuration: 0,
       gutter: 25,
@@ -165,6 +180,7 @@ class UserProfile extends React.Component {
         );
       }
     } else {
+      // debugger
       return null;
     }
   }
