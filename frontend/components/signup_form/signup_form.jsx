@@ -48,18 +48,6 @@ class SignupForm extends React.Component {
     this.props.processForm({user});
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul className="errors-list">
-  //       {this.props.errors.map((error, i) => (
-  //         <li className="errors-list-item" key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
-
   demo() {
     this.props.demoLogin({user: {username:"pindiesel" , password:"pindiesel"} });
   }

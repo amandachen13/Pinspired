@@ -12,47 +12,16 @@ class PinSaveForm extends React.Component {
       image: this.props.pin.image_url,
       board_id: ""
     };
-
-    // this.handleSave = this.handleSave.bind(this);
   }
 
   componentDidUpdate() {
     const pin = this.state;
     this.props.createPin(pin).then(() => this.props.close());
-    // this.props.close();
-    // this.props.requestSingleBoard(pin.board_id);
-    // this.props.history.push('/');
   }
 
   componentWillUnmount() {
 
   }
-
-  // boardId() {
-  //   //debugger
-  //   return this;
-  // }
-  //
-  // handleSave(boardId) {
-  //   //debugger;
-  //   this.setState({board_id: boardId});
-  //   //debugger
-  //   let pin = this.state;
-  //   //debugger
-  //   let that = this;
-  //   return () => {
-  //     //debugger
-  //     that.props.createPin(pin);
-  //   }
-
-    // e.preventDefault();
-    // //debugger;
-    // const boardId = parseInt(e.currentTarget.value);
-    // this.setState({board_id: boardId});
-    // const pin = this.state;
-    // //debugger
-    // this.props.createPin(pin);
-  // }
 
   update(field) {
     return e => this.setState({
@@ -62,7 +31,6 @@ class PinSaveForm extends React.Component {
 
   boardList() {
     const boards = values(this.props.currentUser.boards);
-    //debugger;
     const boardNames = boards.map( board => {
       const boardId = board.id;
       return (

@@ -234,38 +234,3 @@ Pin.create({title: "Nice",
   image: File.open("app/assets/images/pinshoe2.jpg"),
   user_id: User.find_by_username("jeremypin").id,
   board_id: Board.find_by_name("Shoes").id})
-
-
-
-
-
-# Pin.create({title: "Test 4",
-#   url: "test4.com",
-#   description: "testing4",
-#   image: File.open("app/assets/images/pin4.jpg"),
-#   user_id: User.find_by_username("pindiesel").id,
-#   board_id: Board.find_by_name("Cars").id})
-# Pin.create({title: "Test Longer Title For Styling Purposes",
-#   url: "test5.com",
-#   description: "testing longer description for styling purposes",
-#   image: File.open("app/assets/images/pin5.jpg"),
-#   user_id: User.find_by_username("pablopincasso").id,
-#   board_id: Board.find_by_name("Art").id})
-# Pin.create({title: "Test 6",
-#   url: "test6.com",
-#   description: "testing6",
-#   image: File.open("app/assets/images/pin6.jpg"),
-#   user_id: User.find_by_username("pablopincasso").id,
-#   board_id: Board.find_by_name("Art").id})
-# Pin.create({title: "Test 7",
-#   url: "test7.com",
-#   description: "testing7",
-#   image: File.open("app/assets/images/pin7.jpg"),
-#   user_id: User.find_by_username("pablopincasso").id,
-#   board_id: Board.find_by_name("Art").id})
-# Pin.create({title: "Test 8",
-#   url: "test8.com",
-#   description: "testing8",
-#   image: File.open("app/assets/images/pin8.jpg"),
-#   user_id: User.find_by_username("pindiesel").id,
-#   board_id: Board.find_by_name("Cars").id})

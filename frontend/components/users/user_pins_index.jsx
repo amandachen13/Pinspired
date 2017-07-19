@@ -11,67 +11,26 @@ class UserPinsIndex extends React.Component {
 
     this.pinsIndexArr = this.pinsIndexArr.bind(this);
     this.pinsList = this.pinsList.bind(this);
-    // this.handlePinShow = this.handlePinShow.bind(this);
   }
 
   componentDidMount() {
-    // //debugger;
-    // const firstPinId = this.pinsIndexArr()[0];
-    // this.props.requestSinglePin(firstPinId);
-    // //debugger;
-    // this.pinsIndexArr().forEach( id => {
-    //   this.props.requestSinglePin(id);
-    // });
-    // this.props.requestUser(this.props.username);
     this.props.requestAllPins();
   }
 
-  // shouldComponentUpdate(nextProps) {
-  //   const pinsInState = Object.keys(this.props.pins);
-  //   const pinsInBoard = this.pinsIndexArr();
-  //   //debugger
-  //
-  //   if (pinsInBoard.every(id => pinsInState.indexOf(id) > -1)) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  //
-  // componentWillUpdate() {
-  //   const restPinIds = this.pinsIndexArr().slice(1);
-  //   restPinIds.forEach( id => {
-  //     this.props.requestSinglePin(id);
-  //   });
-  //   //debugger
-  // }
-
   pinsIndexArr() {
     const pinsArr = [];
-    //debugger
     const user = this.props.users[this.props.username];
-    //debugger
     const pins = values(user.pins);
-    //debugger
-    // //debugger
-    // const pins = this.props.board.pins;
     pins.forEach( pin => {
       pinsArr.push(pin.id)
     });
-    //debugger
     return pinsArr;
   }
-
-  // handlePinShow() {
-  //   e.stopPropagation();
-  //   return this.props.history.push(`/pins/${pin.id}`)
-  // }
 
   pinsList() {
     const user = this.props.users[this.props.username];
     const pins = [];
     this.pinsIndexArr().forEach( id => {
-      //debugger
       const pin = user.pins[id];
       if (user.boards[pin.board_id]) {
         pins.push (
@@ -106,9 +65,7 @@ class UserPinsIndex extends React.Component {
           </li>
         );
       }
-      //debugger
     });
-    //debugger
     if (user.username === this.props.currentUser.username) {
       pins.unshift(
         <li key="add">
@@ -125,21 +82,8 @@ class UserPinsIndex extends React.Component {
     return pins;
   }
 
-  // noPins() {
-  //   if (this.props.users[this.props.username].)
-  // }
 
   render() {
-    debugger
-    // return (
-    //   <div>{this.props.board.name}</div>
-    // );
-    //debugger
-    // const pinKeysInState = Object.keys(this.props.pins);
-    // const pinsInState = pinKeysInState.map( id => parseInt(id) );
-    // const pinsInBoard = this.pinsIndexArr();
-
-    // if (pinsInBoard.every(id => pinsInState.indexOf(id) > -1)) {
     const user = this.props.users[this.props.username];
     if (user.pins) {
       let masonryOptions = {
@@ -157,7 +101,6 @@ class UserPinsIndex extends React.Component {
         </Masonry>
       );
     } else {
-      // return null;
       let masonryOptions = {
         transitionDuration: 0,
         gutter: 25,

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-// import { deletePin, editPin, clearErrors } from './../../actions/pin_actions';
 import { close } from './../../actions/modal_actions';
 import { updateUser } from './../../actions/user_actions';
 import UserProfileEdit from './user_profile_edit';

@@ -13,7 +13,6 @@ const mapStateToProps = ({ session, users, boards, pins }, { match }) => {
     username,
     user: users[username],
     boardId,
-    // board: boards.boards[boardId],
     boards: boards.boards
   }
 };

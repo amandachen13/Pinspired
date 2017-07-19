@@ -7,7 +7,6 @@
         json.extract! board, :id, :name
       end
     end
-    # json.array! user.boards, :id, :name
   end
   json.pins do
     user.pins.each do |pin|

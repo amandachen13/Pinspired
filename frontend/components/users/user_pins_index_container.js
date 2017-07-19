@@ -14,8 +14,6 @@ const mapStateToProps = ({ session, users, boards, pins }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // requestSingleBoard: id => dispatch(requestSingleBoard(id)),
-    // requestUser: username => dispatch(requestUser(username)),
     requestAllPins: () => dispatch(requestAllPins()),
     open: component => dispatch(open(component))
   }

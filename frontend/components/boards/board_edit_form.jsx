@@ -22,11 +22,6 @@ class BoardEditForm extends React.Component {
     this.props.editBoard(board).then(() => this.props.close());
   }
 
-  // componentWillReceiveProps() {
-  //   if(this.props.errors.length === 0) {
-  //     this.props.close();
-  //   }
-  // }
 
   update(field) {
     return e => this.setState({
@@ -47,7 +42,6 @@ class BoardEditForm extends React.Component {
   }
 
   render() {
-    //debugger
     const board = this.props.boards[this.props.boardId];
     return (
       <div className="board-edit-form-container">

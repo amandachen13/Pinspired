@@ -14,7 +14,6 @@ class PinCreateForm extends React.Component {
     };
 
     this.handleCreate = this.handleCreate.bind(this);
-    // this.nextStep = this.nextStep.bind(this);
   }
 
   update(field) {
@@ -27,19 +26,10 @@ class PinCreateForm extends React.Component {
     e.preventDefault();
     const pin = this.state;
     this.props.createPin(pin).then(() => this.props.close());
-    // if (this.props.errors.length === 0) {
-    //   this.props.close();
-    // }
-    // //debugger
   }
 
   boardList() {
-    // //debugger
-
-    // if (this.state.title && this.state.image && this.state.url) {
-      // && (this.props.errors.length === 1)
       const boards = values(this.props.currentUser.boards);
-      //debugger
       const boardNames = boards.map( board => {
         const boardId = board.id;
         return (
@@ -53,32 +43,9 @@ class PinCreateForm extends React.Component {
         );
       });
       return boardNames;
-  //   } else {
-  //     return null;
-  //   }
   }
 
-  // componentDidUpdate() {
-  //   // //debugger
-  //   // //debugger
-  //   // //debugger
-  //   //debugger
-  //   if (this.props.errors) {
-  //     this.props.errors.forEach((err) => {
-  //       switch(err.substring(0,4)) {
-  //         case "Titl":
-  //           document.getElementById("titleError").innerHTML = err;
-  //         case "Imag":
-  //           document.getElementById("imageError").innerHTML = err;
-  //         case "Url ":
-  //           document.getElementById("urlError").innerHTML = err;
-  //       }
-  //     });
-  //   }
-  // }
-
   componentWillUnmount() {
-    //debugger
     this.props.clearErrors();
   }
 
@@ -89,7 +56,6 @@ class PinCreateForm extends React.Component {
   }
 
   componentDidUpdate() {
-    //debugger
     if (this.props.errors) {
       this.props.errors.forEach((err) => {
         switch(err.substring(0,4)) {
@@ -106,54 +72,6 @@ class PinCreateForm extends React.Component {
       });
     }
   }
-
-  // componentWillReceiveProps() {
-  //   //debugger
-  //   document.getElementById("titleError").innerHTML = "";
-  //   document.getElementById("imageError").innerHTML = "";
-  //   document.getElementById("urlError").innerHTML = "";
-  // }
-
-  // componentWillUpdate() {
-  //   //debugger;
-    // this.props.clearErrors();
-  // }
-
-  // nextStep(e) {
-    // //debugger
-    // e.preventDefault();
-    // const pin = this.state;
-    // this.props.createPin(pin);
-
-    // if only one error
-    // return boards list
-    // else, render errors
-    // //debugger
-    // if (this.state.errors) {
-    //   this.props.errors.forEach((err) => {
-    //     switch(err.substring(0,4)) {
-    //       case "Titl":
-    //         document.getElementById("titleError").innerHTML = err;
-    //       case "Imag":
-    //         document.getElementById("imageError").innerHTML = err;
-    //       case "Url ":
-    //         document.getElementById("urlError").innerHTML = err;
-    //     }
-    //   });
-    // }
-  // }
-
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   render() {
     return(

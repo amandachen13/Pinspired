@@ -42,7 +42,6 @@ class Api::PinsController < ApplicationController
 
     if @pin
       if @pin.destroy
-        # render json: params[:id], status: 200
         render 'api/pins/show'
       else
         render json: ["Failed to delete."], status: 404

@@ -22,9 +22,6 @@ class PinEditForm extends React.Component {
     e.preventDefault();
     const pin = this.state;
     this.props.editPin(pin).then(() => this.props.requestSingleBoard(this.props.pin.board.id)).then(() => this.props.close());
-    // if(this.props.errors.length === 0) {
-    //   this.props.close();
-    // }
   }
 
   update(field) {
@@ -43,7 +40,6 @@ class PinEditForm extends React.Component {
 
   selectBoard() {
     const boards = values(this.props.currentUser.boards);
-    //debugger
     const options = boards.map( board => {
       return(
         <option key={board.id} selected={this.selected(board.name)} value={board.id}>{board.name}</option>

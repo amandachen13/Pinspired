@@ -11,58 +11,18 @@ class BoardPinsIndex extends React.Component {
 
     this.pinsIndexArr = this.pinsIndexArr.bind(this);
     this.pinsList = this.pinsList.bind(this);
-    // this.handlePinShow = this.handlePinShow.bind(this);
   }
-
-  componentDidMount() {
-    // //debugger;
-    // const firstPinId = this.pinsIndexArr()[0];
-    // this.props.requestSinglePin(firstPinId);
-    // //debugger;
-    // this.pinsIndexArr().forEach( id => {
-    //   this.props.requestSinglePin(id);
-    // });
-    // this.props.requestAllPins();
-  }
-
-  // shouldComponentUpdate(nextProps) {
-  //   const pinsInState = Object.keys(this.props.pins);
-  //   const pinsInBoard = this.pinsIndexArr();
-  //   //debugger
-  //
-  //   if (pinsInBoard.every(id => pinsInState.indexOf(id) > -1)) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
-  //
-  // componentWillUpdate() {
-  //   const restPinIds = this.pinsIndexArr().slice(1);
-  //   restPinIds.forEach( id => {
-  //     this.props.requestSinglePin(id);
-  //   });
-  //   //debugger
-  // }
 
   pinsIndexArr() {
     const pinsArr = [];
     const pins = this.props.board.pins;
-    // //debugger
-    // const pins = this.props.board.pins;
     pins.forEach( pin => {
       pinsArr.push(pin.id)
     });
     return pinsArr;
   }
 
-  // handlePinShow() {
-  //   e.stopPropagation();
-  //   return this.props.history.push(`/pins/${pin.id}`)
-  // }
-
   pinsList() {
-    // //debugger
     const pins = this.pinsIndexArr().map( id => {
       const pin = this.props.pins[id];
       return (
@@ -115,10 +75,6 @@ class BoardPinsIndex extends React.Component {
   }
 
   render() {
-    // return (
-    //   <div>{this.props.board.name}</div>
-    // );
-    //debugger
     const pinKeysInState = Object.keys(this.props.pins);
     const pinsInState = pinKeysInState.map( id => parseInt(id) );
     const pinsInBoard = this.pinsIndexArr();

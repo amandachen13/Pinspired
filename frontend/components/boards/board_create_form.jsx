@@ -22,30 +22,7 @@ class BoardCreateForm extends React.Component {
     e.preventDefault();
     const board = this.state;
     this.props.createBoard(board).then((res) => this.props.requestUser(res.board.creator.username)).then(() => this.props.close());
-    // if (this.props.errors.length === 0) {
-    //   this.props.close();
-    // }
-    // //debugger
   }
-
-  // componentDidUpdate() {
-  //   // //debugger
-  //   // //debugger
-  //   // //debugger
-  //   //debugger
-  //   if (this.props.errors) {
-  //     this.props.errors.forEach((err) => {
-  //       switch(err.substring(0,4)) {
-  //         case "Titl":
-  //           document.getElementById("titleError").innerHTML = err;
-  //         case "Imag":
-  //           document.getElementById("imageError").innerHTML = err;
-  //         case "Url ":
-  //           document.getElementById("urlError").innerHTML = err;
-  //       }
-  //     });
-  //   }
-  // }
 
   componentWillUnmount() {
     this.props.clearErrors();
@@ -66,54 +43,6 @@ class BoardCreateForm extends React.Component {
       });
     }
   }
-
-  // componentWillReceiveProps() {
-  //   //debugger
-  //   document.getElementById("titleError").innerHTML = "";
-  //   document.getElementById("imageError").innerHTML = "";
-  //   document.getElementById("urlError").innerHTML = "";
-  // }
-
-  // componentWillUpdate() {
-  //   //debugger;
-    // this.props.clearErrors();
-  // }
-
-  // nextStep(e) {
-    // //debugger
-    // e.preventDefault();
-    // const pin = this.state;
-    // this.props.createPin(pin);
-
-    // if only one error
-    // return boards list
-    // else, render errors
-    // //debugger
-    // if (this.state.errors) {
-    //   this.props.errors.forEach((err) => {
-    //     switch(err.substring(0,4)) {
-    //       case "Titl":
-    //         document.getElementById("titleError").innerHTML = err;
-    //       case "Imag":
-    //         document.getElementById("imageError").innerHTML = err;
-    //       case "Url ":
-    //         document.getElementById("urlError").innerHTML = err;
-    //     }
-    //   });
-    // }
-  // }
-
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   render() {
     return (

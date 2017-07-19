@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import UserPins from './user_pins';
-// import { requestSingleBoard } from './../../actions/board_actions';
 import { requestUser } from './../../actions/user_actions';
 import { requestAllPins } from './../../actions/pin_actions';
 import { open } from './../../actions/modal_actions';

@@ -3,7 +3,6 @@ import React from 'react';
 class UserProfileEdit extends React.Component {
   constructor(props) {
     super(props);
-    //debugger
     this.state = {
       id: this.props.users[this.props.username].id,
       username: this.props.username,
@@ -17,8 +16,6 @@ class UserProfileEdit extends React.Component {
   }
 
   handleSubmit(e) {
-    //debugger
-    // e.preventDefault();
     let formData = new FormData();
     formData.append("user[username]", this.state.username);
     formData.append("user[description]", this.state.description);
@@ -26,11 +23,8 @@ class UserProfileEdit extends React.Component {
     if (this.state.imageFile) {
       formData.append("user[image]", this.state.imageFile);
     }
-    //debugger
     this.props.updateUser(formData, this.props.username).then(() => this.props.close());
 
-    // const user = this.state;
-    // this.props.updateUser({user: user}).then(() => this.props.close());
   }
 
   update(field) {

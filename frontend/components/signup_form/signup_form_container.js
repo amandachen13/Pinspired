@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { login, signup, clearErrors } from './../../actions/session_actions';
-// import { validate, prevStep } from './../../actions/signup_actions';
 import SignupForm from './signup_form';
 
 const mapStateToProps = ({ session }) => {

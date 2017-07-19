@@ -15,19 +15,10 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.requestUser(this.props.username);
   }
 
-  // componentWillUpdate() {
-  //   debugger
-  //   if (this.props.user === undefined) {
-  //     this.props.requestUser(this.props.username);
-  //   }
-  // }
-
   componentDidUpdate() {
-    // debugger
     if (this.props.user === undefined) {
       this.props.requestUser(this.props.username);
     }
@@ -35,7 +26,6 @@ class UserProfile extends React.Component {
 
   handleOpenEdit(e) {
     e.preventDefault();
-    //debugger
     this.props.open(<UserProfileEditContainer username={this.props.username} />);
   }
 
@@ -128,7 +118,6 @@ class UserProfile extends React.Component {
           </div>
         );
       } else {
-        // return null;
         return(
           <div className="profile-show-container">
             <HeaderContainer />
@@ -167,7 +156,6 @@ class UserProfile extends React.Component {
         );
       }
     } else {
-      // debugger
       return null;
     }
   }

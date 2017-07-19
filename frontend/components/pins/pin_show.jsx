@@ -6,8 +6,6 @@ import PinEditFormContainer from './pin_edit_form_container';
 class PinShow extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.ownPin = this.ownPin.bind(this);
   }
 
   componentDidMount() {
