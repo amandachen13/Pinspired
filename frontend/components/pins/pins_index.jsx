@@ -11,16 +11,21 @@ class PinsIndex extends React.Component {
     super(props);
 
     this.state = {
-      end: 10
+      end: 20
     }
 
     this.infiniteScroll = this.infiniteScroll.bind(this);
   }
 
   componentDidMount() {
+    // debugger
     window.bottom = false;
     window.addEventListener("scroll", this.infiniteScroll);
     this.props.requestAllPins();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.infiniteScroll);
   }
 
   infiniteScroll() {
@@ -31,9 +36,11 @@ class PinsIndex extends React.Component {
     });
 
     if (window.bottom) {
-      this.setState({
-        end: this.state.end + 10
-      });
+      if (this.state.end < this.props.pins.length) {
+        this.setState({
+          end: this.state.end + 10
+        });
+      }
       window.bottom = false;
     }
   }
