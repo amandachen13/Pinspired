@@ -15,7 +15,6 @@ class PinCreateForm extends React.Component {
     };
 
     $.embedly.defaults.key = '1b788a6c74d5445ea5c6cadb932249e3';
-    // this.handleCreate = this.handleCreate.bind(this);
     this.scrapeImages = this.scrapeImages.bind(this);
   }
 
@@ -52,15 +51,6 @@ class PinCreateForm extends React.Component {
     });
 
   }
-
-  // handleCreate(e) {
-  //   e.preventDefault();
-  //
-  //   const pin = this.state;
-  //   debugger
-  //   delete pin['guid'];
-  //   this.props.createPin(pin).then(() => this.props.close());
-  // }
 
   boardList() {
     let boards = values(this.props.currentUser.boards);
@@ -142,6 +132,7 @@ class PinCreateForm extends React.Component {
                 <div id="urlError"></div>
               </div>
               <div className='pin-create-images'>
+                <i className="fa fa-file-image-o" aria-hidden="true"></i>
               </div>
               <textarea placeholder="Tell us about this Pin..."
                 className="pin-create-text"
