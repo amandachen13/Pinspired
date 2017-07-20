@@ -9,15 +9,37 @@ import { randomizePins } from './../../reducers/selectors';
 class PinsIndex extends React.Component {
   constructor (props) {
     super(props);
+
+    this.state = {
+      end: 10
+    }
+
+    this.infiniteScroll = this.infiniteScroll.bind(this);
   }
 
-
   componentDidMount() {
+    window.bottom = false;
+    window.addEventListener("scroll", this.infiniteScroll);
     this.props.requestAllPins();
   }
 
+  infiniteScroll() {
+    $(window).scroll( function() {
+      if ($(window).scrollTop() <= $(document).height() - $(window).height() && $(window).scrollTop() >= $(document).height() - $(window).height() - 50) {
+        window.bottom = true;
+      }
+    });
+
+    if (window.bottom) {
+      this.setState({
+        end: this.state.end + 10
+      });
+      window.bottom = false;
+    }
+  }
+
   pinsList() {
-    const pins = this.props.pins.map( pin => {
+    const pins = this.props.pins.slice(0, this.state.end).map( pin => {
       return (
         <li key={pin.id}>
           <div className="pins-hover">
