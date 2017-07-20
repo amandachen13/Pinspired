@@ -14,7 +14,9 @@ class PinCreateForm extends React.Component {
       board_id: ''
     };
 
-    this.handleCreate = this.handleCreate.bind(this);
+    $.embedly.defaults.key = '1b788a6c74d5445ea5c6cadb932249e3';
+    // this.handleCreate = this.handleCreate.bind(this);
+    this.scrapeImages = this.scrapeImages.bind(this);
   }
 
   update(field) {
@@ -23,63 +25,42 @@ class PinCreateForm extends React.Component {
     });
   }
 
-  handleCreate(e) {
-    e.preventDefault();
-    // //
-    // const Scraper = require("image-scraper");
-    //
-    // const scraper = new Scraper("http://apod.nasa.gov/apod/astropix.html");
-    //
-    // scraper.scrape(function(image) {
-    //   console.log(image);
-    // });
-    //
-    // debugger
+  scrapeImages(e1) {
+    e1.preventDefault();
+    const url = e1.currentTarget.value;
+    this.setState({url: url});
 
-    //
-    // const getImageUrls = require('get-image-urls');
-    //
-    // getImageUrls('http://google.com')
-    // .then( (images) => {
-    //   debugger
-    //   console.log('Images found', images.length);
-    //   console.log(images);
-    // })
-    // debugger
-    // const phantomjs = require('phantomjs-prebuilt');
-    // const fs = require('fs');
-    // const child_process = require('child_process');
-    //
-    //
-    // const page = require('webpage').create();
-    //
-    // page.onLoadFinished = () => {
-    //
-    //   const img_urls = page.evaluate( () => {
-    //     const urls = [];
-    //     const images = document.getElementsByTagName("img");
-    //     images.forEach( (image, idx), () => {
-    //       urls.push(images[idx].src);
-    //     });
-    //     return urls;
-    //   });
-    //   debugger // check img_urls.length and first element
-    //
-    //   phantomjs.exit();
-    // }
-    //
-    // page.open('http://www.walmart.com');
+    $.embedly.extract(url).progress(data => {
+    	const images = data.images;
+    	const $container = $('<div class=\'images-container\'>');
+    	images.forEach( (image, idx) => {
+        let imageUrl = image.url;
+    		// let imageUrl = $.embedly.display.resize(image.url, {query: {width: 300}});
+    		let $img = $(`<img class=\'scraped-image ${idx}\'>`);
+        $img.on("click", (e2) => {
+          this.setState({image: imageUrl});
+          $('.images-container').children().each( function() {
+            $(this).attr('class', 'pin-image-unselected');
+          });
+          $img.attr('class', 'pin-image-selected');
+        }).bind(this);
+    		$img.attr('src', imageUrl);
+    		$container.append($img);
+    	});
 
-    // debugger
-    const pin = this.state;
-    this.props.createPin(pin).then(() => this.props.close());
+      $('.pin-create-images').html($container);
+    });
+
   }
 
-  // image-scraping
-  // on create, find image and merge state with found image url
-  // then continue creating pin
-
-  // () => this.props.createPin(merge(this.state, {board_id: boardId})).then(() => this.props.close())
+  // handleCreate(e) {
+  //   e.preventDefault();
+  //
+  //   const pin = this.state;
+  //   debugger
+  //   delete pin['guid'];
+  //   this.props.createPin(pin).then(() => this.props.close());
+  // }
 
   boardList() {
     let boards = values(this.props.currentUser.boards);
@@ -92,7 +73,12 @@ class PinCreateForm extends React.Component {
       return (
       <li key={boardId} className="pin-save-board">
         <div className="pin-save-board">{board.name}</div>
-        <div onClick={ () => this.props.createPin(merge(this.state, {board_id: boardId})).then(() => this.props.close()) } className="pin-save-final">
+        <div onClick={ () => this.props.createPin(merge({},
+            {title: this.state.title},
+            {url: this.state.url},
+            {description: this.state.description},
+            {image: this.state.image},
+            {board_id: boardId})).then(() => this.props.close()) } className="pin-save-final">
           <i className="fa fa-thumb-tack" aria-hidden="true"></i>
           <div className="pin-save">Save</div>
         </div>
@@ -108,7 +94,6 @@ class PinCreateForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     document.getElementById("titleError").innerHTML = "";
-    document.getElementById("imageError").innerHTML = "";
     document.getElementById("urlError").innerHTML = "";
   }
 
@@ -118,9 +103,6 @@ class PinCreateForm extends React.Component {
         switch(err.substring(0,4)) {
           case "Titl":
             document.getElementById("titleError").innerHTML = err;
-            break;
-          case "Imag":
-            document.getElementById("imageError").innerHTML = err;
             break;
           case "Url ":
             document.getElementById("urlError").innerHTML = err;
@@ -152,20 +134,14 @@ class PinCreateForm extends React.Component {
                 <div id="titleError"></div>
               </div>
               <div className="pin-create-error">
-                <input type="text" placeholder="Image URL"
-                  className="pin-create-input"
-                  value={this.state.image}
-                  onChange={this.update('image')}
-                />
-                <div id="imageError"></div>
-              </div>
-              <div className="pin-create-error">
                 <input type="text" placeholder="https://..."
                   className="pin-create-input"
                   value={this.state.url}
-                  onChange={this.update('url')}
-                />
+                  onChange={this.scrapeImages}
+                  />
                 <div id="urlError"></div>
+              </div>
+              <div className='pin-create-images'>
               </div>
               <textarea placeholder="Tell us about this Pin..."
                 className="pin-create-text"
@@ -189,3 +165,12 @@ class PinCreateForm extends React.Component {
 }
 
 export default withRouter(PinCreateForm);
+
+// <div className="pin-create-error">
+//   <input type="text" placeholder="Image URL"
+//     className="pin-create-input"
+//     value={this.state.image}
+//     onChange={this.update('image')}
+//   />
+//   <div id="imageError"></div>
+// </div>

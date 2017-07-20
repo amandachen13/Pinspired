@@ -674,6 +674,42 @@ input.pin-create-input {
   width: 70%;
 }
 
+div.pin-create-images {
+  height: 300px;
+  background: #efefef;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
+div.images-container {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+img.scraped-image {
+  cursor: pointer;
+  width: 238px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 2px solid #efefef;
+}
+
+img.pin-image-selected {
+  width: 238px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 2px solid #bd081c;
+}
+
+img.pin-image-unselected {
+  width: 238px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 2px solid #efefef;
+}
+
 input.pin-create-input:focus, textarea.pin-create-text:focus {
   box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #b5b5b5;
   outline: 0;
