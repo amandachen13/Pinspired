@@ -18,11 +18,15 @@ const usersReducer = (state = {}, action) => {
       delete newState[action.username].boards[action.id];
       return newState;
     case REMOVE_PIN:
-      delete newState[action.pin.creator.username].pins[action.pin.id];
-      return newState;
+      if (newState[action.pin.creator.username].pins) {
+        delete newState[action.pin.creator.username].pins[action.pin.id];
+        return newState;
+      }
     case RECEIVE_PIN:
-      newState[action.pin.creator.username].pins[action.pin.id] = action.pin;
-      return newState;
+      if (newState[action.pin.creator.username].pins) {
+        newState[action.pin.creator.username].pins[action.pin.id] = action.pin;
+        return newState;
+      }
     default:
       return state;
   }

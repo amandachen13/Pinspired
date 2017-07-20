@@ -5,8 +5,9 @@ import { requestSingleBoard } from './../../actions/board_actions';
 import { requestUser } from './../../actions/user_actions';
 import PinDeleteWarning from './pin_delete_warning';
 
-const mapStateToProps = ({ session, pins }, history) => {
+const mapStateToProps = ({ session, pins, users }, history) => {
   return {
+    username: session.currentUser.username,
     history
   };
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 class UserProfileEdit extends React.Component {
   constructor(props) {
@@ -88,4 +89,4 @@ class UserProfileEdit extends React.Component {
   }
 }
 
-export default UserProfileEdit;
+export default withRouter(UserProfileEdit);

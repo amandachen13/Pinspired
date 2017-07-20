@@ -1,5 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
+import { Link, withRouter } from 'react-router-dom';
 import BoardDeleteWarningContainer from './board_delete_warning_container';
 
 class BoardEditForm extends React.Component {
@@ -91,4 +92,4 @@ class BoardEditForm extends React.Component {
 
 }
 
-export default BoardEditForm;
+export default withRouter(BoardEditForm);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { merge, values } from 'lodash';
+import { Link, withRouter } from 'react-router-dom';
 
 class PinCreateForm extends React.Component {
   constructor(props) {
@@ -24,25 +25,81 @@ class PinCreateForm extends React.Component {
 
   handleCreate(e) {
     e.preventDefault();
+    // //
+    // const Scraper = require("image-scraper");
+    //
+    // const scraper = new Scraper("http://apod.nasa.gov/apod/astropix.html");
+    //
+    // scraper.scrape(function(image) {
+    //   console.log(image);
+    // });
+    //
+    // debugger
+
+    //
+    // const getImageUrls = require('get-image-urls');
+    //
+    // getImageUrls('http://google.com')
+    // .then( (images) => {
+    //   debugger
+    //   console.log('Images found', images.length);
+    //   console.log(images);
+    // })
+    // debugger
+    // const phantomjs = require('phantomjs-prebuilt');
+    // const fs = require('fs');
+    // const child_process = require('child_process');
+    //
+    //
+    // const page = require('webpage').create();
+    //
+    // page.onLoadFinished = () => {
+    //
+    //   const img_urls = page.evaluate( () => {
+    //     const urls = [];
+    //     const images = document.getElementsByTagName("img");
+    //     images.forEach( (image, idx), () => {
+    //       urls.push(images[idx].src);
+    //     });
+    //     return urls;
+    //   });
+    //   debugger // check img_urls.length and first element
+    //
+    //   phantomjs.exit();
+    // }
+    //
+    // page.open('http://www.walmart.com');
+
+    // debugger
     const pin = this.state;
     this.props.createPin(pin).then(() => this.props.close());
   }
 
+  // image-scraping
+  // on create, find image and merge state with found image url
+  // then continue creating pin
+
+  // () => this.props.createPin(merge(this.state, {board_id: boardId})).then(() => this.props.close())
+
   boardList() {
-      const boards = values(this.props.currentUser.boards);
-      const boardNames = boards.map( board => {
-        const boardId = board.id;
-        return (
-        <li key={boardId} className="pin-save-board">
-          <div className="pin-save-board">{board.name}</div>
-          <div onClick={ () => this.props.createPin(merge(this.state, {board_id: boardId})).then(() => this.props.close()) } className="pin-save-final">
-            <i className="fa fa-thumb-tack" aria-hidden="true"></i>
-            <div className="pin-save">Save</div>
-          </div>
-        </li>
-        );
-      });
-      return boardNames;
+    let boards = values(this.props.currentUser.boards);
+    if ( this.props.history.location.pathname.includes('/board/') ) {
+      let board_id = parseInt(this.props.history.location.pathname.split('/').pop());
+      boards = [this.props.currentUser.boards[board_id]];
+    }
+    const boardNames = boards.map( board => {
+      const boardId = board.id;
+      return (
+      <li key={boardId} className="pin-save-board">
+        <div className="pin-save-board">{board.name}</div>
+        <div onClick={ () => this.props.createPin(merge(this.state, {board_id: boardId})).then(() => this.props.close()) } className="pin-save-final">
+          <i className="fa fa-thumb-tack" aria-hidden="true"></i>
+          <div className="pin-save">Save</div>
+        </div>
+      </li>
+      );
+    });
+    return boardNames;
   }
 
   componentWillUnmount() {
@@ -131,4 +188,4 @@ class PinCreateForm extends React.Component {
   }
 }
 
-export default PinCreateForm;
+export default withRouter(PinCreateForm);

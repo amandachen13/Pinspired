@@ -3,10 +3,11 @@ import { createPin, clearErrors } from './../../actions/pin_actions';
 import { close } from './../../actions/modal_actions';
 import PinCreateForm from './pin_create_form';
 
-const mapStateToProps = ({ session, pins }) => {
+const mapStateToProps = ({ session, pins }, history) => {
   return {
     currentUser: session.currentUser,
-    errors: pins.errors
+    errors: pins.errors,
+    history
   };
 };
 

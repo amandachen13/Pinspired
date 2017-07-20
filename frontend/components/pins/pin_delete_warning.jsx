@@ -10,7 +10,14 @@ class PinDeleteWarning extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deletePin(this.props.pin.id).then(() => this.props.close()).then(() => this.props.history.goBack());
+    // if delete from pin show page, this.props.history.push to deleted pin's board show page
+    // debugger
+    // const board_id = this.props.pin.board.id;
+    // if ( this.props.history.location.pathname.includes('/pin/') ) {
+    //   this.props.deletePin(this.props.pin.id).then(() => this.props.close()).then(() => this.props.history.push(`/${this.props.username}/board/${board_id}`));
+    // } else {
+      this.props.deletePin(this.props.pin.id).then(() => this.props.close()).then(() => this.props.history.go(-1));
+    // }
   }
 
   componentWillUnmount() {

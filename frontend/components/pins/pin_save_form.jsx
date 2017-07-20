@@ -1,5 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
+import { Link, withRouter } from 'react-router-dom';
 
 class PinSaveForm extends React.Component {
   constructor(props) {
@@ -81,4 +82,4 @@ class PinSaveForm extends React.Component {
 
 }
 
-export default PinSaveForm;
+export default withRouter(PinSaveForm);

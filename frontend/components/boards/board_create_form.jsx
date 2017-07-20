@@ -1,5 +1,6 @@
 import React from 'react';
 import { merge, values } from 'lodash';
+import { Link, withRouter } from 'react-router-dom';
 
 class BoardCreateForm extends React.Component {
   constructor(props) {
@@ -79,4 +80,4 @@ class BoardCreateForm extends React.Component {
   }
 }
 
-export default BoardCreateForm;
+export default withRouter(BoardCreateForm);

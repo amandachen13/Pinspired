@@ -77,4 +77,4 @@ class PinsIndex extends React.Component {
 
 }
 
-export default PinsIndex;
+export default withRouter(PinsIndex);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
+import { Link, withRouter } from 'react-router-dom';
 import PinDeleteWarningContainer from './pin_delete_warning_container';
 
 class PinEditForm extends React.Component {
@@ -98,4 +99,4 @@ class PinEditForm extends React.Component {
   }
 }
 
-export default PinEditForm;
+export default withRouter(PinEditForm);
