@@ -36,6 +36,12 @@ class PinCreateForm extends React.Component {
         let imageUrl = image.url;
     		// let imageUrl = $.embedly.display.resize(image.url, {query: {width: 300}});
     		let $img = $(`<img class=\'scraped-image ${idx}\'>`);
+
+        // default-select first image
+        if (idx == 0) {
+          this.setState({image: imageUrl});
+        }
+
         $img.on("click", (e2) => {
           this.setState({image: imageUrl});
           $('.images-container').children().each( function() {
