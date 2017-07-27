@@ -11,19 +11,18 @@ const usersReducer = (state = {}, action) => {
       const user = action.user;
       return merge({}, state, {[user.username]: user});
     case RECEIVE_SINGLE_BOARD:
-      //debugger
       const creator = action.user;
       return merge({}, state, {[creator.username]: creator});
     case REMOVE_BOARD:
       delete newState[action.username].boards[action.id];
       return newState;
     case REMOVE_PIN:
-      if (newState[action.pin.creator.username].pins) {
+      if (newState[action.pin.creator.username] && newState[action.pin.creator.username].pins) {
         delete newState[action.pin.creator.username].pins[action.pin.id];
         return newState;
       }
     case RECEIVE_SINGLE_PIN:
-      if (newState[action.pin.creator.username].pins) {
+      if (newState[action.pin.creator.username] && newState[action.pin.creator.username].pins) {
         newState[action.pin.creator.username].pins[action.pin.id] = action.pin;
         return newState;
       }

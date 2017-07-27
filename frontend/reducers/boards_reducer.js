@@ -15,7 +15,8 @@ const boardsReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_SINGLE_BOARD:
       const board = action.board;
-      return merge({}, state, {boards: {[board.id]: board}}, {errors: []});
+      // return merge({}, state, {boards: {[board.id]: board}}, {errors: []});
+      return merge({boards: {[board.id]: board}}, {errors: []});
     case REMOVE_BOARD:
       const newState = merge({}, state);
       delete newState.boards[action.id];
