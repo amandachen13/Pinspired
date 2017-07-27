@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { values } from 'lodash';
 import HeaderContainer from './../home/header_container';
+import FooterContainer from './../home/footer_container';
 import Masonry from 'react-masonry-component';
 import UserProfileEditContainer from'./user_profile_edit_container';
 import BoardCreateFormContainer from './../boards/board_create_form_container';
@@ -115,6 +116,7 @@ class UserProfile extends React.Component {
                 {this.boardsList()}
               </ul>
             </div>
+            <FooterContainer />
           </div>
         );
       } else {
@@ -152,6 +154,7 @@ class UserProfile extends React.Component {
                 {this.boardsList()}
               </ul>
             </div>
+            <FooterContainer />
           </div>
         );
       }

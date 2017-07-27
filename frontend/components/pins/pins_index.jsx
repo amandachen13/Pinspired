@@ -18,7 +18,6 @@ class PinsIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     window.bottom = false;
     window.addEventListener("scroll", this.infiniteScroll);
     this.props.requestAllPins();

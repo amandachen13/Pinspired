@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SignupFormContainer from './../signup_form/signup_form_container';
 import HeaderContainer from './header_container';
+import FooterContainer from './../home/footer_container';
 import PinsIndexContainer from './../pins/pins_index_container';
 
 class Home extends React.Component {
@@ -19,6 +20,7 @@ class Home extends React.Component {
           <div className="pins-grid">
             <PinsIndexContainer history={this.props.history}/>
           </div>
+          <FooterContainer />
         </div>
       );
     } else {

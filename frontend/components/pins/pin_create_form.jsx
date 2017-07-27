@@ -1,5 +1,5 @@
 import React from 'react';
-import { merge, values } from 'lodash';
+import { merge, values, keys } from 'lodash';
 import { Link, withRouter } from 'react-router-dom';
 
 class PinCreateForm extends React.Component {
@@ -62,7 +62,10 @@ class PinCreateForm extends React.Component {
     let boards = values(this.props.currentUser.boards);
     if ( this.props.history.location.pathname.includes('/board/') ) {
       let board_id = parseInt(this.props.history.location.pathname.split('/').pop());
-      boards = [this.props.currentUser.boards[board_id]];
+
+      if (board_id in this.props.currentUser.boards) {
+        boards = [this.props.currentUser.boards[board_id]];
+      }
     }
     const boardNames = boards.map( board => {
       const boardId = board.id;

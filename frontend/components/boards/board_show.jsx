@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import HeaderContainer from './../home/header_container';
+import FooterContainer from './../home/footer_container';
 import Masonry from 'react-masonry-component';
 import { values } from 'lodash';
 import BoardPinsIndexContainer from './board_pins_index_container';
@@ -68,6 +69,7 @@ class BoardShow extends React.Component {
             <div className="pins-grid">
               <BoardPinsIndexContainer board={board} boardPinsArr={board.pins} />
             </div>
+            <FooterContainer />
           </div>
         );
       } else {

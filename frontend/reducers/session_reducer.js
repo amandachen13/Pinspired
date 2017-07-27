@@ -26,7 +26,11 @@ const sessionReducer = (state = nullUser, action) => {
       delete newState.currentUser.boards[action.id];
       return newState;
     case RECEIVE_SINGLE_BOARD:
-      return merge({}, state, {currentUser: {boards: {[action.board.id]: {id: action.board.id, name: action.board.name}}}});
+      if (action.user.id === state.currentUser.id) {
+        return merge({}, state, {currentUser: {boards: {[action.board.id]: {id: action.board.id, name: action.board.name}}}});
+      } else {
+        return merge({}, state)
+      }
     case REMOVE_PIN:
       const newerState = merge({}, state);
       delete newerState.currentUser.pins[action.pin.id];
