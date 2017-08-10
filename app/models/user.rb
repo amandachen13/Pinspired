@@ -37,6 +37,24 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     class_name: "Board"
 
+  has_many :follows_as_follower,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: "Follow"
+
+  has_many :follows_as_following,
+    primary_key: :id,
+    foreign_key: :following_id,
+    class_name: "Follow"
+
+  has_many :followers,
+    through: :follows_as_following,
+    source: :follower
+
+  has_many :followings,
+    through: :follows_as_follower,
+    source: :following
+
   attr_reader :password
 
   after_initialize :ensure_session_token
