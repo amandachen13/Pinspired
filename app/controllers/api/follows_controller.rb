@@ -12,6 +12,13 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
+    @follow = current_user.follows_as_follower.find_by_following_id(params[:id])
+
+    if @follow.destroy
+      render :show
+    else
+      render json: @follow.errors.full_messages, status: 422
+    end
   end
 
 end
