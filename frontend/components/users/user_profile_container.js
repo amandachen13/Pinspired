@@ -3,6 +3,7 @@ import UserProfile from './user_profile';
 import { requestSingleBoard } from './../../actions/board_actions';
 import { requestUser } from './../../actions/user_actions';
 import { requestAllPins } from './../../actions/pin_actions';
+import { follow, unfollow } from './../../actions/follow_actions';
 import { open } from './../../actions/modal_actions';
 
 const mapStateToProps = ({ session, users, boards, pins }, { match }) => {
@@ -21,6 +22,8 @@ const mapDispatchToProps = dispatch => {
     requestSingleBoard: id => dispatch(requestSingleBoard(id)),
     requestUser: username => dispatch(requestUser(username)),
     requestAllPins: () => dispatch(requestAllPins()),
+    follow: following_id => dispatch(follow(following_id)),
+    unfollow: following_id => dispatch(unfollow(following_id)),
     open: component => dispatch(open(component))
   }
 };

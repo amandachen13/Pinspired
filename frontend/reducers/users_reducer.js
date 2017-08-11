@@ -1,6 +1,7 @@
 import { RECEIVE_USER } from './../actions/user_actions';
 import { RECEIVE_SINGLE_BOARD, REMOVE_BOARD } from './../actions/board_actions';
 import { REMOVE_PIN, RECEIVE_SINGLE_PIN } from './../actions/pin_actions';
+// import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from './../actions/follow_actions';
 import { merge } from 'lodash';
 
 const usersReducer = (state = {}, action) => {
@@ -26,6 +27,9 @@ const usersReducer = (state = {}, action) => {
         newState[action.pin.creator.username].pins[action.pin.id] = action.pin;
         return newState;
       }
+    // case RECEIVE_FOLLOW:
+    //
+    // case REMOVE_FOLLOW:
     default:
       return state;
   }

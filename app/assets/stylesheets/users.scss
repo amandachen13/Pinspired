@@ -44,12 +44,32 @@ div.profile-follow-button {
   margin-top: 2px;
   font-size: 16px;
   color: #fff;
+  cursor: pointer;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
 }
 
 div.profile-follow-button:hover {
   background-color: #ad081b;
+}
+
+div.profile-unfollow-button {
+  background-color: #efefef;
+  padding: 10px 14px;
+  border-radius: 4px;
+  letter-spacing: -.2px;
+  line-height: 20px;
+  margin-right: 16px;
+  margin-top: 2px;
+  font-size: 16px;
+  color: #555555;
+  cursor: pointer;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+
+div.profile-unfollow-button:hover {
+  background-color: #e2e2e2;
 }
 
 h1.profile-show-username {

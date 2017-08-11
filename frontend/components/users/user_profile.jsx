@@ -12,6 +12,8 @@ class UserProfile extends React.Component {
     super(props);
 
     this.handleOpenEdit = this.handleOpenEdit.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
     this.ownProfile = this.ownProfile.bind(this);
   }
 
@@ -30,6 +32,22 @@ class UserProfile extends React.Component {
     this.props.open(<UserProfileEditContainer username={this.props.username} />);
   }
 
+  handleFollow(e) {
+    e.preventDefault();
+    this.props.follow(this.props.user.id);
+    $(".profile-follow-button").hide();
+    $(".profile-unfollow-button").show();
+    this.props.requestUser(this.props.currentUser.username);
+  }
+
+  handleUnfollow(e) {
+    e.preventDefault();
+    this.props.unfollow(this.props.user.id);
+    $(".profile-unfollow-button").hide();
+    $(".profile-follow-button").show();
+    this.props.requestUser(this.props.currentUser.username);
+  }
+
   ownProfile() {
     if (this.props.currentUser.username === this.props.username) {
       return (
@@ -40,11 +58,20 @@ class UserProfile extends React.Component {
           <div></div>
         </div>
       );
+    } else if (this.props.currentUser.followings && this.props.currentUser.followings[this.props.user.id]) {
+      return (
+        <div className="profile-options">
+          <div></div>
+          <div onClick={this.handleUnfollow} className="profile-unfollow-button">Unfollow</div>
+          <div onClick={this.handleFollow} className="profile-follow-button" style={{display: 'none'}}>Follow</div>
+        </div>
+      );
     } else {
       return (
         <div className="profile-options">
           <div></div>
-          <div className="profile-follow-button">Follow</div>
+          <div onClick={this.handleUnfollow} className="profile-unfollow-button" style={{display: 'none'}}>Unfollow</div>
+          <div onClick={this.handleFollow} className="profile-follow-button">Follow</div>
         </div>
       );
     }
@@ -93,12 +120,12 @@ class UserProfile extends React.Component {
               </div>
               <div className="profile-info-right">
                 <div className="profile-follow">
-                  <span className="profile-follow-num">0</span>
+                  <span className="profile-follow-num">{this.props.user.num_followers}</span>
                   <br/>
                   <span className="profile-follow">Followers</span>
                 </div>
                 <div className="profile-follow">
-                  <span className="profile-follow-num">0</span>
+                  <span className="profile-follow-num">{this.props.user.num_followings}</span>
                   <br/>
                   <span className="profile-follow">Following</span>
                 </div>
