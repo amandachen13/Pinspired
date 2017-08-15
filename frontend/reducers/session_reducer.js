@@ -2,6 +2,8 @@ import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS, RECEIVE_LOGOUT } from './../actions/session_actions';
 import { RECEIVE_SINGLE_BOARD, REMOVE_BOARD } from './../actions/board_actions';
 import { RECEIVE_SINGLE_PIN, REMOVE_PIN } from './../actions/pin_actions';
+import { RECEIVE_USER } from './../actions/user_actions';
+
 const nullUser = Object.freeze({
   currentUser: null,
   errors: []
@@ -29,7 +31,7 @@ const sessionReducer = (state = nullUser, action) => {
       if (action.user.id === state.currentUser.id) {
         return merge({}, state, {currentUser: {boards: {[action.board.id]: {id: action.board.id, name: action.board.name}}}});
       } else {
-        return merge({}, state)
+        return merge({}, state);
       }
     case REMOVE_PIN:
       const newerState = merge({}, state);
@@ -37,6 +39,10 @@ const sessionReducer = (state = nullUser, action) => {
       return newerState;
     // case RECEIVE_SINGLE_PIN:
     //   return merge({}, state, {currentUser: {pins: {[action.pin.id]: action.pin}}});
+    case RECEIVE_USER:
+      if (action.user.id === state.currentUser.id) {
+        return merge({}, {currentUser: action.user});
+      }
     default:
       return state;
   }

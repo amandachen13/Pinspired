@@ -1,7 +1,7 @@
 import { RECEIVE_USER } from './../actions/user_actions';
 import { RECEIVE_SINGLE_BOARD, REMOVE_BOARD } from './../actions/board_actions';
 import { REMOVE_PIN, RECEIVE_SINGLE_PIN } from './../actions/pin_actions';
-// import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from './../actions/follow_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from './../actions/follow_actions';
 import { merge } from 'lodash';
 
 const usersReducer = (state = {}, action) => {
@@ -28,8 +28,9 @@ const usersReducer = (state = {}, action) => {
         return newState;
       }
     // case RECEIVE_FOLLOW:
-    //
-    // case REMOVE_FOLLOW:
+    case REMOVE_FOLLOW:
+      delete newState[action.follow.following].followers[action.follow.follower_id];
+      return newState;
     default:
       return state;
   }
