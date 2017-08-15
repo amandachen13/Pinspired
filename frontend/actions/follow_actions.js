@@ -22,6 +22,6 @@ export const follow = following_id => dispatch => (
 
 export const unfollow = following_id => dispatch => (
   APIUtil.deleteFollow(following_id)
-    .then( follow => dispatch(receiveFollow(follow)) )
+    .then( follow => dispatch(removeFollow(follow)) )
       .then( follow => dispatch(requestUser(follow.follow.following)) )
 );

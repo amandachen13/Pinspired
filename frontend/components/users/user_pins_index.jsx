@@ -118,8 +118,6 @@ class UserPinsIndex extends React.Component {
     }
   }
 
-
-
 }
 
 export default withRouter(UserPinsIndex);
