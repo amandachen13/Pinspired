@@ -4,7 +4,7 @@ import HeaderContainer from './../home/header_container';
 import FooterContainer from './../home/footer_container';
 import Masonry from 'react-masonry-component';
 import UserProfileEditContainer from'./user_profile_edit_container';
-import UserPinsIndexContainer from './user_pins_index_container'
+import UserPinsIndexContainer from './user_pins_index_container';
 
 class UserPins extends React.Component {
   constructor(props) {
