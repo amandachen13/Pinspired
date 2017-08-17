@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: {message: "You missed a spot!"}
   validates :username, exclusion: { in: %w(pin login signup), message: "%{value} is reserved." }
+  validates :username, format: { with: /\A[a-zA-Z0-9_]*\z/, message: "Alphanumeric characters only!" }
   validates :password_digest, :session_token, presence: true
   validates :username, uniqueness: {message: "Deja vu! That username's taken."}
   validates :session_token, uniqueness: true
