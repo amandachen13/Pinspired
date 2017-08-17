@@ -17,7 +17,7 @@ class BoardShow extends React.Component {
 
   componentDidMount() {
     this.props.requestSingleBoard(this.props.boardId);
-    this.props.requestAllPins();
+    // this.props.requestAllPins();
   }
 
   ownBoard() {

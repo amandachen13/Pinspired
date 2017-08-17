@@ -14,7 +14,7 @@ class UserPinsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllPins();
+    // this.props.requestAllPins();
   }
 
   pinsIndexArr() {
