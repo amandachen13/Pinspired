@@ -17,8 +17,8 @@ class Header extends React.Component {
             </span>
           </Link>
         <span className="search-bar">Search</span>
-        <Link className="icon-temp" to='/'>Discover</Link>
-        <Link className="icon-temp" to={`/${this.props.currentUser}`}>Profile</Link>
+        <Link className="icon-temp nav-bar" to='/'>Home</Link>
+        <Link className="icon-temp nav-bar" to={`/${this.props.currentUser}`}>Profile</Link>
         <button className="icon-temp" onClick={this.props.logout}>Log Out</button>
       </header>
     );

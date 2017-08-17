@@ -37,6 +37,17 @@ a.icon-temp {
   // top: 4px;
 }
 
+a.nav-bar {
+  font-size: 16px;
+  letter-spacing: -.2px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+}
+
+a.nav-bar:hover {
+  color: #555;
+}
+
 a.logo {
   padding-right: 8px;
 }
