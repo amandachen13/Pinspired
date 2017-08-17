@@ -10,8 +10,7 @@ const usersReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_USER:
       const user = action.user;
-      delete newState[user.username];
-      return merge({}, newState, {[user.username]: user});
+      return merge({}, state, {[user.username]: user});
     case RECEIVE_SINGLE_BOARD:
       const creator = action.user;
       return merge({}, state, {[creator.username]: creator});
@@ -29,9 +28,10 @@ const usersReducer = (state = {}, action) => {
         return newState;
       }
     // case RECEIVE_FOLLOW:
-    // case REMOVE_FOLLOW:
-    //   delete newState[action.follow.following].followers[action.follow.follower_id];
-    //   return newState;
+    case REMOVE_FOLLOW:
+      delete newState[action.follow.following].followers[action.follow.follower_id];
+      delete newState[action.follow.follower].followings[action.follow.following_id];
+      return newState;
     default:
       return state;
   }
