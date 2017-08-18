@@ -41,7 +41,7 @@ const sessionReducer = (state = nullUser, action) => {
     //   return merge({}, state, {currentUser: {pins: {[action.pin.id]: action.pin}}});
     case RECEIVE_USER:
       if (action.user.id === state.currentUser.id) {
-        return merge({}, {currentUser: action.user});
+        return merge({}, nullUser, {currentUser: action.user});
       }
     default:
       return state;

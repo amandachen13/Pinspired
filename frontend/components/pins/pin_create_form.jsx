@@ -14,7 +14,7 @@ class PinCreateForm extends React.Component {
       board_id: ''
     };
 
-    $.embedly.defaults.key = '1b788a6c74d5445ea5c6cadb932249e3';
+    $.embedly.defaults.key = 'eb919e5d9f8849ca8879d7ee30bbf4e8';
     this.scrapeImages = this.scrapeImages.bind(this);
   }
 
