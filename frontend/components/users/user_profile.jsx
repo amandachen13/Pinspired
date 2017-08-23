@@ -35,16 +35,16 @@ class UserProfile extends React.Component {
   handleFollow(e) {
     e.preventDefault();
     this.props.follow(this.props.user.id);
-    $(".profile-follow-button").hide();
-    $(".profile-unfollow-button").show();
+    // $(".profile-follow-button").hide();
+    // $(".profile-unfollow-button").show();
     this.props.requestUser(this.props.currentUser.username);
   }
 
   handleUnfollow(e) {
     e.preventDefault();
     this.props.unfollow(this.props.user.id);
-    $(".profile-unfollow-button").hide();
-    $(".profile-follow-button").show();
+    // $(".profile-unfollow-button").hide();
+    // $(".profile-follow-button").show();
     this.props.requestUser(this.props.currentUser.username);
   }
 
@@ -63,19 +63,20 @@ class UserProfile extends React.Component {
         <div className="profile-options">
           <div></div>
           <div onClick={this.handleUnfollow} className="profile-unfollow-button">Unfollow</div>
-          <div onClick={this.handleFollow} className="profile-follow-button" style={{display: 'none'}}>Follow</div>
         </div>
       );
     } else {
       return (
         <div className="profile-options">
           <div></div>
-          <div onClick={this.handleUnfollow} className="profile-unfollow-button" style={{display: 'none'}}>Unfollow</div>
           <div onClick={this.handleFollow} className="profile-follow-button">Follow</div>
         </div>
       );
     }
   }
+
+  // <div onClick={this.handleFollow} className="profile-follow-button" style={{display: 'none'}}>Follow</div>
+  // <div onClick={this.handleUnfollow} className="profile-unfollow-button" style={{display: 'none'}}>Unfollow</div>
 
   boardsList() {
     const boards = (values(this.props.user.boards)).map( board => {
