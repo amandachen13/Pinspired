@@ -68,7 +68,7 @@ class UserProfileEdit extends React.Component {
             </div>
           </div>
           <div className="user-edit-description">
-            <label className="user-edit-label" htmlFor="Description">About you</label>
+            <label className="user-edit-label user-edit-about" htmlFor="Description">About you</label>
             <br />
             <textarea
               className="user-edit-description"

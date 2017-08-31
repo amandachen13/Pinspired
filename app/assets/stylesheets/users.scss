@@ -197,9 +197,13 @@ div.user-edit-exit {
   line-height: 16px;
   font-size: 14px;
   color: #555;
+  cursor: default;
   font-weight: 400;
-  cursor: pointer;
   margin-bottom: 6px;
+}
+
+.user-edit-about {
+  cursor: pointer;
 }
 
 div.user-edit-picture {
@@ -211,6 +215,7 @@ div.user-edit-picture {
 img.user-edit-picture {
   width: 75px;
   height: 75px;
+  border-radius: 50%;
 }
 
 div.user-edit-picture-right {
